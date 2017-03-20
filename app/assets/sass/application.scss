@@ -1,6 +1,6 @@
 // Path to assets for use with the file-url function
 // in the govuk frontend toolkit's url-helpers partial
-$path: "/public/images/";
+$path: '/public/images/';
 
 // Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
@@ -8,23 +8,72 @@ $path: "/public/images/";
 
 // Take a look at in app/assets/sass/patterns/ to see which files are imported.
 @import 'patterns/check-your-answers';
+@import 'generics';
 
 // Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
 .govuk-related-items {
-  margin-top: $gutter;
-  border-top: 10px solid $govuk-blue;
-  padding-top: 5px;
+    margin-top: $gutter;
+    border-top: 10px solid $govuk-blue;
+    padding-top: 5px;
 
-  .heading-medium {
-    margin-top: 0.3em;
-    margin-bottom: 0.5em;
-  }
+    .heading-medium {
+        margin-top: .3em;
+        margin-bottom: .5em;
+    }
 
-  li {
-    margin-bottom: 10px;
-    list-style-type: none;
-  }
+    li {
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
 }
 
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.login-bar {
+    text-align: right;
+    border-bottom: 1px solid $grey-2;
+    padding: 10px 0;
+    font-size: .85em;
+
+    p {
+        margin: 0;
+    }
+}
+
+.service-name {
+    text-align: center;
+}
+
+.search-bar {
+    padding: 10px;
+    background: $grey-3;
+    position: relative;
+
+    .search-field {
+        position: relative;
+        //font-size: 1.2em;
+        width: calc(100% - 63px);
+        border: 1px solid $grey-2;
+        border-right: 0;
+        //line-height: 2.5em;
+        padding: 0 0 0 10px;
+        margin: 0;
+        height: 50px;
+    }
+
+    .search-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-indent: -9999em;
+        height: 52px;
+        width: 52px;
+        border: 1px solid darken($govuk-blue, 10%);
+        background: $govuk-blue url('/public/images/search-button.png') -12.5% 50% no-repeat;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($govuk-blue, 5%);
+            border-color: darken($govuk-blue, 5%);
+        }
+    }
+}
