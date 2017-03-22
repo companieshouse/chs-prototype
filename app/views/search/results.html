@@ -11,9 +11,138 @@
     {% include "includes/login_bar.html" %}
     <div class="grid-row">
       <div class="column-full">
-        <h1 class="heading-xlarge service-name">
-          Search results
-        </h1>
+        <form action="" method="post">
+          <div class="form-group">
+            <div class="search-bar">
+              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
+              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
+              <input type="submit" name="" class="search-button" value="Search"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-full">
+        <nav class="tab-bar">
+          <ul role="navigation">
+            <li class="active">
+              <a href="" title="View search results from the entire register">All</a>
+            </li>
+            <li>
+              <a href="" title="View search results for registered companies">Companies</a>
+            </li>
+            <li>
+              <a href="" title="View search results for registered company officers">Officers</a>
+            </li>
+            <li>
+              <a href="" title="View search results for disqualified company officers">Disqualifications</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <section class="results-group">
+          <ul role="list">
+            <li>
+              <h3>
+                <a href="">
+                  <span class="matched-criteria">LLOYDS BANK</span>
+                  PLC</a>
+              </h3>
+              <div class="subline previous-name">
+                <div class="panel">
+                  Matching previous names:<br/>
+                  <span class="name">
+                    <span class="matched-criteria">LLOYDS</span>
+                    TSB BANK</span>,
+                  <span class="name">LLOYDS BANKING GROUP</span>
+                </div>
+              </div>
+              <div class="subline company">
+                <span class="number">00002065</span>
+                &ndash; Incorporated on 20 April 1865
+              </div>
+              <div class="subline address">
+                25 Gresham Street, London, United Kingdom, EC2V 7HN
+              </div>
+            </li>
+            <li>
+              <h3>
+                <a href="">
+                  <span class="matched-criteria">Lloyd</span>
+                  Douglas
+                  <span class="matched-criteria">BANKS</span>
+                  PLC</a>
+              </h3>
+              <div class="subline appointment">
+                Total number of appointments: 1
+              </div>
+              <div class="subline address">
+                25 Gresham Street, London, United Kingdom, EC2V 7HN
+              </div>
+            </li>
+            <li>
+              <h3>
+                <a href="">
+                  <span class="matched-criteria">LLOYDS BANK</span>
+                  MANAGEMENT LIMITED</a>
+              </h3>
+              <div class="subline company">
+                <span class="number">00002065</span>
+                &ndash; Incorporated on 20 April 1865
+              </div>
+              <div class="subline address">
+                25 Gresham Street, London, United Kingdom, EC2V 7HN
+              </div>
+            </li>
+          </ul>
+          <nav class="pagination">
+            <ul role="navigation">
+              <li>
+                <a href="" class="prev">Previous</a>
+              </li>
+              <li>
+                <span class="active">1</span>
+              </li>
+              <li>
+                <a href="">2</a>
+              </li>
+              <li>
+                <a href="">3</a>
+              </li>
+              <li>
+                <a href="">4</a>
+              </li>
+              <li>
+                <a href="">5</a>
+              </li>
+              <li>
+                <a href="">6</a>
+              </li>
+              <li>
+                <a href="">7</a>
+              </li>
+              <li>
+                <a href="">8</a>
+              </li>
+              <li>
+                <a href="" class="next">Next</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="meta">
+            6,955 matches found
+          </div>
+        </section>
+      </div>
+      <div class="column-one-third">
+        <div class="related-container disqualified">
+          <a href="" class="link">Register of disqualifications</a><br/>
+          <a href="" class="link">Report a disqualified director</a>
+        </div>
       </div>
     </div>
   </main>

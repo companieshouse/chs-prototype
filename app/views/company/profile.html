@@ -11,11 +11,27 @@
     {% include "includes/login_bar.html" %}
     <div class="grid-row">
       <div class="column-full">
-        <h1 class="heading-xlarge service-name">
-          Company Profile
-        </h1>
+        <form action="" method="post">
+          <div class="form-group">
+            <div class="search-bar">
+              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
+              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
+              <input type="submit" name="" class="search-button" value="Search"/>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+    <div class="grid-row">
+      <div class="column-half">
+        <h1 class="heading-xlarge">LLOYDS BANK PLC</h1>
+      </div>
+    </div>
+    <div class="grid-row"></div>
+    <div class="grid-row"></div>
+    <div class="grid-row"></div>
+    <div class="grid-row"></div>
+    <div class="grid-row"></div>
   </main>
 
 {% endblock %}
