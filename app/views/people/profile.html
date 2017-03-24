@@ -11,11 +11,114 @@
     {% include "includes/login_bar.html" %}
     <div class="grid-row">
       <div class="column-full">
-        <h1 class="heading-xlarge service-name">
-          Officer Profile
-        </h1>
+        <form action="" method="post">
+          <div class="form-group">
+            <div class="search-bar">
+              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
+              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
+              <input type="submit" name="" class="search-button" value="Search"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <h1 class="heading-xlarge">
+      Officer name
+    </h1>
+    <div class="grid-row">
+      <div class="column-full">
+        <h2 class="heading-medium">Filter appointments</h2>
+        <form action="" method="post">
+          <div class="multiple-choice">
+            <input id="current-appointments" name="current-appointments" type="checkbox" value="active">
+            <label for="current-appointments">Current appointments</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <h2 class="heading-medium">Total number of appointments: 1</h2>
+    <div class="grid-row">
+      <div class="column-third">
+        <span class="data-key" id="key-dob">
+          Date of birth
+        </span>
+        <p class="data-value" aria-describedby="key-dob">
+          October 1990
+        </p>
+      </div>
+    </div>
+    <h2 class="heading-medium heading-with-border">
+      <a href="">COMPANY NAME (COMPANY NUMBER)</a>
+    </h2>
+    <div class="grid-row">
+      <div class="column-one-third">
+        <span class="data-key" id="key-status">
+          Company status
+        </span>
+        <span class="data-value" aria-describedby="key-status">
+          Active
+        </span>
+      </div>
+      <div class="column-two-thirds">
+        <span class="data-key" id="key-address">
+          Correspondence address
+        </span>
+        <p class="data-value" aria-describedby="key-address">
+          Crown Way, Cardiff, CF5 555
+        </p>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-third">
+        <span class="data-key" id="key-role">
+          Role
+        </span>
+        <p class="data-value" aria-describedby="key-role">
+          Director
+        </p>
+      </div>
+      <div class="column-one-third">
+        <span class="data-key" id="key-appointed">
+          Appointed on
+        </span>
+        <p class="data-value" aria-describedby="key-appointed">
+          21 March 2013
+        </p>
+      </div>
+      <div class="column-one-third">
+        <span class="data-key" id="key-resigned">
+          Resigned on
+        </span>
+        <p class="data-value" aria-describedby="key-resigned">
+          22 March 2017
+        </p>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-third">
+        <span class="data-key" id="key-nationality">
+          Nationality
+        </span>
+        <p class="data-value" aria-describedby="key-nationality">
+          British
+        </p>
+      </div>
+      <div class="column-one-third">
+        <span class="data-key" id="key-residnece-country">
+          Country of residence
+        </span>
+        <p class="data-value" aria-describedby="key-residence-country">
+          Wales
+        </p>
+      </div>
+      <div class="column-one-third">
+        <span class="data-key" id="key-occupation">
+          Occupation
+        </span>
+        <p class="data-value" aria-describedby="key-occupation">
+          Company director
+        </p>
       </div>
     </div>
   </main>
-
 {% endblock %}

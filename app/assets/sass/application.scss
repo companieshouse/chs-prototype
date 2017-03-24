@@ -42,6 +42,7 @@ $path: '/public/images/';
 .service-name {
   text-align: center;
 }
+
 //
 //// SEARCH STYLES
 //
@@ -221,4 +222,15 @@ $path: '/public/images/';
       color: $govuk-blue;
     }
   }
+}
+//
+//// officer profile styles
+//
+
+.data-key {
+  display: block;
+}
+
+.data-value {
+  font-weight: bold;
 }
