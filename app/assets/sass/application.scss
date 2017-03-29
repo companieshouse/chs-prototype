@@ -118,6 +118,60 @@ $path: '/public/images/';
       }
     }
   }
+
+  &.content {
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    position: relative;
+    overflow: inherit;
+
+    ul {
+      top: 1px;
+      position: relative;
+
+      li {
+        border-width: 1px 1px 1px 1px;
+        border-color: $grey-3;
+        border-bottom-color: $grey-2;
+        border-style: solid;
+        background: $white;
+
+        a {
+          background-color: $grey-3;
+          text-decoration: underline;
+
+          &:hover {
+            background: $white;
+            text-decoration: none;
+          }
+        }
+
+        &.active {
+          border-color: $grey-2;
+          border-bottom-color: $white;
+
+          a {
+            background-color: $white;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+
+    &.sub-nav {
+      margin-bottom: .5em;
+    }
+  }
+
+  &.sub-nav {
+    margin-bottom: 2em;
+  }
 }
 
 .results-group {
@@ -127,7 +181,7 @@ $path: '/public/images/';
     font-weight: bold;
   }
 
-  ul {
+  > ul {
     li {
       margin-bottom: 1.2em;
 
@@ -140,6 +194,14 @@ $path: '/public/images/';
 
           &:hover {
             text-decoration: underline;
+          }
+        }
+      }
+
+      .result-title {
+        a {
+          &:hover {
+            text-decoration: none;
           }
         }
       }
@@ -208,6 +270,11 @@ $path: '/public/images/';
 
   > .meta {
     margin-top: .25em;
+    font-size: .8em;
+  }
+
+  &.no-margin {
+    margin-top: 0;
   }
 }
 
@@ -223,14 +290,20 @@ $path: '/public/images/';
     }
   }
 }
-//
-//// officer profile styles
-//
 
-.data-key {
-  display: block;
-}
+//
+//// COMPANY PROFILE
+//
+.primary-actions {
+  margin-top: 1.8em;
+  text-align: right;
 
-.data-value {
-  font-weight: bold;
+  .button {
+    margin-bottom: .5em;
+  }
+
+  .link {
+    font-size: .85em;
+  }
+
 }

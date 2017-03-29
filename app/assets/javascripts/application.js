@@ -25,4 +25,42 @@ $(document).ready(function () {
   // to toggle hidden content
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
+
+  $('.result-count').text('Showing 3 of 10 officers on 4 pages')
+  $('.result-count').attr('data-current', 3)
+  $('.result-count').attr('data-total', 10)
+  $('.result-count').attr('data-pages', 4)
+
+  // Signature button click
+  $('.filters-heading').click(function () {
+    if ($(this).parent().hasClass('open')) {
+      $(this).parent().removeClass('open')
+      $(this).attr('aria-expanded', false)
+      $(this).next().attr('aria-hidden', true)
+    } else {
+      $(this).parent().addClass('open')
+      $(this).attr('aria-expanded', true)
+      $(this).next().attr('aria-hidden', false)
+    }
+    return false
+  })
+
+  // Filter Reset
+  $('.filter-reset').click(function () {
+    $('.filters :checkbox:enabled').prop('checked', false)
+    return false
+  })
+
+  $('.filter-expand').click(function () {
+    $('.filter').addClass('open')
+    return false
+  })
+
+  $(".filter input[type='checkbox']").change(function () {
+    var current = parseInt($('.result-count').attr('data-current'))
+    var total = parseInt($('.result-count').attr('data-total'))
+    $('.result-count').attr('data-current', current + 1)
+    $('.result-count').attr('data-total', total + 1)
+    $('.result-count').text('Showing ' + (current + 1) + ' of ' + (total + 1) + ' officers')
+  })
 })

@@ -1,18 +1,163 @@
-sup {
-    &.label {
-        display: inline-block;
-        padding: .1em .3em;
-        color: #FFFFFF;
-        background-color: #F47738;
-        font-size: .8em;
-        position: relative;
-        top: .3em;
+a {
+  &.filter-reset {
+    font-size: .8em;
+    //float: right;
+  }
+
+  &.filter-expand {
+    font-size: .8em;
+  }
+}
+
+p {
+  &.info {
+    margin: 0 0 1em;
+    font-size: .8em;
+  }
+
+  &.filter-label {
+    //float: left;
+  }
+}
+
+table {
+  td,
+  th {
+    vertical-align: top;
+  }
+
+  &.condensed {
+    td,
+    th {
+      font-size: .85em;
     }
+  }
+}
+
+sup {
+  &.label {
+    display: inline-block;
+    padding: .1em .3em;
+    font-weight: bold;
+    background-color: $grey-1;
+    color: $white;
+
+    &.floating {
+      position: relative;
+      top: .3em;
+    }
+
+    &.small {
+      font-size: .8em;
+    }
+
+    &.orange {
+      background-color: $orange;
+      color: $white;
+    }
+
+    &.green {
+      background-color: $grass-green;
+      color: $white;
+    }
+
+    &.grey {
+      background-color: $grey-1;
+      color: $white;
+    }
+  }
 }
 
 .list-bullet,
 .list-number {
-    li {
-        margin-bottom: .25em;
+  li {
+    margin-bottom: .25em;
+  }
+}
+
+.data-group {
+  display: block;
+  margin-bottom: 1em;
+
+  .data-key {
+    display: block;
+  }
+
+  .data-value {
+    font-weight: bold;
+  }
+
+}
+
+//
+//// FILTERS PANEL
+//
+.filters {
+  .filter {
+    margin-bottom: 1em;
+
+    .filters-heading {
+      background: $grey-3;
+      font-weight: bold;
+      padding: .5em;
+      margin: 0;
+      vertical-align: middle;
+      position: relative;
+      cursor: pointer;
+
+      .toggle {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: .8em;
+        height: 30px;
+        width: 20px;
+        background: transparent top center url('/public/images/accordion-arrow.png') no-repeat;
+        zoom: .8;
+      }
     }
+
+    &.open {
+      .filters-heading {
+        .toggle {
+          background-position: center -45px;
+        }
+      }
+
+      .filters-wrapper {
+        display: block;
+      }
+    }
+  }
+
+  .filters-wrapper {
+    display: none;
+    width: auto;
+    border-width: 0 4px 4px 4px;
+    border-color: $grey-3;
+    border-style: solid;
+    padding: .5em .5em 0;
+    font-size: .8em;
+
+    .multiple-choice {
+      padding: 2px 10px 2px 30px;
+      margin-bottom: 10px;
+
+      input {
+        width: 22px;
+        height: 22px;
+      }
+
+      label {
+        &::before {
+          width: 18px;
+          height: 18px;
+        }
+
+        &::after {
+          zoom: .6;
+        }
+      }
+    }
+  }
 }

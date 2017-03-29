@@ -11,11 +11,347 @@
     {% include "includes/login_bar.html" %}
     <div class="grid-row">
       <div class="column-full">
-        <h1 class="heading-xlarge service-name">
-          Company Officers - Officers
-        </h1>
+        <form action="" method="post">
+          <div class="form-group">
+            <div class="search-bar">
+              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
+              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
+              <input type="submit" name="" class="search-button" value="Search"/>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </main>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">LLOYDS BANK PLC</h1>
+        <div class="data-group">
+          <span id="key-company-number">Company number</span>
+          <span class="data-value" aria-labelledby="key-company-number">00002065</span>
+        </div>
+      </div>
+      <div class="column-one-third primary-actions">
+        <a href="/feature/follow-company" class="button" role="button" title="">Follow this company</a>
+        <br/>
+        <a href="/filing" class="link" title="">File for this company</a>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-full">
+        <nav class="tab-bar content sub-nav">
+          <ul role="naviagtion">
+            <li>
+              <a href="/company/profile">
+                <span id="company-overview">Overview</span>
+              </a>
+            </li>
+            <li>
+              <a href="/company/filing-history">
+                <span id="company-filing-history">Filing history</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="/company/people/officers">
+                <span id="company-people">People</span>
+              </a>
+            </li>
+            <li>
+              <a href="/company/charges/list">
+                <span id="company-charges">Charges</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-full">
+        <nav class="tab-bar sub-nav">
+          <ul role="naviagtion">
+            <li class="active">
+              <a href="/company/profile">
+                <span id="company-officers">Officers</span>
+              </a>
+            </li>
+            <li>
+              <a href="/company/filing-history">
+                <span id="company-psc">Persons with Significant Control</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section aria-labelledby="company-officers">
+      <div class="grid-row">
+        <div class="column-third">
+          <p class="info filter-label">Filter officers</p>
+          <section class="filters" id="filters">
+            <form action="" method="post">
+              <div role="widget" class="filter open">
+                <div class="filters-heading" role="button" aria-controls="filter-status" aria-expanded="true" tabindex="0">
+                  <span id="filter-label-status">
+                    <span class="visuallyhidden">Filter by
+                    </span>Status</span>
+                  <div class="toggle"></div>
+                </div>
+                <fieldset id="filter-status" class="filters-wrapper" aria-hidden="false" aria-labelledby="filter-label-status">
+                  <legend class="visuallyhidden">Choose to see active or resigned officers</legend>
+                  <div class="multiple-choice">
+                    <input id="status-active" name="filterStatus" type="checkbox" value="active">
+                    <label for="status-active">Active</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="status-resigned" name="filterStatus" type="checkbox" value="resigned">
+                    <label for="status-resigned">Resigned</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div role="widget" class="filter">
+                <div class="filters-heading" role="button" aria-controls="filter-nationality" aria-expanded="false" tabindex="0">
+                  <span id="filter-label-nationality">
+                    <span class="visuallyhidden">Filter by
+                    </span>Nationality</span>
+                  <div class="toggle"></div>
+                </div>
+                <fieldset id="filter-nationality" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-nationality">
+                  <legend class="visuallyhidden">What nationalities do you want to see officers for?</legend>
+                  <div class="multiple-choice">
+                    <input id="nationality-us" name="filterNationality" type="checkbox" value="us">
+                    <label for="nationality-us">American</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="nationality-gb" name="filterNationality" type="checkbox" value="uk">
+                    <label for="nationality-gb">British</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="nationality-nl" name="filterNationality" type="checkbox" value="nl">
+                    <label for="nationality-nl">Dutch</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="nationality-sa" name="filterNationality" type="checkbox" value="sa">
+                    <label for="nationality-sa">South African</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div role="widget" class="filter">
+                <div class="filters-heading" role="button" aria-controls="filter-role" aria-expanded="false" tabindex="0">
+                  <span id="filter-label-role">
+                    <span class="visuallyhidden">Filter by
+                    </span>Role</span>
+                  <div class="toggle"></div>
+                </div>
+                <fieldset id="filter-role" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-role">
+                  <legend class="visuallyhidden">What roles do you want to see officers for?</legend>
+                  <div class="multiple-choice">
+                    <input id="role-director" name="filterRole" type="checkbox" value="director">
+                    <label for="role-director">Director</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="role-secretary" name="filterRole" type="checkbox" value="secretary">
+                    <label for="role-secretary">Secretary</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </section>
+          <p>
+            <a href="" class="filter-expand" aria-hidden="true">Open all filters</a>
+          </p>
+          <p>
+            <a href="" role="button" class="link filter-reset" title="Clear filters to see all officers" aria-controls="filters">Reset filters</a>
+          </p>
+        </div>
+        <div class="column-two-thirds">
+          <section aria-labelledby="company-people">
+            <div class="grid-row">
+              <div class="column-full">
+                <p class="info result-count" id="result-count" aria-live="assertive">&nbsp;</div>
+              </div>
+              <div class="grid-row">
+                <div class="column-full">
+                  <div class="results-group">
+                    <span class="visuallyhidden">Officers list</span>
+                    <ul>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/people/profile" class="link" title="">
+                            ELLWOOD, Peter John
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Role</th>
+                              <td>Director</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Status</th>
+                              <td>
+                                <sup class="label green">ACTIVE</sup>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Appointed on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Resigned on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Correspondence address</th>
+                              <td>25 Gresham Street, London, EC2V 7HN</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Date of birth</th>
+                              <td>April 1956</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Nationality</th>
+                              <td>British</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Country of residence</th>
+                              <td>United Kingdom</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Occupation</th>
+                              <td>Bank Director</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/people/profile" class="link" title="">
+                            BLACKWELL, Malcom James
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Role</th>
+                              <td>Director</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Status</th>
+                              <td>
+                                <sup class="label grey">RESIGNED</sup>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Appointed on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Resigned on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Correspondence address</th>
+                              <td>25 Gresham Street, London, EC2V 7HN</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Date of birth</th>
+                              <td>April 1956</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Nationality</th>
+                              <td>British</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Country of residence</th>
+                              <td>United Kingdom</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Occupation</th>
+                              <td>Bank Director</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/people/profile" class="link" title="">
+                            KENT, Michael George
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Role</th>
+                              <td>Secretary</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Status</th>
+                              <td>
+                                <sup class="label grey">RESIGNED</sup>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Appointed on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Resigned on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Correspondence address</th>
+                              <td>25 Gresham Street, London, EC2V 7HN</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                    </ul>
+                    <nav class="pagination">
+                      <ul role="navigation">
+                        <li>
+                          <a href="" class="prev" title="Previous page">Previous<span class="visuallyhidden">
+                              page</span>
+                          </a>
+                        </li>
+                        <li>
+                          <span class="active">
+                            <span class="visuallyhidden">Current result page
+                            </span>1</span>
+                        </li>
+                        <li>
+                          <a href="" title="Page 2">2</a>
+                        </li>
+                        <li>
+                          <a href="" title="Page 3">3</a>
+                        </li>
+                        <li>
+                          <a href="" title="Page 4">4</a>
+                        </li>
+                        <li>
+                          <a href="" title="Page 5">5</a>
+                        </li>
+                        <li>
+                          <a href="" title="Page 6">6</a>
+                        </li>
+                        <li>
+                          <a href="" title="Page 7">7</a>
+                        </li>
+                        <li>
+                          <a href="" title="Page 8">8</a>
+                        </li>
+                        <li>
+                          <a href="" class="next" title="Next page">Next<span class="visuallyhidden">
+                              page</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
 
-{% endblock %}
+  {% endblock %}
