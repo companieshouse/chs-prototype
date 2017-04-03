@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/login_bar.html" %}
+    {% include "includes/search-bar.html" %}s="grid-row">
+    <div class="column-full">
+      <nav class="tab-bar">
+        <ul role="navigation">
+          <li>
+            <a href="/search/all" title="View search results from the entire register">All</a>
+          </li>
+          <li>
+            <a href="/search/companies" title="View search results for registered companies">Companies</a>
+          </li>
+          <li class="active">
+            <a href="/search/officers" title="View search results for registered company officers">Officers</a>
+          </li>
+          <li>
+            <a href="/search/disqualifications" title="View search results for disqualified company officers">Disqualifications</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <section class="results-group">
+        <div class="meta top">
+          6,955 matches found
+        </div>
+        <ul role="list">
+          <li>
+            <h3>
+              <a href="">
+                <span class="matched-criteria">LLOYDS BANK</span>
+                PLC</a>
+            </h3>
+            <div class="subline previous-name">
+              <div class="panel">
+                Matching previous names:<br/>
+                <span class="name">
+                  <span class="matched-criteria">LLOYDS</span>
+                  TSB BANK</span>,
+                <span class="name">LLOYDS BANKING GROUP</span>
+              </div>
+            </div>
+            <div class="subline company">
+              <span class="number">00002065</span>
+              &ndash; Incorporated on 20 April 1865
+            </div>
+            <div class="subline address">
+              25 Gresham Street, London, United Kingdom, EC2V 7HN
+            </div>
+          </li>
+          <li>
+            <h3>
+              <a href="">
+                <span class="matched-criteria">Lloyd</span>
+                Douglas
+                <span class="matched-criteria">BANKS</span>
+              </a>
+            </h3>
+            <div class="subline appointment">
+              Total number of appointments: 1
+            </div>
+            <div class="subline address">
+              25 Gresham Street, London, United Kingdom, EC2V 7HN
+            </div>
+          </li>
+          <li>
+            <h3>
+              <a href="">
+                <span class="matched-criteria">LLOYDS BANK</span>
+                MANAGEMENT LIMITED</a>
+            </h3>
+            <div class="subline company">
+              <span class="number">00002065</span>
+              &ndash; Incorporated on 20 April 1865
+            </div>
+            <div class="subline address">
+              25 Gresham Street, London, United Kingdom, EC2V 7HN
+            </div>
+          </li>
+        </ul>
+        {% include "includes/pagination.html" %}
+      </section>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

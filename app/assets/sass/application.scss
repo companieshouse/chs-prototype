@@ -169,13 +169,39 @@ $path: '/public/images/';
     }
   }
 
+  &.alpha {
+    ul {
+      li {
+        margin-right: .1em;
+
+        a {
+          padding: .55em;
+          font-size: 1em;
+
+          &:hover {
+            background: $grey-3;
+          }
+        }
+
+        &.active {
+          font-size: 2em;
+          border-bottom-width: 4px;
+
+          a {
+            padding: .25em;
+          }
+        }
+      }
+    }
+  }
+
   &.sub-nav {
     margin-bottom: 2em;
   }
 }
 
 .results-group {
-  margin: 2em 0;
+  margin: .5em 0;
 
   .matched-criteria {
     font-weight: bold;
@@ -271,6 +297,11 @@ $path: '/public/images/';
   > .meta {
     margin-top: .25em;
     font-size: .8em;
+
+    &.top {
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
   }
 
   &.no-margin {
@@ -282,8 +313,12 @@ $path: '/public/images/';
   margin-top: 2em;
 
   &.disqualified {
-    background: $grey-3;
-    padding: .75em;
+    background: lighten($grey-3, 5);
+    padding: .85em;
+
+    ul {
+      margin-bottom: 0;
+    }
 
     a {
       color: $govuk-blue;
@@ -306,4 +341,21 @@ $path: '/public/images/';
     font-size: .85em;
   }
 
+}
+
+//
+//// TABULAR RESULTS CLASSES
+//
+table {
+  &.company-filings {
+    .filing-type {
+      display: none;
+    }
+
+    span {
+      &.title {
+        font-weight: bold;
+      }
+    }
+  }
 }

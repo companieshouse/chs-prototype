@@ -9,13 +9,206 @@
   <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/login_bar.html" %}
+    {% include "includes/search-bar.html" %}
     <div class="grid-row">
-      <div class="column-full">
-        <h1 class="heading-xlarge service-name">
-          Company Charges
-        </h1>
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">LLOYDS BANK PLC</h1>
+        <div class="data-group">
+          <span id="key-company-number">Company number</span>
+          <span class="data-value" aria-labelledby="key-company-number">00002065</span>
+        </div>
+      </div>
+      <div class="column-one-third primary-actions">
+        <a href="/feature/follow-company" class="button" role="button" title="">Follow this company</a>
+        <br/>
+        <a href="/filing" class="link" title="">File for this company</a>
       </div>
     </div>
-  </main>
+    <div class="grid-row">
+      <div class="column-full">
+        <nav class="tab-bar content">
+          <ul role="naviagtion">
+            <li>
+              <a href="/company/profile">
+                <span id="company-overview">Overview</span>
+              </a>
+            </li>
+            <li>
+              <a href="/company/filing-history">
+                <span id="company-filing-history">Filing history</span>
+              </a>
+            </li>
+            <li>
+              <a href="/company/people/officers">
+                <span id="company-people">People</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="/company/charges/list">
+                <span id="company-charges">Charges</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section aria-labelledby="company-charges">
+      <div class="grid-row">
+        <div class="column-third">
+          <p class="info filter-label">Filter charges</p>
+          <section class="filters" id="filters">
+            <form action="" method="post">
+              <div role="widget" class="filter open">
+                <div class="filters-heading" role="button" aria-controls="filter-status" aria-expanded="true" tabindex="0">
+                  <span id="filter-label-status">
+                    <span class="visuallyhidden">Filter by
+                    </span>Status</span>
+                  <div class="toggle"></div>
+                </div>
+                <fieldset id="filter-status" class="filters-wrapper" aria-hidden="false" aria-labelledby="filter-label-status">
+                  <legend class="visuallyhidden">Choose to see outstanding, satisfied or part satisfied charges</legend>
+                  <div class="multiple-choice">
+                    <input id="status-oustanding" name="filterStatus" type="checkbox" value="active">
+                    <label for="status-oustanding">Outstanding</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="status-satisfied" name="filterStatus" type="checkbox" value="satisfied">
+                    <label for="status-satisfied">Satisfied</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="status-part" name="filterStatus" type="checkbox" value="part">
+                    <label for="status-part">Part satisfied</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </section>
+          <p>
+            <a href="" class="filter-expand" aria-hidden="true">Open all filters</a>
+          </p>
+          <p>
+            <a href="" role="button" class="link filter-reset" title="Clear filters to see all officers" aria-controls="filters">Reset filters</a>
+          </p>
+        </div>
+        <div class="column-two-thirds">
+          <section aria-labelledby="company-people">
+            <div class="grid-row">
+              <div class="column-full">
+                <p class="info result-count" id="result-count" aria-live="polite">&nbsp;</div>
+              </div>
+              <div class="grid-row">
+                <div class="column-full">
+                  <div class="results-group">
+                    <span class="visuallyhidden">Officers list</span>
+                    <ul>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/company/charges/charge" class="link" title="">
+                            Charge 0000 2065 1235
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Status</th>
+                              <td>
+                                Outstanding
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Created on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Delivered on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Persons entitled</th>
+                              <td>Pearsons Clearing Limited</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Description</th>
+                              <td>Contains notice of a fixed charge</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/company/charges/charge" class="link" title="">
+                            Charge 0000 2065 1236
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Status</th>
+                              <td>
+                                Part satisfied
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Created on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Delivered on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Persons entitled</th>
+                              <td>Pearsons Clearing Limited</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Description</th>
+                              <td>Contains notice of a fixed charge</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/company/charges/charge" class="link" title="">
+                            Charge 0000 2065 1237
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Status</th>
+                              <td>
+                                Satisfied
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Created on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Delivered on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Persons entitled</th>
+                              <td>Pearsons Clearing Limited</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Description</th>
+                              <td>Contains notice of a fixed charge</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                    </ul>
+                    {% include "includes/pagination.html" %}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
 
-{% endblock %}
+  {% endblock %}

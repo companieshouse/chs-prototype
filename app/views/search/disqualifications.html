@@ -9,34 +9,22 @@
   <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/login_bar.html" %}
-    <div class="grid-row">
-      <div class="column-full">
-        <form action="" method="post">
-          <div class="form-group">
-            <div class="search-bar">
-              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
-              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
-              <input type="submit" name="" class="search-button" value="Search"/>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+    {% include "includes/search-bar.html" %}
     <div class="grid-row">
       <div class="column-full">
         <nav class="tab-bar">
           <ul role="navigation">
+            <li>
+              <a href="/search/all" title="View search results from the entire register">All</a>
+            </li>
+            <li>
+              <a href="/search/companies" title="View search results for registered companies">Companies</a>
+            </li>
+            <li>
+              <a href="/search/officers" title="View search results for registered company officers">Officers</a>
+            </li>
             <li class="active">
-              <a href="" title="View search results from the entire register">All</a>
-            </li>
-            <li>
-              <a href="" title="View search results for registered companies">Companies</a>
-            </li>
-            <li>
-              <a href="" title="View search results for registered company officers">Officers</a>
-            </li>
-            <li>
-              <a href="" title="View search results for disqualified company officers">Disqualifications</a>
+              <a href="/search/disqualifications" title="View search results for disqualified company officers">Disqualifications</a>
             </li>
           </ul>
         </nav>
@@ -45,6 +33,9 @@
     <div class="grid-row">
       <div class="column-two-thirds">
         <section class="results-group">
+          <div class="meta top">
+            6,955 matches found
+          </div>
           <ul role="list">
             <li>
               <h3>
@@ -75,7 +66,7 @@
                   <span class="matched-criteria">Lloyd</span>
                   Douglas
                   <span class="matched-criteria">BANKS</span>
-                  PLC</a>
+                </a>
               </h3>
               <div class="subline appointment">
                 Total number of appointments: 1
@@ -99,49 +90,25 @@
               </div>
             </li>
           </ul>
-          <nav class="pagination">
-            <ul role="navigation">
-              <li>
-                <a href="" class="prev">Previous</a>
-              </li>
-              <li>
-                <span class="active">1</span>
-              </li>
-              <li>
-                <a href="">2</a>
-              </li>
-              <li>
-                <a href="">3</a>
-              </li>
-              <li>
-                <a href="">4</a>
-              </li>
-              <li>
-                <a href="">5</a>
-              </li>
-              <li>
-                <a href="">6</a>
-              </li>
-              <li>
-                <a href="">7</a>
-              </li>
-              <li>
-                <a href="">8</a>
-              </li>
-              <li>
-                <a href="" class="next">Next</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="meta">
-            6,955 matches found
-          </div>
+          {% include "includes/pagination.html" %}
         </section>
       </div>
       <div class="column-one-third">
         <div class="related-container disqualified">
-          <a href="" class="link">Register of disqualifications</a><br/>
-          <a href="" class="link">Report a disqualified director</a>
+          <h4 class="heading-small no-margin">Related tools</h4>
+          <ul class="list list-bullet">
+            <li>
+              <a href="" class="link">
+                <span class="visuallyhidden">
+                  Browse the
+                </span>
+                Register of Disqualifications
+              </a>
+            </li>
+            <li>
+              <a href="" class="link">Report a disqualified director</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

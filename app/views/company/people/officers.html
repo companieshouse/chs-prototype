@@ -9,19 +9,7 @@
   <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/login_bar.html" %}
-    <div class="grid-row">
-      <div class="column-full">
-        <form action="" method="post">
-          <div class="form-group">
-            <div class="search-bar">
-              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
-              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
-              <input type="submit" name="" class="search-button" value="Search"/>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+    {% include "includes/search-bar.html" %}
     <div class="grid-row">
       <div class="column-two-thirds">
         <h1 class="heading-xlarge">LLOYDS BANK PLC</h1>
@@ -69,12 +57,12 @@
         <nav class="tab-bar sub-nav">
           <ul role="naviagtion">
             <li class="active">
-              <a href="/company/profile">
+              <a href="/company/people/officers">
                 <span id="company-officers">Officers</span>
               </a>
             </li>
             <li>
-              <a href="/company/filing-history">
+              <a href="/company/people/persons-of-significant-control">
                 <span id="company-psc">Persons with Significant Control</span>
               </a>
             </li>
@@ -166,7 +154,7 @@
           <section aria-labelledby="company-people">
             <div class="grid-row">
               <div class="column-full">
-                <p class="info result-count" id="result-count" aria-live="assertive">&nbsp;</div>
+                <p class="info result-count" id="result-count" aria-live="polite">&nbsp;</div>
               </div>
               <div class="grid-row">
                 <div class="column-full">
@@ -305,46 +293,7 @@
                         </table>
                       </li>
                     </ul>
-                    <nav class="pagination">
-                      <ul role="navigation">
-                        <li>
-                          <a href="" class="prev" title="Previous page">Previous<span class="visuallyhidden">
-                              page</span>
-                          </a>
-                        </li>
-                        <li>
-                          <span class="active">
-                            <span class="visuallyhidden">Current result page
-                            </span>1</span>
-                        </li>
-                        <li>
-                          <a href="" title="Page 2">2</a>
-                        </li>
-                        <li>
-                          <a href="" title="Page 3">3</a>
-                        </li>
-                        <li>
-                          <a href="" title="Page 4">4</a>
-                        </li>
-                        <li>
-                          <a href="" title="Page 5">5</a>
-                        </li>
-                        <li>
-                          <a href="" title="Page 6">6</a>
-                        </li>
-                        <li>
-                          <a href="" title="Page 7">7</a>
-                        </li>
-                        <li>
-                          <a href="" title="Page 8">8</a>
-                        </li>
-                        <li>
-                          <a href="" class="next" title="Next page">Next<span class="visuallyhidden">
-                              page</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
+                    {% include "includes/pagination.html" %}
                   </div>
                 </div>
               </div>

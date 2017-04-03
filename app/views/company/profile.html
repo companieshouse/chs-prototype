@@ -9,19 +9,7 @@
   <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/login_bar.html" %}
-    <div class="grid-row">
-      <div class="column-full">
-        <form action="" method="post">
-          <div class="form-group">
-            <div class="search-bar">
-              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
-              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
-              <input type="submit" name="" class="search-button" value="Search"/>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+    {% include "includes/search-bar.html" %}
     <div class="grid-row">
       <div class="column-two-thirds">
         <h1 class="heading-xlarge">LLOYDS BANK PLC</h1>
@@ -124,7 +112,8 @@
       </div>
       <div class="grid-row">
         <div class="column-full">
-          <h3 class="heading-medium">Nature of business (SIC)</h3>
+          <h3 class="heading-medium subline">Nature of business</h3>
+          <div class="heading-subline">Standard Industrial Classification (SIC) Code</div>
           <p>64191 &ndash; Banks</p>
         </div>
       </div>

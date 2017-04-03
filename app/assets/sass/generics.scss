@@ -1,3 +1,25 @@
+@import 'govuk-elements';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.subline {
+    margin-bottom: .25em;
+  }
+
+  &.no-margin {
+    margin: 0;
+  }
+}
+
+.heading-subline {
+  font-size: .8em;
+  margin-bottom: 1.5em;
+}
+
 a {
   &.filter-reset {
     font-size: .8em;
@@ -24,6 +46,10 @@ table {
   td,
   th {
     vertical-align: top;
+
+    &.no-wrap {
+      white-space: nowrap;
+    }
   }
 
   &.condensed {
@@ -65,6 +91,11 @@ sup {
       background-color: $grey-1;
       color: $white;
     }
+
+    &.yellow {
+      background-color: $yellow;
+      color: $black;
+    }
   }
 }
 
@@ -86,7 +117,10 @@ sup {
   .data-value {
     font-weight: bold;
   }
+}
 
+.content-back-link {
+  margin-bottom: 1em;
 }
 
 //

@@ -9,21 +9,9 @@
   <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/login_bar.html" %}
-    <div class="grid-row">
-      <div class="column-full">
-        <form action="" method="post">
-          <div class="form-group">
-            <div class="search-bar">
-              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
-              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
-              <input type="submit" name="" class="search-button" value="Search"/>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+    {% include "includes/search-bar.html" %}
     <h1 class="heading-xlarge">
-      Disqualified Officer Name
+      David Gregory ALLSWAY
     </h1>
     <div class="data-group">
       <div class="grid-row">
@@ -33,6 +21,14 @@
           </span>
           <span class="data-value" aria-describedby="key-dob">
             19 October 1990
+          </span>
+        </div>
+        <div class="column-quarter">
+          <span class="data-key" id="key-nationality">
+            Nationality
+          </span>
+          <span class="data-value" aria-describedby="key-nationality">
+            British
           </span>
         </div>
       </div>

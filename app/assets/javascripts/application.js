@@ -61,6 +61,11 @@ $(document).ready(function () {
     var total = parseInt($('.result-count').attr('data-total'))
     $('.result-count').attr('data-current', current + 1)
     $('.result-count').attr('data-total', total + 1)
-    $('.result-count').text('Showing ' + (current + 1) + ' of ' + (total + 1) + ' officers')
+    $('.result-count').text('Showing ' + (current + 1) + ' of ' + (total + 1) + ' officers on 4 pages')
+  })
+
+  // SHOW FILING TYPE
+  $("input[name='filterType']").change(function () {
+    $('.filing-type').toggle()
   })
 })

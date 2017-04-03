@@ -9,116 +9,252 @@
   <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/login_bar.html" %}
+    {% include "includes/search-bar.html" %}
     <div class="grid-row">
-      <div class="column-full">
-        <form action="" method="post">
-          <div class="form-group">
-            <div class="search-bar">
-              <label for="searchField" class="visuallyhidden">Enter a company name, number or officer name</label>
-              <input type="text" name="" class="search-field" value="Start here&hellip;" id="searchField"/>
-              <input type="submit" name="" class="search-button" value="Search"/>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <h1 class="heading-xlarge">
-      Officer name
-    </h1>
-    <div class="grid-row">
-      <div class="column-full">
-        <h2 class="heading-medium">Filter appointments</h2>
-        <form action="" method="post">
-          <div class="multiple-choice">
-            <input id="current-appointments" name="current-appointments" type="checkbox" value="active">
-            <label for="current-appointments">Current appointments</label>
-          </div>
-        </form>
-      </div>
-    </div>
-    <h2 class="heading-medium">Total number of appointments: 1</h2>
-    <div class="grid-row">
-      <div class="column-third">
-        <span class="data-key" id="key-dob">
-          Date of birth
-        </span>
-        <p class="data-value" aria-describedby="key-dob">
-          October 1990
-        </p>
-      </div>
-    </div>
-    <h2 class="heading-medium">
-      <a href="">COMPANY NAME (COMPANY NUMBER)</a>
-    </h2>
-    <div class="grid-row">
-      <div class="column-one-third">
-        <span class="data-key" id="key-status">
-          Company status
-        </span>
-        <span class="data-value" aria-describedby="key-status">
-          Active
-        </span>
-      </div>
       <div class="column-two-thirds">
-        <span class="data-key" id="key-address">
-          Correspondence address
-        </span>
-        <p class="data-value" aria-describedby="key-address">
-          Crown Way, Cardiff, CF5 555
-        </p>
+        <h1 class="heading-xlarge">JOHN MATTHEW SMITH</h1>
+        <div class="data-group">
+          <span class="data-key" id="key-dob">Date of birth</span>
+          <span class="data-value" aria-labelledby="key-dob">May 1962</span>
+        </div>
       </div>
     </div>
-    <div class="grid-row">
-      <div class="column-one-third">
-        <span class="data-key" id="key-role">
-          Role
-        </span>
-        <p class="data-value" aria-describedby="key-role">
-          Director
-        </p>
+    <hr/>
+    <section aria-labelledby="person-appointments">
+      <div class="grid-row">
+        <div class="column-full">
+          <h3 class="heading-medium" id="person-appointments">Appointments</h3>
+        </div>
       </div>
-      <div class="column-one-third">
-        <span class="data-key" id="key-appointed">
-          Appointed on
-        </span>
-        <p class="data-value" aria-describedby="key-appointed">
-          21 March 2013
-        </p>
-      </div>
-      <div class="column-one-third">
-        <span class="data-key" id="key-resigned">
-          Resigned on
-        </span>
-        <p class="data-value" aria-describedby="key-resigned">
-          22 March 2017
-        </p>
-      </div>
-    </div>
-    <div class="grid-row">
-      <div class="column-one-third">
-        <span class="data-key" id="key-nationality">
-          Nationality
-        </span>
-        <p class="data-value" aria-describedby="key-nationality">
-          British
-        </p>
-      </div>
-      <div class="column-one-third">
-        <span class="data-key" id="key-residnece-country">
-          Country of residence
-        </span>
-        <p class="data-value" aria-describedby="key-residence-country">
-          Wales
-        </p>
-      </div>
-      <div class="column-one-third">
-        <span class="data-key" id="key-occupation">
-          Occupation
-        </span>
-        <p class="data-value" aria-describedby="key-occupation">
-          Company director
-        </p>
-      </div>
-    </div>
-  </main>
-{% endblock %}
+      <div class="grid-row">
+        <div class="column-third">
+          <p class="info filter-label">Filter appointments</p>
+          <section class="filters" id="filters">
+            <form action="" method="post">
+              <div role="widget" class="filter open">
+                <div class="filters-heading" role="button" aria-controls="filter-appointment" aria-expanded="true" tabindex="0">
+                  <span id="filter-label-appointment">
+                    <span class="visuallyhidden">Filter by
+                    </span>Role status</span>
+                  <div class="toggle"></div>
+                </div>
+                <fieldset id="filter-appointment" class="filters-wrapper" aria-hidden="false" aria-labelledby="filter-label-appointment">
+                  <legend class="visuallyhidden">Choose to see active or resigned appointments</legend>
+                  <div class="multiple-choice">
+                    <input id="appointment-active" name="filterAppointment" type="checkbox" value="active">
+                    <label for="appointment-active">Active</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="appointment-resigned" name="filterAppointment" type="checkbox" value="resigned">
+                    <label for="appointment-resigned">Resigned</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div role="widget" class="filter open">
+                <div class="filters-heading" role="button" aria-controls="filter-company-status" aria-expanded="true" tabindex="0">
+                  <span id="filter-label-company-status">
+                    <span class="visuallyhidden">Filter by
+                    </span>Company status</span>
+                  <div class="toggle"></div>
+                </div>
+                <fieldset id="filter-company-status" class="filters-wrapper" aria-hidden="false" aria-labelledby="filter-label-company-status">
+                  <legend class="visuallyhidden">Choose which company statuses you want to see appointments for</legend>
+                  <div class="multiple-choice">
+                    <input id="company-status-active" name="filterCompanyStatus" type="checkbox" value="active">
+                    <label for="company-status-active">Active</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="company-status-resigned" name="filterCompanyStatus" type="checkbox" value="resigned">
+                    <label for="company-status-resigned">Dissolved</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="company-status-liquidation" name="filterCompanyStatus" type="checkbox" value="liquidation">
+                    <label for="company-status-liquidation">Liquidation</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </section>
+          <p>
+            <a href="" class="filter-expand" aria-hidden="true">Open all filters</a>
+          </p>
+          <p>
+            <a href="" role="button" class="link filter-reset" title="Clear filters to see all officers" aria-controls="filters">Reset filters</a>
+          </p>
+        </div>
+        <div class="column-two-thirds">
+          <section aria-labelledby="company-people">
+            <div class="grid-row">
+              <div class="column-full">
+                <p class="info result-count" id="result-count" aria-live="polite">&nbsp;</div>
+              </div>
+              <div class="grid-row">
+                <div class="column-full">
+                  <div class="results-group">
+                    <span class="visuallyhidden">Appointment list</span>
+                    <ul>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/people/profile" class="link" title="">
+                            LLOYDS BANK PLC (00002065)
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Role</th>
+                              <td>Director</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Role status</th>
+                              <td>
+                                Active
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Company status</th>
+                              <td>
+                                Active
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Appointed on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Resigned on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Correspondence address</th>
+                              <td>25 Gresham Street, London, EC2V 7HN</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Nationality</th>
+                              <td>British</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Country of residence</th>
+                              <td>United Kingdom</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Occupation</th>
+                              <td>Bank Director</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/people/profile" class="link" title="">
+                            HBOS PLC (06549109)
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Role</th>
+                              <td>Director</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Role status</th>
+                              <td>
+                                Active
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Company status</th>
+                              <td>
+                                Active
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Appointed on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Resigned on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Correspondence address</th>
+                              <td>25 Gresham Street, London, EC2V 7HN</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Nationality</th>
+                              <td>British</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Country of residence</th>
+                              <td>United Kingdom</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Occupation</th>
+                              <td>Bank Director</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                      <li>
+                        <h2 class="heading-medium result-title">
+                          <a href="/people/profile" class="link" title="">
+                            BANK OF SCOTLAND PLC (SC002371)
+                          </a>
+                        </h2>
+                        <table class="condensed">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Role</th>
+                              <td>Director</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Role status</th>
+                              <td>
+                                Active
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Company status</th>
+                              <td>
+                                Active
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Appointed on</th>
+                              <td>1 June 2002</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Resigned on</th>
+                              <td>27 March 2012</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Correspondence address</th>
+                              <td>25 Gresham Street, London, EC2V 7HN</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Nationality</th>
+                              <td>British</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Country of residence</th>
+                              <td>United Kingdom</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Occupation</th>
+                              <td>Bank Director</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                    </ul>
+                    {% include "includes/pagination.html" %}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  {% endblock %}
