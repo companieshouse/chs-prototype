@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/login_bar.html" %}
+    <div class="grid-row">
+      <div class="column-full">
+        <a class="link link-back">Back</a>
+        <h1 class="heading-xlarge">
+          Filing other documents
+        </h1>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p>During the beta service development you should continue to use
+          <a href="https://www.gov.uk/government/organisations/companies-house/about/about-our-services#webfiling" class="link" title="">WebFiling</a>
+          to file your company information online.
+        </p>
+        <p>
+          This includes
+          <ul class="list list-bullet">
+            <li>confirmation statements</li>
+            <li>company accounts</li>
+            <li>directors and company secretaries &ndash; for example, new appointments, resignations and changes to personal details</li>
+            <li>changing a company name</li>
+            <li>changing an accounting reference date</li>
+          </ul>
+        </p>
+        <h3 class="heading-medium">If you haven't used the WebFiling service before</h3>
+        <p>
+          You'll need to
+          <a href="https://ewf.companieshouse.gov.uk//runpage?page=webfilingRegister&signUpPage.lang=en" class="link" title="">register a password and email address</a>, then request an authentication code for your company - which is sent to your company's registered office by post, so allow plenty of time for delivery.
+        </p>
+        <a href="https://ewf.companieshouse.gov.uk/" class="button" role="button" title="">Go to WebFiling</a>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}

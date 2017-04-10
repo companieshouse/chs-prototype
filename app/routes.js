@@ -23,5 +23,7 @@ require('./routes/account.js')(router)
 require('./routes/disqualified.js')(router)
 // Feature Routes
 require('./routes/features.js')(router)
+// Help Routes
+require('./routes/help.js')(router)
 
 module.exports = router

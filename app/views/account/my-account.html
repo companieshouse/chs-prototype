@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/login_bar_alt.html" %}
+    <div class="grid-row">
+      <div class="column-full">
+        <h1 class="heading-xlarge">
+          My acount
+        </h1>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-full">
+        <h3 class="heading-medium">My details</h3>
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="data-group">
+              <span class="data-key" id="key-name">Name</span>
+              <span class="data-value" aria-labelledby="key-name">John Matthews</span>
+            </div>
+          </div>
+          <div class="column-third">
+            <div class="data-group">
+              <span class="data-key" id="key-name">Email address</span>
+              <span class="data-value" aria-labelledby="key-name">john.matthews@myemail.com</span>
+            </div>
+          </div>
+          <div class="column-third">
+            <div class="data-group">
+              <span class="data-key" id="key-name">Name</span>
+              <span class="data-value" aria-labelledby="key-name">John Matthews</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-full">
+        <h3 class="heading-medium">Recently followed companies</h3>
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Started following on</th>
+              <th>Last updated on</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JOHN SMITH LIMITED</td>
+              <td>1 January 2016</td>
+              <td>1 April 2017</td>
+              <td>
+                <a href="" class="link" title="">Unfollow</a>
+              </td>
+            </tr>
+            <tr>
+              <td>HYPERBARN TECHNOLOGY LTD</td>
+              <td>27 March 2016</td>
+              <td>02 April 2017</td>
+              <td>
+                <a href="" class="link" title="">Unfollow</a>
+              </td>
+            </tr>
+            <tr>
+              <td>WILMINGTON ESTATES PLC</td>
+              <td>15 January 2017</td>
+              <td>18 March 2017</td>
+              <td>
+                <a href="" class="link" title="">Unfollow</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <a href="" class="button" role="button" title="">View all followed companies</a>
+        </p>
+      </div>
+      <div class="column-full">
+        <h3 class="heading-medium">My recent filings</h3>
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Type</th>
+              <th>Submitted</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JAMESONS TRANSPORT LIMITED</td>
+              <td>Confirmation statement</td>
+              <td>10 March 2017</td>
+              <td>Processing</td>
+            </tr>
+            <tr>
+              <td>FAIRCLOUGH LETTINGS LIMITED</td>
+              <td>Appointments</td>
+              <td>15 March 2017</td>
+              <td>Rejected</td>
+            </tr>
+            <tr>
+              <td>TECHTRONIX LTD</td>
+              <td>Annual accounts</td>
+              <td>15 March 2017</td>
+              <td>Accepted</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <a href="/account/my-filings" class="button" role="button" title="">View all filings</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}

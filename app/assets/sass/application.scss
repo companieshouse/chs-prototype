@@ -21,11 +21,6 @@ $path: '/public/images/';
     margin-top: .3em;
     margin-bottom: .5em;
   }
-
-  li {
-    margin-bottom: 10px;
-    list-style-type: none;
-  }
 }
 
 .login-bar {
@@ -34,8 +29,8 @@ $path: '/public/images/';
   padding: 10px 0;
   font-size: .85em;
 
-  p {
-    margin: 0;
+  a {
+    margin-left: 1em;
   }
 }
 
@@ -358,4 +353,18 @@ table {
       }
     }
   }
+}
+
+//
+//// DISQUALIFICATION PROFILE
+//
+section {
+  &.disqualifications {
+    article {
+      padding-bottom: 1em;
+      margin-bottom: 1.5em;
+      border-bottom: 1px solid $grey-2;
+    }
+  }
+
 }
