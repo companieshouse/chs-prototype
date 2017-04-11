@@ -353,6 +353,12 @@ table {
       }
     }
   }
+
+  &.filings {
+    .ref {
+      display: none;
+    }
+  }
 }
 
 //

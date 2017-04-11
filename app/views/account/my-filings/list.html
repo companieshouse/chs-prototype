@@ -22,8 +22,8 @@
           <section class="filters" id="filters">
             <form action="" method="post">
               <div class="grid-row" style="display: block;">
-                <div class="column-half">
-                  <div role="widget" class="filter open">
+                <div class="column-full">
+                  <div role="widget" class="filter">
                     <div class="filters-heading" role="button" aria-controls="filter-company" aria-expanded="false" tabindex="0">
                       <span id="filter-label-company">
                         <span class="visuallyhidden">Filter by
@@ -59,65 +59,10 @@
                     </fieldset>
                   </div>
                 </div>
-                <div class="column-quarter">
-                  <div role="widget" class="filter open">
-                    <div class="filters-heading" role="button" aria-controls="filter-status" aria-expanded="false" tabindex="0">
-                      <span id="filter-label-status">
-                        <span class="visuallyhidden">Filter by
-                        </span>Status</span>
-                      <div class="toggle"></div>
-                    </div>
-                    <fieldset id="filter-status" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-status">
-                      <legend class="visuallyhidden">What filing statuses do you want to see?</legend>
-                      <div class="multiple-choice">
-                        <input id="status-accepted" name="filterStatus" type="checkbox" value="">
-                        <label for="status-accepted">Accepted</label>
-                      </div>
-                      <div class="multiple-choice">
-                        <input id="status-incomplete" name="filterStatus" type="checkbox" value="">
-                        <label for="status-incomplete">Incomplete</label>
-                      </div>
-                      <div class="multiple-choice">
-                        <input id="status-processing" name="filterStatus" type="checkbox" value="">
-                        <label for="status-processing">Processing</label>
-                      </div>
-                      <div class="multiple-choice">
-                        <input id="status-rejected" name="filterStatus" type="checkbox" value="">
-                        <label for="status-rejected">Rejected</label>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-                <div class="column-quarter">
-                  <div role="widget" class="filter open">
-                    <div class="filters-heading" role="button" aria-controls="filter-category" aria-expanded="false" tabindex="0">
-                      <span id="filter-label-category">
-                        <span class="visuallyhidden">Filter by
-                        </span>Date</span>
-                      <div class="toggle"></div>
-                    </div>
-                    <fieldset id="filter-category" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-category">
-                      <legend class="visuallyhidden">Which dates do you want to see filings for?</legend>
-                      <div class="form-group">
-                        <label class="form-label" for="received-after">
-                          Received after
-                        </label>
-                        <input class="form-control" id="received-after" type="text">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label" for="received-before">
-                          Received before
-                        </label>
-                        <input class="form-control" id="received-before" type="text">
-                      </div>
-                      <span class="filter-helper">For example, 2005 or 21/05/2010</span>
-                    </fieldset>
-                  </div>
-                </div>
               </div>
               <div class="grid-row" style="display: block;">
                 <div class="column-third">
-                  <div role="widget" class="filter open">
+                  <div role="widget" class="filter">
                     <div class="filters-heading" role="button" aria-controls="filter-status" aria-expanded="false" tabindex="0">
                       <span id="filter-label-status">
                         <span class="visuallyhidden">Filter by
@@ -145,264 +90,332 @@
                     </fieldset>
                   </div>
                 </div>
-              </div>
-            </form>
-          </section>
-          <div class="grid-row">
-            <div class="column-full">
-              <table class="condensed">
-                <thead>
-                  <tr>
-                    <th scope="col">Company</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Received on</th>
-                    <th scope="col">Reference</th>
-                    <th scope="col">Status</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>CARDIFF FENCING LIMITED</td>
-                    <td>Abridged accounts</td>
-                    <td>15 Mar 2017</td>
-                    <td>SMB2230126</td>
-                    <td>Accepted</td>
-                    <td>
-                      <a href="" class="link" title="">View</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>HBOS PLC</td>
-                    <td>Confirmation statement</td>
-                    <td>10 Mar 2017</td>
-                    <td>777653-128665-0092287</td>
-                    <td>Accepted</td>
-                    <td>
-                      <a href="" class="link" title="">View</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>MITCHELL ELECTRIC LIMITED</td>
-                    <td>Appointments</td>
-                    <td>1 Jan 2017</td>
-                    <td>1129333700</td>
-                    <td>Rejected</td>
-                    <td>
-                      <a href="" class="link" title="">View</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>EJ SYMONDS &amp; SONS LTD</td>
-                    <td>Dissolution</td>
-                    <td>15 Dec 2017</td>
-                    <td>DSS224-DVVA-887</td>
-                    <td>Incomplete</td>
-                    <td>
-                      <a href="" class="link" title="">View</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>CONSORSHA CONSULTING LIMITED</td>
-                    <td>Confirmation statement</td>
-                    <td>14 Dec 2016</td>
-                    <td>00004565-229</td>
-                    <td>Accepted</td>
-                    <td>
-                      <a href="" class="link" title="">View</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>ANOTHER TEST COMPANY LIMITED</td>
-                    <td>Abridged accounts</td>
-                    <td>25 Nov 2016</td>
-                    <td>1120203333</td>
-                    <td>Processing</td>
-                    <td>
-                      <a href="" class="link" title="">View</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="grid-row" style="display: none;">
-            <div class="column-third">
-              <p class="info filter-label">Filter filings</p>
-              <section class="filters" id="filters">
-                <form action="" method="post">
-                  <div role="widget" class="filter open">
-                    <div class="filters-heading" role="button" aria-controls="filter-company" aria-expanded="false" tabindex="0">
-                      <span id="filter-label-company">
-                        <span class="visuallyhidden">Filter by
-                        </span>Company</span>
-                      <div class="toggle"></div>
-                    </div>
-                    <fieldset id="filter-company" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-company">
-                      <legend class="visuallyhidden">Whaich companies do you want to see filings for?</legend>
-                      <div class="multiple-choice">
-                        <input id="company-0" name="filterCompany" type="checkbox" value="CARDIFF FENCING LIMITED">
-                        <label for="company-0">CARDIFF FENCING LIMITED</label>
-                      </div>
-                      <div class="multiple-choice">
-                        <input id="company-1" name="filterCompany" type="checkbox" value="ELLA'S CAKES LTD">
-                        <label for="company-1">ELLA'S CAKES LTD</label>
-                      </div>
-                      <div class="multiple-choice">
-                        <input id="company-2" name="filterCompany" type="checkbox" value="MITCHELL ELECTRIC LIMITED">
-                        <label for="company-2">MITCHELL ELECTRIC LIMITED</label>
-                      </div>
-                    </fieldset>
-                  </div>
-                  <div role="widget" class="filter open">
-                    <div class="filters-heading" role="button" aria-controls="filter-type" aria-expanded="false" tabindex="0">
-                      <span id="filter-label-type">
+                <div class="column-third">
+                  <div role="widget" class="filter">
+                    <div class="filters-heading" role="button" aria-controls="filter-status" aria-expanded="false" tabindex="0">
+                      <span id="filter-label-status">
                         <span class="visuallyhidden">Filter by
                         </span>Status</span>
                       <div class="toggle"></div>
                     </div>
                     <fieldset id="filter-status" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-status">
-                      <legend class="visuallyhidden">Select to see filing codes?</legend>
+                      <legend class="visuallyhidden">What filing statuses do you want to see?</legend>
                       <div class="multiple-choice">
-                        <input id="status-incomplete" name="filterType" type="checkbox" value="incomplete">
+                        <input id="status-accepted" name="filterStatus" type="checkbox" value="">
+                        <label for="status-accepted">Accepted</label>
+                      </div>
+                      <div class="multiple-choice">
+                        <input id="status-incomplete" name="filterStatus" type="checkbox" value="">
                         <label for="status-incomplete">Incomplete</label>
                       </div>
                       <div class="multiple-choice">
-                        <input id="status-submitted" name="filterType" type="checkbox" value="submitted">
-                        <label for="status-submitted">Submitted</label>
+                        <input id="status-processing" name="filterStatus" type="checkbox" value="">
+                        <label for="status-processing">Processing</label>
+                      </div>
+                      <div class="multiple-choice">
+                        <input id="status-rejected" name="filterStatus" type="checkbox" value="">
+                        <label for="status-rejected">Rejected</label>
                       </div>
                     </fieldset>
                   </div>
-                </form>
-              </section>
-              <p>
-                <a href="" class="filter-expand" aria-hidden="true">Open all filters</a>
-              </p>
-              <p>
-                <a href="" role="button" class="link filter-reset" title="Clear filters to see all officers" aria-controls="filters">Reset filters</a>
-              </p>
-            </div>
-            <div class="column-two-thirds">
-              <section>
-                <div class="grid-row">
-                  <div class="column-full">
-                    <p class="info result-count" id="result-count" aria-live="polite">&nbsp;</div>
-                  </div>
-                  <div class="grid-row">
-                    <div class="column-full">
-                      <div class="results-group">
-                        <span class="visuallyhidden">Filings list</span>
-                        <ul>
-                          <li>
-                            <h2 class="heading-medium result-title">
-                              <a href="/account/my-filings/filing" class="link" title="">
-                                MITCHELL ELECTRIC LIMITED
-                              </a>
-                            </h2>
-                            <table class="condensed">
-                              <tbody>
-                                <tr>
-                                  <th scope="row">Company number</th>
-                                  <td>
-                                    00294625
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Description</th>
-                                  <td>Confirmation statement</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Reference number</th>
-                                  <td>645362&ndash;998745&ndash;887465</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Status</th>
-                                  <td>Submitted</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Received on</th>
-                                  <td>15 March 2017 at 10:35am</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </li>
-                          <li>
-                            <h2 class="heading-medium result-title">
-                              <a href="/account/my-filings/filing" class="link" title="">
-                                CARDIFF FENCING LIMITED
-                              </a>
-                            </h2>
-                            <table class="condensed">
-                              <tbody>
-                                <tr>
-                                  <th scope="row">Company number</th>
-                                  <td>
-                                    00294625
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Description</th>
-                                  <td>Appointments</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Reference number</th>
-                                  <td>645362&ndash;998745&ndash;887465</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Status</th>
-                                  <td>Submitted</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Received on</th>
-                                  <td>15 March 2017 at 10:35am</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </li>
-                          <li>
-                            <h2 class="heading-medium result-title">
-                              <a href="/account/my-filings/filing" class="link" title="">
-                                ELLA'S CAKES LTD
-                              </a>
-                            </h2>
-                            <table class="condensed">
-                              <tbody>
-                                <tr>
-                                  <th scope="row">Company number</th>
-                                  <td>
-                                    00294625
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Description</th>
-                                  <td>Annual accounts</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Reference number</th>
-                                  <td>645362&ndash;998745&ndash;887465</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Status</th>
-                                  <td>Submitted</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Received on</th>
-                                  <td>15 March 2017 at 10:35am</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </li>
-                        </ul>
-                        {% include "includes/pagination.html" %}
-                      </div>
+                </div>
+                <div class="column-third">
+                  <div role="widget" class="filter">
+                    <div class="filters-heading" role="button" aria-controls="filter-category" aria-expanded="false" tabindex="0">
+                      <span id="filter-label-category">
+                        <span class="visuallyhidden">Filter by
+                        </span>Date</span>
+                      <div class="toggle"></div>
                     </div>
+                    <fieldset id="filter-category" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-category">
+                      <legend class="visuallyhidden">Which dates do you want to see filings for?</legend>
+                      <div class="form-group">
+                        <label class="form-label" for="received-after">
+                          Received after
+                        </label>
+                        <input class="form-control" id="received-after" type="text">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="received-before">
+                          Received before
+                        </label>
+                        <input class="form-control" id="received-before" type="text">
+                      </div>
+                      <span class="filter-helper">For example, 2005 or 21/05/2010</span>
+                    </fieldset>
                   </div>
-                </section>
+                </div>
+              </div>
+              <div class="grid-row">
+                <div class="column-full">
+                  <a href="" class="link filter-reset" title="">Reset filters</a>
+                </div>
+              </div>
+            </form>
+          </section>
+          <hr/>
+          <div class="grid-row">
+            <div class="column-full">
+              <p class="info result-count" id="result-count" aria-live="polite">&nbsp;</p>
+            </div>
+            <div class="column-full">
+              <div class="results-group">
+                <table class="condensed filings">
+                  <thead>
+                    <tr>
+                      <th scope="col">Company</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Received on</th>
+                      <th scope="col" class="ref">Reference</th>
+                      <th scope="col">Status</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>CARDIFF FENCING LIMITED</td>
+                      <td>Abridged accounts</td>
+                      <td>15 Mar 2017</td>
+                      <td class="ref">SMB2230126</td>
+                      <td>Accepted</td>
+                      <td>
+                        <a href="/account/my-filings/filing" class="link" title="">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>HBOS PLC</td>
+                      <td>Confirmation statement</td>
+                      <td>10 Mar 2017</td>
+                      <td class="ref">777653-128665-0092287</td>
+                      <td>Accepted</td>
+                      <td>
+                        <a href="/account/my-filings/filing" class="link" title="">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>MITCHELL ELECTRIC LIMITED</td>
+                      <td>Appointments</td>
+                      <td>1 Jan 2017</td>
+                      <td class="ref">1129333700</td>
+                      <td>Rejected</td>
+                      <td>
+                        <a href="/account/my-filings/filing" class="link" title="">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>EJ SYMONDS &amp; SONS LTD</td>
+                      <td>Dissolution</td>
+                      <td>15 Dec 2017</td>
+                      <td class="ref">DSS224-DVVA-887</td>
+                      <td>Incomplete</td>
+                      <td>
+                        <a href="/account/my-filings/filing" class="link" title="">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>CONSORSHA CONSULTING LIMITED</td>
+                      <td>Confirmation statement</td>
+                      <td>14 Dec 2016</td>
+                      <td class="ref">00004565-229</td>
+                      <td>Accepted</td>
+                      <td>
+                        <a href="/account/my-filings/filing" class="link" title="">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ANOTHER TEST COMPANY LIMITED</td>
+                      <td>Abridged accounts</td>
+                      <td>25 Nov 2016</td>
+                      <td class="ref">1120203333</td>
+                      <td>Processing</td>
+                      <td>
+                        <a href="/account/my-filings/filing" class="link" title="">View</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                {% include "includes/pagination.html" %}
               </div>
             </div>
-          </section>
+          </div>
         </div>
+        <div class="grid-row" style="display: none;">
+          <div class="column-third">
+            <p class="info filter-label">Filter filings</p>
+            <section class="filters" id="filters">
+              <form action="" method="post">
+                <div role="widget" class="filter open">
+                  <div class="filters-heading" role="button" aria-controls="filter-company" aria-expanded="false" tabindex="0">
+                    <span id="filter-label-company">
+                      <span class="visuallyhidden">Filter by
+                      </span>Company</span>
+                    <div class="toggle"></div>
+                  </div>
+                  <fieldset id="filter-company" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-company">
+                    <legend class="visuallyhidden">Whaich companies do you want to see filings for?</legend>
+                    <div class="multiple-choice">
+                      <input id="company-0" name="filterCompany" type="checkbox" value="CARDIFF FENCING LIMITED">
+                      <label for="company-0">CARDIFF FENCING LIMITED</label>
+                    </div>
+                    <div class="multiple-choice">
+                      <input id="company-1" name="filterCompany" type="checkbox" value="ELLA'S CAKES LTD">
+                      <label for="company-1">ELLA'S CAKES LTD</label>
+                    </div>
+                    <div class="multiple-choice">
+                      <input id="company-2" name="filterCompany" type="checkbox" value="MITCHELL ELECTRIC LIMITED">
+                      <label for="company-2">MITCHELL ELECTRIC LIMITED</label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div role="widget" class="filter open">
+                  <div class="filters-heading" role="button" aria-controls="filter-type" aria-expanded="false" tabindex="0">
+                    <span id="filter-label-type">
+                      <span class="visuallyhidden">Filter by
+                      </span>Status</span>
+                    <div class="toggle"></div>
+                  </div>
+                  <fieldset id="filter-status" class="filters-wrapper" aria-hidden="true" aria-labelledby="filter-label-status">
+                    <legend class="visuallyhidden">Select to see filing codes?</legend>
+                    <div class="multiple-choice">
+                      <input id="status-incomplete" name="filterType" type="checkbox" value="incomplete">
+                      <label for="status-incomplete">Incomplete</label>
+                    </div>
+                    <div class="multiple-choice">
+                      <input id="status-submitted" name="filterType" type="checkbox" value="submitted">
+                      <label for="status-submitted">Submitted</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </form>
+            </section>
+            <p>
+              <a href="" class="filter-expand" aria-hidden="true">Open all filters</a>
+            </p>
+            <p>
+              <a href="" role="button" class="link filter-reset" title="Clear filters to see all officers" aria-controls="filters">Reset filters</a>
+            </p>
+          </div>
+          <div class="column-two-thirds">
+            <section>
+              <div class="grid-row">
+                <div class="column-full">
+                  <p class="info result-count" id="result-count" aria-live="polite">&nbsp;</div>
+                </div>
+                <div class="grid-row">
+                  <div class="column-full">
+                    <div class="results-group">
+                      <span class="visuallyhidden">Filings list</span>
+                      <ul>
+                        <li>
+                          <h2 class="heading-medium result-title">
+                            <a href="/account/my-filings/filing" class="link" title="">
+                              MITCHELL ELECTRIC LIMITED
+                            </a>
+                          </h2>
+                          <table class="condensed">
+                            <tbody>
+                              <tr>
+                                <th scope="row">Company number</th>
+                                <td>
+                                  00294625
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Description</th>
+                                <td>Confirmation statement</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Reference number</th>
+                                <td>645362&ndash;998745&ndash;887465</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Status</th>
+                                <td>Submitted</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Received on</th>
+                                <td>15 March 2017 at 10:35am</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </li>
+                        <li>
+                          <h2 class="heading-medium result-title">
+                            <a href="/account/my-filings/filing" class="link" title="">
+                              CARDIFF FENCING LIMITED
+                            </a>
+                          </h2>
+                          <table class="condensed">
+                            <tbody>
+                              <tr>
+                                <th scope="row">Company number</th>
+                                <td>
+                                  00294625
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Description</th>
+                                <td>Appointments</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Reference number</th>
+                                <td>645362&ndash;998745&ndash;887465</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Status</th>
+                                <td>Submitted</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Received on</th>
+                                <td>15 March 2017 at 10:35am</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </li>
+                        <li>
+                          <h2 class="heading-medium result-title">
+                            <a href="/account/my-filings/filing" class="link" title="">
+                              ELLA'S CAKES LTD
+                            </a>
+                          </h2>
+                          <table class="condensed">
+                            <tbody>
+                              <tr>
+                                <th scope="row">Company number</th>
+                                <td>
+                                  00294625
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Description</th>
+                                <td>Annual accounts</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Reference number</th>
+                                <td>645362&ndash;998745&ndash;887465</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Status</th>
+                                <td>Submitted</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Received on</th>
+                                <td>15 March 2017 at 10:35am</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </li>
+                      </ul>
+                      {% include "includes/pagination.html" %}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
       </div>
-    </main>
+    </div>
+  </main>
 
-  {% endblock %}
+{% endblock %}

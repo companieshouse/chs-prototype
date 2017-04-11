@@ -53,7 +53,11 @@ table {
   &.condensed {
     td,
     th {
-      font-size: .85em;
+      @include core-16;
+    }
+
+    th {
+      font-weight: bold;
     }
   }
 }
