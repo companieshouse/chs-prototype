@@ -68,4 +68,15 @@ $(document).ready(function () {
   $("input[name='filterType']").change(function () {
     $('.filing-type').toggle()
   })
+
+  // Manage Panel Switcher
+  $('.manage-sections a').click(function () {
+    var section = $(this).attr('data-target')
+    $('.manage-sections a').removeClass('active')
+    $(this).addClass('active')
+    $('.company-manager > section').hide()
+    $('.company-manager > section.' + section).show()
+    console.log(section)
+    return false
+  })
 })

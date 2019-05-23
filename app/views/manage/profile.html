@@ -1,0 +1,426 @@
+{% extends "layout-manage.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" class="manage" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/login_bar_alt.html" %}
+    <!--{% include "includes/search-bar.html" %}-->
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">LLOYDS BANK PLC</h1>
+        <div class="data-group">
+          <span id="key-company-number">Company number</span>
+          <span class="data-value" aria-labelledby="key-company-number">00002065</span>
+        </div>
+      </div>
+      <div class="column-one-third primary-actions">
+        <a href="/feature/follow-company" class="button" role="button" title="">File company accounts</a>
+      </div>
+    </div>
+    <div class="grid-row company-manager">
+      <nav class="column-one-quarter">
+        <ul class="manage-sections list">
+          <li>
+            <a href="#activity" class="active" data-target="activity">Recent activity</a>
+          </li>
+          <li>
+            <a href="#profile" data-target="profile">Company profile</a>
+          </li>
+          <li>
+            <a href="#accounts" data-target="accounts">Accounts filing</a>
+          </li>
+          <li>
+            <a href="#officers" data-target="officers">Officers &amp; PSC's</a>
+          </li>
+          <li>
+            <a href="#charges" data-target="charges">Charges</a>
+          </li>
+          <li>
+            <a href="#ownership" data-target="ownership">Shareholders</a>
+          </li>
+          <li>
+            <a href="#closure" data-target="closure">Closure</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="column-three-quarter activity active">
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Date</th>
+              <th>Owner</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>File company accounts</td>
+              <td>24 Jun 2017</td>
+              <td>John Smith</td>
+              <td>In progress</td>
+              <td>
+                <a href="" class="link" title="">Continue</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Director Howard James resigned</td>
+              <td>15 May 2017</td>
+              <td>John Smith</td>
+              <td>Complete</td>
+              <td>
+                <a href="" class="link" title="">View details</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Registration of a charge</td>
+              <td>1 May 2017</td>
+              <td>John Smith</td>
+              <td>Complete</td>
+              <td>
+                <a href="" class="link" title="">View details</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Change of details for director Jane Howe</td>
+              <td>19 Apr 2017</td>
+              <td>John Smith</td>
+              <td>Complete</td>
+              <td>
+                <a href="" class="link" title="">View details</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Registered office address changed</td>
+              <td>12 Feb 2017</td>
+              <td>John Smith</td>
+              <td>Complete</td>
+              <td>
+                <a href="" class="link" title="">View details</a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="" class="link" title="">View details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="column-three-quarter profile">
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Value</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Company name</td>
+              <td>LLOYDS BANK PLC</td>
+              <td>
+                <a href="" class="link" title="">Change</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Company number</td>
+              <td>00002065</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Company type</td>
+              <td>Public limited company</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Registered office</td>
+              <td>25 Gresham Street, London , EC2V 7HN</td>
+              <td>
+                <a href="" class="link" title="">Change</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Nature of business</td>
+              <td>
+                641911 - Banks<br/>
+                115402 - Financial Services
+              </td>
+              <td>
+                <a href="" class="link" title="">Change</a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="column-three-quarter accounts">
+        <div class="grid-row">
+          <div class="column-half">
+            <h3 class="heading-medium">Company accounts</h3>
+            <p>The next set of accounts is due by 4&nbsp;May&nbsp;2018</p>
+            <a href="/feature/follow-company" class="button" role="button" title="">File company accounts</a>
+          </div>
+          <div class="column-half">
+            <h3 class="heading-medium">Confirmation statement</h3>
+            <p>The next confirmation statement is due by 19&nbsp;April&nbsp;2018</p>
+            <a href="/feature/follow-company" class="button" role="button" title="">File confirmation statement</a>
+          </div>
+        </div>
+        <h3 class="heading-medium">Filing history</h3>
+        <div class="results-group">
+          <table class="condensed">
+            <thead>
+              <tr>
+                <th>Filing</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Confirmation statement</td>
+                <td>18 Mar 2017</td>
+                <td>In progress</td>
+                <td>
+                  <a href="" class="link" title="">Continue</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Small company accounts</td>
+                <td>1 Jan 2017</td>
+                <td>Accepted</td>
+                <td>
+                  <a href="" class="link" title="">View details</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Annual return</td>
+                <td>24 Aug 2016</td>
+                <td>Accepted</td>
+                <td>
+                  <a href="" class="link" title="">View details</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Small company accounts</td>
+                <td>15 Jun 2016</td>
+                <td>Accepted</td>
+                <td>
+                  <a href="" class="link" title="">View details</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Annual return</td>
+                <td>9 Feb 2016</td>
+                <td>Accepted</td>
+                <td>
+                  <a href="" class="link" title="">View details</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          {% include "includes/pagination.html" %}
+        </div>
+      </section>
+      <section class="column-three-quarter officers">
+        <h2 class="heading-large no-top-margin">Officers</h2>
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jameson Locke</td>
+              <td>Director</td>
+              <td>Active</td>
+              <td>
+                <a href="" class="link" title="">View</a>&nbsp;
+                <a href="" class="link" title="">Update</a>&nbsp;
+                <a href="" class="link" title="">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Holly Tanaka</td>
+              <td>Director</td>
+              <td>Active</td>
+              <td>
+                <a href="" class="link" title="">View</a>&nbsp;
+                <a href="" class="link" title="">Update</a>&nbsp;
+                <a href="" class="link" title="">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LHC INVESTMENTS LIMITED</td>
+              <td>Corporate Director</td>
+              <td>Resigned</td>
+              <td>
+                <a href="" class="link" title="">View</a>&nbsp;
+                <a href="" class="link" title="">Update</a>&nbsp;
+                <a href="" class="link" title="">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <a href="" class="link" title="">Add a new officer</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="heading-large">Persons of significant control</h2>
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Nationality</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jameson Locke</td>
+              <td>British</td>
+              <td>Active</td>
+              <td>
+                <a href="" class="link" title="">View</a>&nbsp;
+                <a href="" class="link" title="">Update</a>&nbsp;
+                <a href="" class="link" title="">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Holly Tanaka</td>
+              <td>British</td>
+              <td>Active</td>
+              <td>
+                <a href="" class="link" title="">View</a>&nbsp;
+                <a href="" class="link" title="">Update</a>&nbsp;
+                <a href="" class="link" title="">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Edward Buck</td>
+              <td>British</td>
+              <td>Resigned</td>
+              <td>
+                <a href="" class="link" title="">View</a>&nbsp;
+                <a href="" class="link" title="">Update</a>&nbsp;
+                <a href="" class="link" title="">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <a href="" class="link" title="">Add a new person of significant control</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="column-three-quarter charges">
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th>Charge</th>
+              <th>Type</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="column-three-quarter ownership">
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="column-three-quarter closure">
+        <table class="condensed">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+{% endblock %}
