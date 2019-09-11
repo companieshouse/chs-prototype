@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/filing-history#filing-history"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check document details</h1>
+
+      <h2 class="govuk-heading-m">FILING LTD</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Company number"
+            },
+            value: {
+              text: "00002065"
+            }
+          },
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              text: "04 Dec 2017"
+            }
+          },
+          {
+            key: {
+              text: "Type"
+            },
+            value: {
+              text: "TM02"
+            }
+          },
+          {
+            key: {
+              text: "Description"
+            },
+            value: {
+              html: "Termination of appointment of Secretary Ltd as a secretary on 4 December 2017"
+            }
+          }
+        ]
+      }) }}
+      <p class="govuk-body">
+        Use this service to request a digital copy of this document.
+      </p>
+       <p class="govuk-body">
+        Companies House will check if the document is available. This may take up to 5 working days. 
+      </p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Request document"
+        }) }}
+        <p> <a href="/filing-history#filing-history" class="govuk-link govuk-link--no-visited-state">Cancel</a> </p>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
