@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+<h1 class="govuk-heading-xl">Document requests</h1>
+
+{{ govukTable({
+  caption: "",
+  head: [
+    {
+      html: "Company"
+    },
+    {
+      html: "Date"
+    },
+    {
+      html: "Description"
+
+    },
+    {
+      html: "Status"
+    }
+  ],
+  rows: [
+    [
+      {
+        html:"<p class='govuk-body-s'> <a href='' class='govuk-link govuk-link--no-visited-state'>FILINGS LTD (00002065)</a></p>"
+      },
+      {
+        html: "<p class='govuk-body-s'>04 Dec 2017</p>"
+      },
+      {
+        html:"<p class='govuk-body-s'>Termination of appointment of Secretary Ltd as a secretary on 4 December 2017 (TM02).</p> "
+      },
+      {
+        html:" <span class='govuk-body govuk-!-font-weight-bold'> Document availability pending </span> </br> <p class='govuk-body-s'>Companies House is checking the availability of this document. An update will appear here by DD Month YYYY.</p>"
+      }
+    ],
+     [
+      {
+        html:"<p class='govuk-body-s'><a href='' class='govuk-link govuk-link--no-visited-state'>SCANNING DOCUMENTS LTD (01234567)</a></p>"
+      },
+      {
+        html: "<p class='govuk-body-s'>29 Aug 1977</p>"
+      },
+      {
+        html:"<p class='govuk-body-s'>Director's details changed for Eduardo Sanchez on 14 August 1997 (CH01).</p> "
+      },
+      {
+        html: "<span class='govuk-body govuk-!-font-weight-bold'> Document available </span> <p class='govuk-body-s'> You requested this document on DD Month YYYY. It is now available on the public register.<a href='filing-history#filing-history' class='govuk-link govuk-link--no-visited-state'> View document in filing history</a></p>"
+      }
+    ],
+     [
+      {
+        html:"<p class='govuk-body-s'><a href='' class='govuk-link govuk-link--no-visited-state'>DIGITAL DOCUMENTS (01930383)</a></p>"
+      },
+      {
+        html: "<p class='govuk-body-s'>04 Dec 2017</p>"
+      },
+      {
+        html:"<p class='govuk-body-s'>Termination of appointment of Secretary Ltd as a secretary on 4 December 2017 (TM02).</p>"
+      },
+      {
+        html:"<span class='govuk-body govuk-!-font-weight-bold'> Document unavailable</span> </br> <p class='govuk-body-s'>You requested this document on DD Month YYYY, but we do not have a copy available. Contact Companies House on 0300 123 4500 or email <a href='mailto:enquiries@companieshouse.gov.uk?Subject=Document%20requested' target='_top'>enquiries@companieshouse.gov.uk</a> if you require more information.</p>"
+      }
+    ]
+  ]
+}) }}
+
+<form action="/filing-history" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Search the register"
+        }) }}
+      </form>
+
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+<h3 class="govuk-heading-m">Contact Companies House</h3>
+{{ govukInsetText({
+  html: "<a href='mailto:enquiries@companieshouse.gov.uk?Subject=Document%20requested' target='_top'>enquiries@companieshouse.gov.uk</a>  </br> Telephone: 0303 1234 500 </br> Minicom/textphone: 029 2022 6788 </br> Welsh language: 029 2038 0065 </br> Monday to Friday, 8.30am to 6pm </br> <a href='https://www.gov.uk/call-charges' class='govuk-link govuk-link--no-visited-state'>Find out about call charges</a> "
+}) }}
+
+
+{% endblock %}
