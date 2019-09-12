@@ -15,7 +15,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check document details</h1>
+      <h1 class="govuk-heading-xl">Request a document</h1>
+
 
       <h2 class="govuk-heading-m">FILING LTD</h2>
 
@@ -56,15 +57,8 @@
           }
         ]
       }) }}
-      <p class="govuk-body">
-        Use this service to request a digital copy of this document.
-      </p>
-       <p class="govuk-body">
-        Companies House will check if the document is available. This may take up to 5 working days. 
-      </p>
 
       <form action="/confirmation" method="post" novalidate>
-
         {{ govukButton({
           text: "Request document"
         }) }}

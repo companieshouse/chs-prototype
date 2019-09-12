@@ -1,7 +1,12 @@
 {% extends "layout.html" %}
 
 {% set mainClasses = "govuk-main-wrapper--l" %}
-
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Return to company information",
+    href: "/filing-history#filing-history"
+  }) }}
+{% endblock %}
 
 {% from "govuk/components/panel/macro.njk" import govukPanel %}
 
@@ -21,12 +26,6 @@
       <p class="govuk-body">
         We’ll add a digital copy to the <a href='/filing-history-document-pending#filing-history' class='govuk-link govuk-link--no-visited-state'>company’s filing history </a> if the document is available. 
       </p>
-      
-      <form action="/filing-history-document-pending#filing-history" method="post" novalidate>
-        {{ govukButton({
-          text: "Return to company overview"
-        }) }}
-      </form>
 
     </div>
   </div>
