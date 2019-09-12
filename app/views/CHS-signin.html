@@ -1,9 +1,9 @@
-
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
@@ -12,14 +12,12 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-      <h1 class="govuk-heading-xl">Sign in to Companies House</h1>
-      
-   
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
-<form action="" method="post">
+      <h1 class="govuk-heading-xl">Sign in to Companies House</h1>
+
+     <form action="" method="post">
         {% if emailErr.flag %}
           {{ govukInput({
               label: {
@@ -67,15 +65,18 @@
               value: password
             }) }}
         {% endif %}
-{{ govukButton({
-              text: "Sign in"
-            }) }}
-        <p class="govuk-body">
-          <a href="" class="govuk-link">Register a new account</a>
-        </p>
-        <p class="govuk-body">
-          <a href="" class="govuk-link">I've forgotten my password</a>
-        </p>
- </div>
-</div>
+      </form>
+
+    
+
+      <form action="/request-document" method="post" novalidate>
+        {{ govukButton({
+          text: "Sign in"
+        }) }}
+        <p> <a href="" class="govuk-link govuk-link--no-visited-state">Register a new account</a> </p>
+        <p> <a href="" class="govuk-link govuk-link--no-visited-state">I've forgotten my password</a> </p>
+      </form>
+
+    </div>
+  </div>
 {% endblock %}
