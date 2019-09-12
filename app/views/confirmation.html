@@ -1,12 +1,5 @@
 {% extends "layout.html" %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "/filing-history#filing-history"
-  }) }}
-{% endblock %}
-
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
 
@@ -28,16 +21,7 @@
       <p class="govuk-body">
         We’ll add a digital copy to the <a href='/filing-history-document-pending#filing-history' class='govuk-link govuk-link--no-visited-state'>company’s filing history </a> if the document is available. 
       </p>
-      <p class="govuk-body">
-        We’ll email <span class='govuk-body govuk-!-font-weight-bold'>yourCHSEmail@example.co.uk</span> to let you know if the document is unavailable.
-      </p>
-       <p class="govuk-body">
-        <a href='/document-requests-list' class='govuk-link govuk-link--no-visited-state'>View  status of requested document</a>
-       </p>
       
-
-      
-
       <form action="/filing-history" method="post" novalidate>
         {{ govukButton({
           text: "Return to company overview"
