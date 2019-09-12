@@ -1,0 +1,81 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/filing-history#filing-history"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-xl">Sign in to Companies House</h1>
+      
+   
+
+<form action="" method="post">
+        {% if emailErr.flag %}
+          {{ govukInput({
+              label: {
+                text: "Email address"
+              },
+              errorMessage: {
+                text: emailErr.text
+              },
+              id: "email",
+              name: "email",
+              value: email
+            }) }}
+        {% else %}
+          {{ govukInput({
+              label: {
+                text: "Email address"
+              },
+              id: "email",
+              name: "email",
+              value: email
+            }) }}
+        {% endif %}
+
+        {% if passwordErr.flag %}
+          {{ govukInput({
+              label: {
+                text: "Password"
+              },
+              errorMessage: {
+                text: passwordErr.text
+              },
+              id: "password",
+              name: "password",
+              type: 'password',
+              value: password
+            }) }}
+        {% else %}
+          {{ govukInput({
+              label: {
+                text: "Password"
+              },
+              id: "password",
+              name: "password",
+              type: 'password',
+              value: password
+            }) }}
+        {% endif %}
+{{ govukButton({
+              text: "Sign in"
+            }) }}
+        <p class="govuk-body">
+          <a href="" class="govuk-link">Register a new account</a>
+        </p>
+        <p class="govuk-body">
+          <a href="" class="govuk-link">I've forgotten my password</a>
+        </p>
+ </div>
+</div>
+{% endblock %}
