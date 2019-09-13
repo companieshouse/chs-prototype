@@ -16,3 +16,23 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+.login-bar {
+  text-align: right;
+  border-bottom: 1px solid govuk-colour("mid-grey");
+  font-size: 0.85em;
+  margin-top:1em;
+
+  a {
+    margin-left: 1em;
+  }
+}
+.no-wrap {
+	
+	white-space: nowrap;
+}
+.document-type {
+	display: none;
+}
+
