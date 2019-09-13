@@ -17,12 +17,19 @@
 
       <h1 class="govuk-heading-xl">Request a document</h1>
 
-
-      <h2 class="govuk-heading-m">FILING LTD</h2>
+      <h2 class="govuk-heading-m">Document details</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
+        {
+            key: {
+              text: "Company"
+            },
+            value: {
+              text: "FILINGS LTD"
+            }
+          },
           {
             key: {
               text: "Company number"
@@ -57,6 +64,9 @@
           }
         ]
       }) }}
+      <p class="govuk-body">
+        If this document is available, we will update the company’s filing history within 5 working days.
+      </p>
 
       <form action="/confirmation" method="post" novalidate>
         {{ govukButton({
