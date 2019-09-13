@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to company profile",
+    href: "/filing-history-document-pending#filing-history"
+  }) }}
+{% endblock %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Document requested"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We will check if the document is available. This may take up to 5 working days.
+      </p>
+      <p class="govuk-body">
+        Check the <a href='/filing-history-document-pending#filing-history' class='govuk-link govuk-link--no-visited-state'>company’s filing history </a> for updates on the status of the document. </br></br> <a href='' class='govuk-link govuk-link--no-visited-state'>View your document requests</a>  
+      </p>
+
+
+    </div>
+  </div>
+{% endblock %}
