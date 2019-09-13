@@ -7,4 +7,14 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+
+$("input[name='documentType']").on('change', function () {
+    if ($("input[name='documentType']").prop('checked') === false) {
+      $('.document-type').hide()
+    } else {
+      $('.document-type').show()
+    }
+  })
+
+
 })
