@@ -4,52 +4,87 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
+{% block beforeContent %}
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full login-bar" role="navigation">
+    <p class="govuk-body">
+      sleighton@companieshouse.gov.uk:
+      <a href="/account/your-details" class="govuk-link">Your account</a>
+
+      <a href="/account/sign-out" class="govuk-link">Sign out</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 <h1 class="govuk-heading-xl">Requested documents</h1>
 
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "documentType",
+  name: "documentType",
+  fieldset: {
+    legend: {
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "type",
+      text: "Show document type"
+    }
+  ]
+}) }}
+
 {{ govukTable({
   caption: "",
   head: [
     {
-      html: "Requested on"
-      
+      html: "Requested on",
+      classes: "no-wrap"
     },
     {
       html: "Company"
     },
     {
-      html: "Date filed"
+      html: "Date filed",
+      classes: "no-wrap"
     },
     {
-      html: "Type"
+      html: "Type",
+      classes: "document-type"
     },
     {
       html: "Description"
     },
     {
-      html: "Status",
-      classes: 'govuk-!-width-one-quarter'
+      html: "Status"
     }
   ],
   rows: [
     [
       {
-        text: "04 Dec 2017"
+        text: "04 Dec 2017",
+      classes: "no-wrap"
       },
       {
         html:"<a href='' class='govuk-link govuk-link--no-visited-state'>FILINGS LTD</a>"
       },
       {
-        text:"TM02"
+        html: "09 July 2018",
+      classes: "no-wrap"
+      },
+      {
+      html: "TM02",
+      classes: "document-type"
       },
       {
         text:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
-      },
-      {
-        html: "09 July 2018"
       },
       {
         html:"Checking availability </br></br> An update will appear here by DD Month YYYY"
@@ -62,15 +97,18 @@
       {
         html:"<a href='' class='govuk-link govuk-link--no-visited-state'>SCANNING DOCUMENTS LTD</a>"
       },
-        {
-        html:"CH01"
-      },
-      {
-        html:"Director's details changed for Eduardo Sanchez on 14 August 1997."
-      },
       {
         html: "15 April 2017"
       },
+      {
+      html: "TM02",
+      classes: "document-type"
+      },
+
+      {
+        html:"Director's details changed for Eduardo Sanchez on 14 August 1997."
+      },
+      
       {
         html: " <a href='filing-history#filing-history' class='govuk-link govuk-link--no-visited-state'> View PDF</a> (2 Pages)"
       }
@@ -83,14 +121,15 @@
         html:"<a href='' class='govuk-link govuk-link--no-visited-state'>DIGITAL DOCUMENTS</a>"
       },
       {
-        html:"TM02"
-      },
-      {
-        html:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017 (TM02)."
-      },
-        {
         html: "21 May 2016"
       },
+      {
+        html: "TM01",
+        classes: "document-type"
+      },
+      {
+        html:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+      }, 
       {
         html:"Document unavailable"
       }
