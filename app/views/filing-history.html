@@ -12,7 +12,27 @@
   {% set overviewHtml %}
   {% endset -%}
   
-  <h1 class="govuk-heading-xl">FILING LTD</h1>
+  <h2 class="govuk-heading-l">FILING LTD</h2>
+  <p class="govuk-body">Company number 027389177</p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+  text: "Follow this company"
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+  text: "File for this company"
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+  text: "Order a document",
+  href: "/order-a-document/choose-document"
+  }) }}
+
+
+
 
   {% set filingHistoryHtml %}
     

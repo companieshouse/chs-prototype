@@ -1,0 +1,60 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/filing-history"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "what-type-of-certificate",
+      name: "what-type-of-certificate",
+      fieldset: {
+        legend: {
+          text: "Type of certificate",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "incorporation",
+          text: "Incorporation"
+        },
+        {
+          value: "incorporation-change-of-name",
+          text: "Incorporation with all changes of name"
+        },
+        {
+          value: "incorporation-with-last-name-change-only",
+          text: "Incorporation with last name change only"
+        },
+        {
+          value: "dissolution-liquidation",
+          text: "Close a company"
+        }
+
+      ]
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+     text: "Continue",
+     href: "/order-a-document/more-information"
+
+    }) }}
+</div>
+</div>
+{% endblock %}

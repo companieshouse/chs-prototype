@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "what-type-of-document",
+      name: "what-type-of-document",
+      fieldset: {
+        legend: {
+          text: "Type of document..",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "certificate",
+          text: "Certificate"
+        },
+        {
+          value: "certified",
+          text: "Certified copy"
+        }
+      ]
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+
+     text: "Continue",
+     href: "/order-a-document/choose-certificate-type"
+
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

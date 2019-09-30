@@ -1,0 +1,180 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/filing-history"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "delivery-method",
+      name: "delivery-method",
+      fieldset: {
+        legend: {
+          text: "How would you like to receieve the certificate?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "email",
+          text: "Email" 
+        },
+        {
+          value: "post",
+          text: "Post"
+        },
+        {
+          value: "collect",
+          text: "Collect"
+        },
+        {
+          value: "fax",
+          text: "Fax"
+        }
+
+      ]
+    }) }}
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  },
+  attributes: {
+    spellcheck: "false"
+  }
+}) }}
+{% endset -%}
+
+{% set phoneHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+{% endset -%}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  },
+  attributes: {
+    spellcheck: "false"
+  }
+}) }}
+{% endset -%}
+
+{% set phoneHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "citizenship-conditional",
+  name: "citizen",
+  fieldset: {
+    legend: {
+      text: "How would you like to receive the certifcate for Filings LTD?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you."
+  },
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "text message",
+      text: "Text message",
+      conditional: {
+        html: textHtml
+      }
+    }
+  ]
+}) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+
+     text: "Continue"
+
+    }) }}
+
+{% endblock %}
