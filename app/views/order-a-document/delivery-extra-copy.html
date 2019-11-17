@@ -14,37 +14,84 @@
 
 {% block content %}
 
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
-    {{ govukRadios({
-      idPrefix: "delivery-method",
-      name: "delivery-method",
-      fieldset: {
-        legend: {
-          text: "Do you need any additional copies of the certificate?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes" 
-        },
-        {
-          value: "no",
-          text: "No"
-        }
+{% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  },
+  attributes: {
+    spellcheck: "false"
+  }
+}) }}
+{% endset -%}
 
-      ]
-    }) }}
+{% set phoneHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "how-contacted-conditional",
+  name: "how-contacted",
+  fieldset: {
+    legend: {
+      text: "How many copies of the certificate do you need?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "one",
+      text: "1"
+    },
+    {
+      value: "two",
+      text: "2"
+    },
+    {
+      value: "three",
+      text: "3"
+    },
+    {
+      value: "four",
+      text: "4"
+    }
+  ]
+}) }}
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
 
      text: "Continue",
-     href:"/order-a-document/delivery-method"
+     href:"/order-a-document/delivery-time"
 
     }) }}
 

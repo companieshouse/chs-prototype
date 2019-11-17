@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to company search",
+    href: "/filing-history-document-pending#filing-history"
+  }) }}
+{% endblock %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Certificate ordered",
+        html: "Your reference number<br><strong>316-120425-12490359</strong>"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        Your order will ...
+      </p>
+
+      <p class="govuk-body">
+        Check the <a href='/filing-history-document-pending#filing-history' class='govuk-link govuk-link--no-visited-state'>certificate orders page</a> for updates on the status of the document. 
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

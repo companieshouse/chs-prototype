@@ -14,13 +14,20 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-xl">Contact details</h1>
+<h1 class="govuk-heading-xl">Check delivery details</h1>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="full-name">
+    Full name
+  </label>
+  <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+</div>
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
-    text: "Reference"
+    text: "Customer reference"
   },
   classes: "govuk-input--width-20",
   id: "width-20",
@@ -68,12 +75,7 @@
   }
 }) }}
 
-<div class="govuk-form-group">
-  <label class="govuk-label" for="full-name">
-    Full name
-  </label>
-  <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
-</div>
+
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}

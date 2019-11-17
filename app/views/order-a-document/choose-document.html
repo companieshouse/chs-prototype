@@ -5,6 +5,13 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/filing-history"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -18,7 +25,7 @@
       name: "what-type-of-document",
       fieldset: {
         legend: {
-          text: "Type of document..",
+          text: "What type of document do you want to order?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }

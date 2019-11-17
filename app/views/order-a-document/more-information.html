@@ -14,8 +14,6 @@
 {% block content %}
   <div class="govuk-grid-row">
 
-      <h1 class="govuk-heading-xl">Additional information</h1>
-
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukCheckboxes({
@@ -23,7 +21,7 @@
   name: "more-info",
   fieldset: {
     legend: {
-      text: "Do you need any more information?",
+      text: "Do you need any more information added to the certificate?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -64,7 +62,7 @@
     text: "Extra information"
   },
   hint: {
-    text: "hint information...."
+    text: "Add any details about the extra information you need."
   }
 }) }}
 

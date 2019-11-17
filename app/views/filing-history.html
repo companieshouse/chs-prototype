@@ -138,6 +138,60 @@
   {% set peopleHtml %}
   {% endset -%}
 
+  {% set viewallHtml %}
+
+  <h2 class="govuk-heading-l"> Company snapshot</h2>
+
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+  {{ govukDetails({
+  summaryText: "What's included in the company snapshot",
+  html: "<p class='govuk-body'>The latest 100 entries for:</p>
+<ul class='govuk-list govuk-list--bullet'>
+  <li>Filing history</li>
+  <li>Officers</li>
+  <li>Persons with significant control</li>
+  <li>Charges</li>
+  <li>Insolvency</li>
+  <li>Registers</li>
+</ul>"
+
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+  text: "View company information snapshot",
+  classes: "govuk-button--secondary"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <h2 class="govuk-heading-l"> Order certificates</h2>
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+  text: "Order certificates",
+  classes: "govuk-button--secondary"
+  }) }}
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <h2 class="govuk-heading-l"> Order certified copies</h2>
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+  text: "Order certified copies",
+  classes: "govuk-button--secondary" 
+  }) }}
+
+
+
+  {% endset -%}
+
+
+
+
   {{ govukTabs({
   items: [
     {
@@ -159,6 +213,13 @@
       id: "people",
       panel: {
         html: peopleHtml
+      }
+    },
+    {
+      label: "View all",
+      id: "view-all",
+      panel: {
+        html: viewallHtml
       }
     }
   ]

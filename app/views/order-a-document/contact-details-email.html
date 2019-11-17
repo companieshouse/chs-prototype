@@ -1,0 +1,48 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/filing-history"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl">Delivery email address</h1>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Email address"
+  },
+  hint: {
+    text: "We’ll only use this to send you a receipt"
+  },
+  id: "email",
+  name: "email",
+  type: "email",
+  autocomplete: "email",
+  attributes: {
+    spellcheck: "false"
+  }
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/order-a-document/check-details"
+}) }}
+
+</div>
+</div>
+
+{% endblock %}

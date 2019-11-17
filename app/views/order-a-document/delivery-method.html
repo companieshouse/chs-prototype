@@ -8,132 +8,19 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/filing-history"
+    href: "/order-a-document/delivery-time"
   }) }}
 {% endblock %}
 
 {% block content %}
-
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-    {{ govukRadios({
-      idPrefix: "delivery-method",
-      name: "delivery-method",
-      fieldset: {
-        legend: {
-          text: "How would you like to receieve the certificate?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "email",
-          text: "Email" 
-        },
-        {
-          value: "post",
-          text: "Post"
-        },
-        {
-          value: "collect",
-          text: "Collect"
-        },
-        {
-          value: "fax",
-          text: "Fax"
-        }
-
-      ]
-    }) }}
-
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-
-{% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contact-by-email",
-  type: "email",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Email address"
-  },
-  attributes: {
-    spellcheck: "false"
-  }
-}) }}
-{% endset -%}
-
-{% set phoneHtml %}
-{{ govukInput({
-  id: "contact-by-phone",
-  name: "contact-by-phone",
-  type: "tel",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Phone number"
-  }
-}) }}
-{% endset -%}
-
-{% set textHtml %}
-{{ govukInput({
-  id: "contact-by-text",
-  name: "contact-by-text",
-  type: "tel",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Mobile phone number"
-  }
-}) }}
-{% endset -%}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
 
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-
-{% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contact-by-email",
-  type: "email",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Email address"
-  },
-  attributes: {
-    spellcheck: "false"
-  }
-}) }}
-{% endset -%}
-
-{% set phoneHtml %}
-{{ govukInput({
-  id: "contact-by-phone",
-  name: "contact-by-phone",
-  type: "tel",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Phone number"
-  }
-}) }}
-{% endset -%}
-
-{% set textHtml %}
-{{ govukInput({
-  id: "contact-by-text",
-  name: "contact-by-text",
-  type: "tel",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Mobile phone number"
-  }
-}) }}
-{% endset -%}
 
 {{ govukCheckboxes({
-  idPrefix: "citizenship-conditional",
-  name: "citizen",
+  idPrefix: "delivery",
+  name: "delivery",
   fieldset: {
     legend: {
       text: "How would you like to receive the certifcate for Filings LTD?",
@@ -142,30 +29,26 @@
     }
   },
   hint: {
-    text: "Select all options that are relevant to you."
+    text: "Select all that apply."
   },
   items: [
+
+    {
+      value: "collect",
+      text: "Collect from Companies House office",
+      hint: {
+      text: "including Belfast, Cardiff, Edinburgh and London"
+    }
+    },
     {
       value: "email",
-      text: "Email",
-      conditional: {
-        html: emailHtml
-      }
+      text: "Email"
     },
     {
-      value: "phone",
-      text: "Phone",
-      conditional: {
-        html: phoneHtml
-      }
-    },
-    {
-      value: "text message",
-      text: "Text message",
-      conditional: {
-        html: textHtml
-      }
+      value: "post",
+      text: "Post"
     }
+    
   ]
 }) }}
 
@@ -173,8 +56,10 @@
 
     {{ govukButton({
 
-     text: "Continue"
+     text: "Continue",
+     href: "/order-a-document/contact-details-collect"
 
     }) }}
-
+</div>
+</div>
 {% endblock %}
