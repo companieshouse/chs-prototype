@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/filing-history#filing-history"
+    href: "/index#filing-history"
   }) }}
 {% endblock %}
 
@@ -68,11 +68,11 @@
         If this document is available, we will update the company’s filing history within 5 working days.
       </p>
 
-      <form action="/confirmation" method="post" novalidate>
+      <form action="confirmation" method="post" novalidate>
         {{ govukButton({
           text: "Request document"
         }) }}
-        <p> <a href="/filing-history#filing-history" class="govuk-link govuk-link--no-visited-state">Cancel</a> </p>
+        <p> <a href="/index#filing-history" class="govuk-link govuk-link--no-visited-state">Cancel</a> </p>
       </form>
 
     </div>
