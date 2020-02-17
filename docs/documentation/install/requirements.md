@@ -4,14 +4,18 @@ The kit runs on Mac, Windows and Linux. At a minimum you’ll need `node.js` (in
 
 This guide recommends additional software which will be used in later guides.
 
-## Admin access
+## Software you need
 
-If you have admin access to your machine, you can follow this guide to install the required software.
+You'll usually need admin access to your machine to install the software.
 
-If you do not have admin access, ask your computer administrator to install:
-* Node.js 6.x.x
-* Sublime Text 3
-* Command line tools (Mac)
+If you do not have admin access, ask your IT team to install the software for you.
+
+GDS staff can install the software themselves with Managed Software Centre (MSC).
+
+You'll need:
+
+* Node.js 12.x.x
+* Atom (text editor)
 * Git bash (Windows)
 
 ## Terminal
@@ -43,9 +47,9 @@ command to be typed in to terminal
 Once you’ve typed the command, press enter to send it.
 
 
-## Node.js version 6 LTS
+## Node.js version 12 LTS
 
-The kit is designed to work with Node.js version 6 LTS. The kit works with any 6.x.x version.
+The kit is designed to work with Node.js version 12 LTS. The kit works with any 12.x.x version.
 
 ### Check if you have Node.js
 
@@ -55,22 +59,22 @@ node --version
 ```
 If it says `command not found` or `Error 0x2 starting node.exe --version` you don’t have node and will need to download and install it.
 
-If the version number starts with 6 you have the correct version installed.
+If the version number starts with 12 you have the correct version installed.
 
-If it says another number such as `0.12` or `5.x.x`, you need to download and install version 6.
+If it says another number such as `0.12` or `5.x.x`, you need to download and install version 12.
 
 ### Download and install Node.js
 
 #### Mac / Windows users
 
-Download version 6 from [nodejs.org](https://nodejs.org/en/).
+Download version 12 from [nodejs.org](https://nodejs.org/en/).
 
 Run the installer with all default options.
 
 #### Linux users
 
 Follow the instructions on the [Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
-) site. Make sure you get version 6, not 7.
+) site. Make sure you get version 12.
 
 ### Once Node is installed
 
@@ -81,24 +85,10 @@ To check it is installed correctly you can again run:
 node --version
 ```
 
-If it’s installed correctly it should show a number starting with 6.
+If it’s installed correctly it should show a number starting with 12.
 
-## Sublime Text
+## Atom (text editor)
 
-You’ll need a text editor to edit and make changes to your prototype. We recommend [Sublime Text](http://www.sublimetext.com/) - instructions later on will refer to Sublime Text.
-
-## Command line tools (mac)
-
-Mac users will need the OSx Command line tools.
-
-In terminal:
-```
-xcode-select --install
-```
-If you already have command line tools, this will display `xcode-select: error: command line tools are already installed, use "Software Update" to install updates`.
-
-![Screenshot of Command line tools popup message](/public/images/docs/installing-mavericks-popup.png)
-
-If you don’t have command line tools, it will open an installer. Follow the instructions to install the command line tools.
+You’ll need a text editor to edit and make changes to your prototype. We recommend [Atom](https://atom.io/) - which is free and has lots of useful features.
 
 <a href="install-the-kit.md" class="button">Next (install the kit)</a>
