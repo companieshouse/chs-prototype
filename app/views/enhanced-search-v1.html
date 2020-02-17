@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Companies House enhanced search
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="https://beta.companieshouse.gov.uk/">Back to Companies House service</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="/" method="post">
+
+    <h1 class="govuk-heading-xl">Companies House enhanced search</h1>
+
+      {{ govukInput({
+        label: {
+          text: "Company name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-!-width-two-thirds",
+        hint: {
+          text: "Search for a company that contains this company name"
+        },
+        id: "company-name",
+        name: "Company name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Location",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-!-width-two-thirds",
+        hint: {
+          text: "Enter a postcode, town or region"
+        },
+        id: "location",
+        name: "location"
+      }) }}
+
+      {{ govukDateInput({
+        id: "incorporation-date",
+        namePrefix: "incorporation-date",
+        fieldset: {
+          legend: {
+            text: "Incorporation date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "dissolution-date",
+        namePrefix: "dissolution-date",
+        fieldset: {
+          legend: {
+            text: "Dissolution date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Standard Industrial Classification (SIC) codes",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-!-width-two-thirds",
+        hint: {
+          text: "For example, a manufacture of motor vehicles has the SIC code 29100."
+        },
+        id: "location",
+        name: "location"
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "company-status",
+        name: "company-status",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Company status",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "active",
+            text: "Active"
+          },
+          {
+            value: "dissolved",
+            text: "Dissolved"
+          },
+          {
+            value: "liquidation",
+            text: "Liquidation"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "company-type",
+        name: "company-type",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Company type",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "company-type-public-limitied-company",
+            text: "Public limitied company (PLC)"
+          },
+          {
+            value: "company-type-limited-by-shares",
+            text: "Private company limited by shares (Ltd, Limited)"
+          },
+          {
+            value: "company-type-limited-by-guarantee",
+            text: "Private company limited by guarantee"
+          },
+          {
+            value: "company-type-private-unlimited-company",
+            text: "Private unlimited company"
+          },
+          {
+            value: "company-type-limited-liability-partnership",
+            text: "Limited liability partnership (LLP)"
+          },
+          {
+            value: "company-type-limited-partnership",
+            text: "Limited partnership (LP)"
+          },
+          {
+            value: "company-type-community-interest-company",
+            text: "Community interest company (CIC)"
+          },
+          {
+            value: "company-type-charitable-incorporated-organisation",
+            text: "Charitable incorporated organisation (CIO)"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+          text: "Search"
+      }) }}
+
+      </form>
+  </div>
+</div>
+{% endblock %}
