@@ -10,67 +10,179 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <form action="/" method="post">
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l">
 
-    <h1 class="govuk-heading-xl">Companies House enhanced search</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
 
-      {{ govukInput({
-        label: {
-          text: "Company name",
-          classes: "govuk-label--s"
-        },
-        classes: "govuk-!-width-two-thirds",
-        hint: {
-          text: "Search for a company that contains this company name"
-        },
-        id: "company-name",
-        name: "Company name"
-      }) }}
+        <h1 class="govuk-heading-xl">Companies House enhanced search</h1>
 
-      {{ govukInput({
-        label: {
-          text: "Location",
-          classes: "govuk-label--s"
-        },
-        classes: "govuk-!-width-two-thirds",
-        hint: {
-          text: "Enter a postcode, town or region"
-        },
-        id: "location",
-        name: "location"
-      }) }}
+        {{ govukInput({
+          label: {
+            text: "Search for a company that contains this company name",
+            classes: "govuk-body govuk-!-font-weight-bold"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "company-name",
+          name: "company-name"
+        }) }}
+      </div>
+    </div>
 
-      {{ govukDateInput({
-        id: "incorporation-date",
-        namePrefix: "incorporation-date",
-        fieldset: {
-          legend: {
-            text: "Incorporation date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-      {{ govukDateInput({
-        id: "dissolution-date",
-        namePrefix: "dissolution-date",
-        fieldset: {
-          legend: {
-            text: "Dissolution date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
+          {% call govukFieldset({
+            legend: {
+              text: "Location",
+              classes: "govuk-fieldset__legend--s",
+              isPageHeading: true
+            }
+          }) %}
+
+            {{ govukInput({
+              label: {
+                html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+              },
+              id: "address-line-1",
+              name: "address-line-1",
+              autocomplete: "address-line1"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Town or region"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "address-region",
+              name: "address-region"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Postcode"
+              },
+              classes: "govuk-input--width-10",
+              id: "address-postcode",
+              name: "address-postcode",
+              autocomplete: "postal-code"
+            }) }}
+          {% endcall %}
+
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter">
+
+                {{ govukSelect({
+                  id: "sort",
+                  name: "sort",
+                  label: {
+                    text: "Search distance"
+                  },
+                  items: [
+                    {
+                      value: "one",
+                      text: "1"
+                    },
+                    {
+                      value: "three",
+                      text: "3",
+                      selected: true
+                    },
+                    {
+                      value: "five",
+                      text: "5"
+                    },
+                    {
+                      value: "eight",
+                      text: "8"
+                    },
+                    {
+                      value: "ten",
+                      text: "10"
+                    },
+                    {
+                      value: "twenty",
+                      text: "20"
+                    },
+                    {
+                      value: "fifty",
+                      text: "50"
+                    }
+                  ]
+                }) }}
+              </div>
+              <div class="govuk-grid-column-one-half">
+                {{ govukSelect({
+                  id: "sort",
+                  name: "sort",
+                  label: {
+                    text: "Distance units"
+                  },
+                  items: [
+                    {
+                      value: "miles",
+                      text: "Miles",
+                      selected: true
+                    },
+                    {
+                      value: "kilometres",
+                      text: "Kilometres"
+                    },
+                    {
+                      value: "views",
+                      text: "Most views"
+                    },
+                    {
+                      value: "comments",
+                      text: "Most comments"
+                    }
+                  ]
+                }) }}
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <h2 class="govuk-heading-m">Company set up between</h2>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              {{ govukDateInput({
+                id: "incorporation-start-date",
+                namePrefix: "incorporation-start-date",
+                fieldset: {
+                  legend: {
+                    text: "Start date",
+                    isPageHeading: true,
+                    classes: "govuk-body govuk-!-font-weight-regular"
+                  }
+                }
+              }) }}
+            </div>
+            <div class="govuk-grid-column-one-half">
+              {{ govukDateInput({
+                id: "incorporation-end-date",
+                namePrefix: "incorporation-end-date",
+                fieldset: {
+                  legend: {
+                    text: "End date",
+                    isPageHeading: true,
+                    classes: "govuk-body govuk-!-font-weight-regular"
+                  }
+                }
+              }) }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+      
 
       {{ govukInput({
         label: {
@@ -163,7 +275,6 @@
           text: "Search"
       }) }}
 
-      </form>
   </div>
 </div>
 {% endblock %}
