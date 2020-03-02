@@ -147,7 +147,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-          <h2 class="govuk-heading-m">Company set up between</h2>
+          <h2 class="govuk-heading-m">Company setup between</h2>
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
               {{ govukDateInput({
@@ -178,6 +178,44 @@
           </div>
         </div>
       </div>
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <h2 class="govuk-heading-m">Company closed between</h2>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              {{ govukDateInput({
+                id: "dissolution-start-date",
+                namePrefix: "dissolution-start-date",
+                fieldset: {
+                  legend: {
+                    text: "Start date",
+                    isPageHeading: true,
+                    classes: "govuk-body govuk-!-font-weight-regular"
+                  }
+                }
+              }) }}
+            </div>
+            <div class="govuk-grid-column-one-half">
+              {{ govukDateInput({
+                id: "dissolution-end-date",
+                namePrefix: "dissolution-end-date",
+                fieldset: {
+                  legend: {
+                    text: "End date",
+                    isPageHeading: true,
+                    classes: "govuk-body govuk-!-font-weight-regular"
+                  }
+                }
+              }) }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
       {{ govukInput({
         label: {
@@ -218,6 +256,8 @@
           }
         ]
       }) }}
+    </div>
+  </div>
 
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
