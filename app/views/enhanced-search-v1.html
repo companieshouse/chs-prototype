@@ -179,11 +179,6 @@
         </div>
       </div>
 
-
-      
-
-      
-
       {{ govukInput({
         label: {
           text: "Standard Industrial Classification (SIC) codes",
@@ -203,7 +198,7 @@
         classes: "govuk-checkboxes--small",
         fieldset: {
           legend: {
-            text: "Company status",
+            text: "Company status'",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -224,52 +219,61 @@
         ]
       }) }}
 
-      {{ govukCheckboxes({
-        idPrefix: "company-type",
-        name: "company-type",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "Company type",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "company-type-public-limitied-company",
-            text: "Public limitied company (PLC)"
-          },
-          {
-            value: "company-type-limited-by-shares",
-            text: "Private company limited by shares (Ltd, Limited)"
-          },
-          {
-            value: "company-type-limited-by-guarantee",
-            text: "Private company limited by guarantee"
-          },
-          {
-            value: "company-type-private-unlimited-company",
-            text: "Private unlimited company"
-          },
-          {
-            value: "company-type-limited-liability-partnership",
-            text: "Limited liability partnership (LLP)"
-          },
-          {
-            value: "company-type-limited-partnership",
-            text: "Limited partnership (LP)"
-          },
-          {
-            value: "company-type-community-interest-company",
-            text: "Community interest company (CIC)"
-          },
-          {
-            value: "company-type-charitable-incorporated-organisation",
-            text: "Charitable incorporated organisation (CIO)"
-          }
-        ]
-      }) }}
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            {{ govukCheckboxes({
+              idPrefix: "company-types",
+              name: "company-types",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Company types",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "all-company-types",
+                  text: "All company types"
+                },
+                {
+                  value: "company-type-public-limitied-company",
+                  text: "Public limitied company (PLC)"
+                },
+                {
+                  value: "company-type-limited-by-shares",
+                  text: "Private company limited by shares (Ltd, Limited)"
+                },
+                {
+                  value: "company-type-limited-by-guarantee",
+                  text: "Private company limited by guarantee"
+                },
+                {
+                  value: "company-type-private-unlimited-company",
+                  text: "Private unlimited company"
+                },
+                {
+                  value: "company-type-limited-liability-partnership",
+                  text: "Limited liability partnership (LLP)"
+                },
+                {
+                  value: "company-type-limited-partnership",
+                  text: "Limited partnership (LP)"
+                },
+                {
+                  value: "company-type-community-interest-company",
+                  text: "Community interest company (CIC)"
+                },
+                {
+                  value: "company-type-charitable-incorporated-organisation",
+                  text: "Charitable incorporated organisation (CIO)"
+                }
+              ]
+            }) }}
+          </div>
+        </div>
 
       {{ govukButton({
           text: "Search"
