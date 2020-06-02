@@ -65,12 +65,34 @@
 
             {{ govukInput({
               label: {
-                text: "Enter a town, postcode or region"
+                text: "Town or city"
               },
               classes: "govuk-!-width-two-thirds",
-              id: "address-town-postcode-region",
-              name: "address-town-postcode-region"
+              id: "address-town",
+              name: "address-town",
+              autocomplete: "address-level2"
             }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Region"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "address-region",
+              name: "address-region"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Postcode"
+              },
+              classes: "govuk-input--width-10",
+              id: "address-postcode",
+              name: "address-postcode",
+              autocomplete: "postal-code"
+            }) }}
+
+           
           {% endcall %}
         </div>
       </div>
@@ -84,7 +106,7 @@
             {{ govukCheckboxes({
               idPrefix: "company-status",
               name: "company-status",
-              classes: "govuk-checkboxes--small",
+              classes: "govuk-checkboxes--large",
               fieldset: {
                 legend: {
                   text: "Company status",
@@ -93,6 +115,10 @@
                 }
               },
               items: [
+               {
+                  value: "all-companies",
+                  text: "All companies"
+                },
                 {
                   value: "active",
                   text: "Active"
@@ -123,7 +149,7 @@
                 namePrefix: "incorporation-start-date",
                 fieldset: {
                   legend: {
-                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company closed after</p>",
+                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company incorporated after</p>",
                     isPageHeading: true,
                     classes: "govuk-body govuk-!-font-weight-regular"
                   }
