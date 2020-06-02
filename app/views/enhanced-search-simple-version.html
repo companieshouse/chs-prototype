@@ -20,13 +20,24 @@
 
         {{ govukInput({
           label: {
-            text: "Search for a company that contains",
+            text: "Company name that contains",
             classes: "govuk-body govuk-!-font-weight-bold"
           },
           classes: "govuk-!-width-two-thirds",
-          id: "company-name",
-          name: "company-name"
+          id: "contains-company-name",
+          name: "contains-company-name"
         }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Company name that doesn't contain",
+            classes: "govuk-body govuk-!-font-weight-bold"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "does-not-contain-company-name",
+          name: "does-not-contain-company-name"
+        }) }}
+
       </div>
     </div>
 
