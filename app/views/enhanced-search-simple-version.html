@@ -20,7 +20,7 @@
 
         {{ govukInput({
           label: {
-            text: "Search for a company",
+            text: "Search for a company that contains",
             classes: "govuk-body govuk-!-font-weight-bold"
           },
           classes: "govuk-!-width-two-thirds",
@@ -138,6 +138,42 @@
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+      
+            {{ govukCheckboxes({
+              idPrefix: "company-status",
+              name: "company-status",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Company status",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "active",
+                  text: "Active"
+                },
+                {
+                  value: "dissolved",
+                  text: "Dissolved"
+                },
+                {
+                  value: "liquidation",
+                  text: "Liquidation"
+                }
+              ]
+            }) }}
+          </div>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
@@ -148,7 +184,7 @@
                 namePrefix: "incorporation-start-date",
                 fieldset: {
                   legend: {
-                    text: "Company incorporated after",
+                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company closed after</p>",
                     isPageHeading: true,
                     classes: "govuk-body govuk-!-font-weight-regular"
                   }
@@ -162,7 +198,7 @@
                 namePrefix: "incorporation-end-date",
                 fieldset: {
                   legend: {
-                    text: "Company incorporated before",
+                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company incorporated before</p>",
                     isPageHeading: true,
                     classes: "govuk-body govuk-!-font-weight-regular"
                   }
@@ -178,7 +214,7 @@
 
 
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-three-quarters">
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
@@ -187,7 +223,7 @@
                 namePrefix: "dissolution-start-date",
                 fieldset: {
                   legend: {
-                    text: "Company closed after",
+                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company closed after</p>",
                     isPageHeading: true,
                     classes: "govuk-body govuk-!-font-weight-regular"
                   }
@@ -202,7 +238,7 @@
                 namePrefix: "dissolution-end-date",
                 fieldset: {
                   legend: {
-                    text: "Company closed before",
+                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company closed before</p>",
                     isPageHeading: true,
                     classes: "govuk-body govuk-!-font-weight-regular"
                   }
@@ -234,97 +270,9 @@
     </div>
   </div>
 
-  <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      {{ govukCheckboxes({
-        idPrefix: "company-status",
-        name: "company-status",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "Company status'",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "active",
-            text: "Active"
-          },
-          {
-            value: "dissolved",
-            text: "Dissolved"
-          },
-          {
-            value: "liquidation",
-            text: "Liquidation"
-          }
-        ]
-      }) }}
-    </div>
-  </div>
+  
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-            {{ govukCheckboxes({
-              idPrefix: "company-types",
-              name: "company-types",
-              classes: "govuk-checkboxes--large",
-              fieldset: {
-                legend: {
-                  text: "Company types",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              items: [
-                {
-                  value: "all-company-types",
-                  text: "All company types"
-                },
-                {
-                  value: "company-type-public-limitied-company",
-                  text: "Public limitied company (PLC)"
-                },
-                {
-                  value: "company-type-limited-by-shares",
-                  text: "Private company limited by shares (Ltd, Limited)"
-                },
-                {
-                  value: "company-type-limited-by-guarantee",
-                  text: "Private company limited by guarantee"
-                },
-                {
-                  value: "company-type-private-unlimited-company",
-                  text: "Private unlimited company"
-                },
-                {
-                  value: "company-type-limited-liability-partnership",
-                  text: "Limited liability partnership (LLP)"
-                },
-                {
-                  value: "company-type-limited-partnership",
-                  text: "Limited partnership (LP)"
-                },
-                {
-                  value: "company-type-community-interest-company",
-                  text: "Community interest company (CIC)"
-                },
-                {
-                  value: "company-type-charitable-incorporated-organisation",
-                  text: "Charitable incorporated organisation (CIO)"
-                }
-              ]
-            }) }}
-          </div>
-        </div>
 
       {{ govukButton({
           text: "Search"
