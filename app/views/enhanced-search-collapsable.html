@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Companies House enhanced search
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="https://beta.companieshouse.gov.uk/">Back to Companies House service</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Companies House advanced search</h1>
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+        {{ govukAccordion({
+          id: "accordion-default",
+          items: [
+            {
+              heading: {
+                text: "Company name"
+              },
+              content: {
+                html: "<div class='govuk-form-group'>
+                          <label class='govuk-label' for='event-name'>
+                            Company name that contains
+                          </label>
+                          <input class='govuk-input' id='event-name' name='contains-company-name' type='text'>
+                        </div>
+
+                        <div class='govuk-form-group'>
+                          <label class='govuk-label' for='event-name'>
+                            Exclude company names that contain 
+                          </label>
+                          <input class='govuk-input' id='event-name' name='contains-company-name' type='text'>
+                        </div>"
+              }
+            },
+              {
+              heading: {
+                text: "Status"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="company-status">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          </legend>
+                          <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="waste" name="all-company" type="checkbox" value="carcasses">
+                              <label class="govuk-label govuk-checkboxes__label" for="all-company">
+                                Active
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                                Liquidation
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                Dissolved
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>'
+              }
+            },
+            {
+              heading: {
+                text: "Incorporation dates"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="last-three-months" name="last-three-months" type="radio" value="three">
+                              <label class="govuk-label govuk-radios__label" for="last-three-months">
+                                Last 3 months
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="last-six-months" name="last-six-months" type="radio" value="six">
+                              <label class="govuk-label govuk-radios__label" for="last-three-months">
+                                Last 6 months
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="last-year" name="last-year" type="radio" value="year">
+                              <label class="govuk-label govuk-radios__label" for="last-year">
+                                Last year
+                              </label>
+                            </div>
+                            <div class="govuk-radios__divider">or</div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="between-dates" name="between-dates" type="radio" value="between-dates">
+                              <label class="govuk-label govuk-radios__label" for="between-dates">
+                                Specific dates
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>'
+              }
+            },
+            {
+              heading: {
+                text: "Dissolved dates"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="last-three-months" name="last-three-months" type="radio" value="three">
+                              <label class="govuk-label govuk-radios__label" for="last-three-months">
+                                Last 3 months
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="last-six-months" name="last-six-months" type="radio" value="six">
+                              <label class="govuk-label govuk-radios__label" for="last-three-months">
+                                Last 6 months
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="last-year" name="last-year" type="radio" value="year">
+                              <label class="govuk-label govuk-radios__label" for="last-year">
+                                Last year
+                              </label>
+                            </div>
+                            <div class="govuk-radios__divider">or</div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="between-dates" name="between-dates" type="radio" value="between-dates">
+                              <label class="govuk-label govuk-radios__label" for="between-dates">
+                                Specific dates
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>'
+              }
+            },
+            {
+              heading: {
+                text: "Industry"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                          Standard Industrial Classification (SIC) codes
+                        </label>
+                        <span id="account-number-hint" class="govuk-hint">
+                          For example, a manufacture of motor vehicles has the SIC code 29100.
+                        </span>
+                        <input class="govuk-input" id="event-name" name="event-name" type="text">
+                      </div>
+
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Browse codes</a>
+
+
+                      '
+              }
+            },
+              {
+              heading: {
+                text: "Location"
+              },
+              content: {
+                html: '<fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        </legend>
+
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="region">
+                            Region
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="region" name="region" type="text">
+                        </div>
+
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-postcode">
+                            Postcode
+                          </label>
+                          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+                        </div>
+
+                      </fieldset>'
+              }
+            }
+          ]
+        }) }}
+
+      
+  
+
+      {{ govukButton({
+          text: "Search"
+      }) }}
+
+  </div>
+</div>
+</div>
+{% endblock %}

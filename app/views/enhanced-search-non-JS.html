@@ -102,6 +102,12 @@
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
+
+
+
+
+
+
       
             {{ govukCheckboxes({
               idPrefix: "company-status",
@@ -133,6 +139,44 @@
                 }
               ]
             }) }}
+          </div>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+               <h2 class="govuk-heading-m">Company status</h2>
+
+    
+              {{ govukSelect({
+                id: "company-status",
+                name: "company-status",
+                label: {
+                  text: "Select company status"
+                },
+                items: [
+                  {
+                  value: "all-companies",
+                  text: "All companies"
+                },
+                {
+                  value: "active",
+                  text: "Active"
+                },
+                {
+                  value: "dissolved",
+                  text: "Dissolved"
+                },
+                {
+                  value: "liquidation",
+                  text: "Liquidation"
+                }
+                ]
+              }) }}
+
+      
           </div>
         </div>
 
