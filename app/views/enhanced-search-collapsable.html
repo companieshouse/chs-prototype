@@ -45,6 +45,28 @@
             },
               {
               heading: {
+                text: "Location"
+              },
+              content: {
+                html: '<fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        </legend>
+
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="registered-address">
+                            Registred address
+                          </label>
+                          <span id="registered-address-hint" class="govuk-hint">
+                           For example, SA7 to search for an area or a SA7 8PP to search for a postcode.
+                          </span>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="registered-address" name="registered-address" type="text">
+                        </div>
+
+                      </fieldset>'
+              }
+            },
+              {
+              heading: {
                 text: "Status"
               },
               content: {
@@ -62,12 +84,6 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
                               <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                                Liquidation
-                              </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-                              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                                 Dissolved
                               </label>
                             </div>
@@ -78,36 +94,82 @@
             },
             {
               heading: {
-                text: "Incorporation dates"
+                text: "Incorporation date"
               },
               content: {
                 html: '<div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                          <div class="govuk-radios">
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="last-three-months" name="last-three-months" type="radio" value="three">
-                              <label class="govuk-label govuk-radios__label" for="last-three-months">
-                                Last 3 months
-                              </label>
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="from-incorportation-date-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h1 class="govuk-fieldset__heading">
+                              From
+                            </h1>
+                          </legend>
+                          <span id="from-incorportation-date-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                          </span>
+                          <div class="govuk-date-input" id="from-incorportation-date">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="from-incorportation-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incporporation-day" name="from-incporporation-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="last-six-months" name="last-six-months" type="radio" value="six">
-                              <label class="govuk-label govuk-radios__label" for="last-three-months">
-                                Last 6 months
-                              </label>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="from-incorporation-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incorporation-month" name="from-incorporation-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="last-year" name="last-year" type="radio" value="year">
-                              <label class="govuk-label govuk-radios__label" for="last-year">
-                                Last year
-                              </label>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="from-incorporation-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-incorporation-year" name="from-incorporation-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
-                            <div class="govuk-radios__divider">or</div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="between-dates" name="between-dates" type="radio" value="between-dates">
-                              <label class="govuk-label govuk-radios__label" for="between-dates">
-                                Specific dates
-                              </label>
+                          </div>
+                        </fieldset>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="incorportation-date-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h1 class="govuk-fieldset__heading">
+                              To
+                            </h1>
+                          </legend>
+                          <span id="incorportation-date-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                          </span>
+                          <div class="govuk-date-input" id="to-incorportation-date">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="to-incorportation-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incporporation-day" name="to-incporporation-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="to-incorporation-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incorporation-month" name="to-incorporation-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="to-incorporation-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-incorporation-year" name="to-incorporation-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
                           </div>
                         </fieldset>
@@ -116,36 +178,82 @@
             },
             {
               heading: {
-                text: "Dissolved dates"
+                text: "Dissolved date"
               },
               content: {
                 html: '<div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                          <div class="govuk-radios">
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="last-three-months" name="last-three-months" type="radio" value="three">
-                              <label class="govuk-label govuk-radios__label" for="last-three-months">
-                                Last 3 months
-                              </label>
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="from-dissolved-date-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h1 class="govuk-fieldset__heading">
+                              From
+                            </h1>
+                          </legend>
+                          <span id="from-dissolved-date-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                          </span>
+                          <div class="govuk-date-input" id="from-dissolved-date">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="from-incorportation-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-dissolved-day" name="from-dissolved-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="last-six-months" name="last-six-months" type="radio" value="six">
-                              <label class="govuk-label govuk-radios__label" for="last-three-months">
-                                Last 6 months
-                              </label>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="from-dissolved-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-dissolved-month" name="from-dissolved-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="last-year" name="last-year" type="radio" value="year">
-                              <label class="govuk-label govuk-radios__label" for="last-year">
-                                Last year
-                              </label>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="from-dissolved-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-dissolved-year" name="from-dissolved-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
-                            <div class="govuk-radios__divider">or</div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="between-dates" name="between-dates" type="radio" value="between-dates">
-                              <label class="govuk-label govuk-radios__label" for="between-dates">
-                                Specific dates
-                              </label>
+                          </div>
+                        </fieldset>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="to-dissolved-date-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h1 class="govuk-fieldset__heading">
+                              To
+                            </h1>
+                          </legend>
+                          <span id="to-dissolved-date-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                          </span>
+                          <div class="govuk-date-input" id="to-dissolved-date">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="to-dissolved-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-dissolved-day" name="to-dissolved-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="to-dissolved-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-dissolved-month" name="to-dissolved-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="to-dissolved-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-dissolved-year" name="to-dissolved-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
                             </div>
                           </div>
                         </fieldset>
@@ -171,32 +279,6 @@
 
 
                       '
-              }
-            },
-              {
-              heading: {
-                text: "Location"
-              },
-              content: {
-                html: '<fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        </legend>
-
-                        <div class="govuk-form-group">
-                          <label class="govuk-label" for="region">
-                            Region
-                          </label>
-                          <input class="govuk-input govuk-!-width-two-thirds" id="region" name="region" type="text">
-                        </div>
-
-                        <div class="govuk-form-group">
-                          <label class="govuk-label" for="address-postcode">
-                            Postcode
-                          </label>
-                          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
-                        </div>
-
-                      </fieldset>'
               }
             }
           ]
