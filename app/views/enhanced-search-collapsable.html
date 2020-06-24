@@ -26,17 +26,17 @@
               },
               content: {
                 html: "<div class='govuk-form-group'>
-                          <label class='govuk-label' for='event-name'>
+                          <label class='govuk-label' for='contains-company-name'>
                             Company name that contains
                           </label>
-                          <input class='govuk-input govuk-!-width-two-thirds' id='event-name' name='contains-company-name' type='text'>
+                          <input class='govuk-input govuk-!-width-two-thirds' id='contains-company-name' name='contains-company-name' type='text'>
                         </div>
 
                         <div class='govuk-form-group'>
-                          <label class='govuk-label' for='event-name'>
+                          <label class='govuk-label' for='excludes-company-name'>
                             Exclude company names that contain 
                           </label>
-                          <input class='govuk-input govuk-!-width-two-thirds' id='event-name' name='contains-company-name' type='text'>
+                          <input class='govuk-input govuk-!-width-two-thirds' id='excludes-company-name' name='excludes-company-name' type='text'>
                         </div>"
               }
             },
@@ -51,10 +51,12 @@
                             Registered address
                           </h1>
                         </legend>
+
                         <div class="govuk-form-group">
-                          <span id="registered-address-hint" class="govuk-hint">
-                           Enter a postcode, town or region.
-                          </span>
+                          <label class="govuk-label" for="registered-address">
+                            Enter a postcode, town or region.
+                          </label>
+
                           <input class="govuk-input govuk-!-width-two-thirds" id="registered-address" name="registered-address" type="text">
                         </div>
 
@@ -67,19 +69,25 @@
               },
               content: {
                 html: '<div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="company-status">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                          </legend>
-                          <div class="govuk-checkboxes">
+                          <fieldset class="govuk-fieldset" aria-describedby="company-status-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              <h1 class="govuk-fieldset__heading">
+                                Company status
+                              </h1>
+                            </legend>
+                            <span id="company-status-hint" class="govuk-hint">
+                              Select all that apply.
+                            </span>
+                            <div class="govuk-checkboxes">
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="all-company" name="all-company" type="checkbox" value="all-companies">
-                              <label class="govuk-label govuk-checkboxes__label" for="all-company">
+                              <input class="govuk-checkboxes__input" id="all-company-status" name="all-companies" type="checkbox" value="all-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="all-company-status">
                                 All companies
                               </label>
                             </div>
                           <div class="govuk-checkboxes">
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="active" name="active-companies" type="checkbox" value="active">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
                                 Active
                               </label>
@@ -90,9 +98,9 @@
                                 Dissolved
                               </label>
                             </div>
-                          </div>
-                        </fieldset>
-                      </div>'
+                          </div> 
+                          </fieldset>
+                        </div>'
               }
             },
             {
@@ -105,38 +113,38 @@
                           <div class="govuk-grid-column-one-half">
 
                               <div class="govuk-form-group">
-                              <fieldset class="govuk-fieldset" role="group" aria-describedby="from-incorportation-date-hint">
+                              <fieldset class="govuk-fieldset" role="group" aria-describedby="from-incorporation-date-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                                   <h1 class="govuk-fieldset__heading">
                                     From
                                   </h1>
                                 </legend>
-                                <span id="from-incorportation-date-hint" class="govuk-hint">
+                                <span id="from-incorporation-date-hint" class="govuk-hint">
                                   For example, 27 3 2007
                                 </span>
-                                <div class="govuk-date-input" id="from-incorportation-date">
+                                <div class="govuk-date-input" id="from-incorporation-date">
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="from-incorportation-day">
+                                      <label class="govuk-label govuk-date-input__label" for="from-incorporation-date-day">
                                         Day
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incporporation-day" name="from-incporporation-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incorporation-date-day" name="from-incorporation-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="from-incorporation-month">
+                                      <label class="govuk-label govuk-date-input__label" for="from-incorporation-date-month">
                                         Month
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incorporation-month" name="from-incorporation-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incorporation-date-month" name="from-incorporation-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="from-incorporation-year">
+                                      <label class="govuk-label govuk-date-input__label" for="from-incorporation-date-year">
                                         Year
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-incorporation-year" name="from-incorporation-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-incorporation-date-year" name="from-incorporation-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                 </div>
@@ -147,38 +155,38 @@
                             <div class="govuk-grid-column-one-half">
 
                             <div class="govuk-form-group">
-                              <fieldset class="govuk-fieldset" role="group" aria-describedby="incorportation-date-hint">
+                              <fieldset class="govuk-fieldset" role="group" aria-describedby="to-incorporation-date-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                                   <h1 class="govuk-fieldset__heading">
                                     To
                                   </h1>
                                 </legend>
-                                <span id="incorportation-date-hint" class="govuk-hint">
+                                <span id="to-incorporation-date-hint" class="govuk-hint">
                                   For example, 27 3 2007
                                 </span>
-                                <div class="govuk-date-input" id="to-incorportation-date">
+                                <div class="govuk-date-input" id="to-incorporation-date">
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="to-incorportation-day">
+                                      <label class="govuk-label govuk-date-input__label" for="to-incorporation-date-day">
                                         Day
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incporporation-day" name="to-incporporation-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incorporation-date-day" name="to-incorporation-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="to-incorporation-month">
+                                      <label class="govuk-label govuk-date-input__label" for="to-incorporation-date-month">
                                         Month
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incorporation-month" name="to-incorporation-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incorporation-date-month" name="to-incorporation-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="to-incorporation-year">
+                                      <label class="govuk-label govuk-date-input__label" for="to-incorporation-date-year">
                                         Year
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-incorporation-year" name="to-incorporation-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-incorporation-date-year" name="to-incorporation-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                 </div>
@@ -186,7 +194,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>'
+                      </div>'         
               }
             },
             {
@@ -199,38 +207,38 @@
                           <div class="govuk-grid-column-one-half">
 
                               <div class="govuk-form-group">
-                              <fieldset class="govuk-fieldset" role="group" aria-describedby="from-incorportation-date-hint">
+                              <fieldset class="govuk-fieldset" role="group" aria-describedby="from-dissolved-date-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                                   <h1 class="govuk-fieldset__heading">
                                     From
                                   </h1>
                                 </legend>
-                                <span id="from-incorportation-date-hint" class="govuk-hint">
+                                <span id="from-dissolved-date-hint" class="govuk-hint">
                                   For example, 27 3 2007
                                 </span>
-                                <div class="govuk-date-input" id="from-incorportation-date">
+                                <div class="govuk-date-input" id="from-dissolved-date">
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="from-incorportation-day">
+                                      <label class="govuk-label govuk-date-input__label" for="from-dissolved-date-day">
                                         Day
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incporporation-day" name="from-incporporation-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-dissolved-date-day" name="from-dissolved-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="from-incorporation-month">
+                                      <label class="govuk-label govuk-date-input__label" for="from-dissolved-date-month">
                                         Month
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-incorporation-month" name="from-incorporation-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-dissolved-date-month" name="from-dissolved-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="from-incorporation-year">
+                                      <label class="govuk-label govuk-date-input__label" for="from-dissolved-date-year">
                                         Year
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-incorporation-year" name="from-incorporation-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-dissolved-date-year" name="from-dissolved-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                 </div>
@@ -241,38 +249,38 @@
                             <div class="govuk-grid-column-one-half">
 
                             <div class="govuk-form-group">
-                              <fieldset class="govuk-fieldset" role="group" aria-describedby="incorportation-date-hint">
+                              <fieldset class="govuk-fieldset" role="group" aria-describedby="to-dissolved-date-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                                   <h1 class="govuk-fieldset__heading">
                                     To
                                   </h1>
                                 </legend>
-                                <span id="incorportation-date-hint" class="govuk-hint">
+                                <span id="to-dissolved-date-hint" class="govuk-hint">
                                   For example, 27 3 2007
                                 </span>
-                                <div class="govuk-date-input" id="to-incorportation-date">
+                                <div class="govuk-date-input" id="to-dissolved-date">
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="to-incorportation-day">
+                                      <label class="govuk-label govuk-date-input__label" for="to-dissolved-date-day">
                                         Day
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incporporation-day" name="to-incporporation-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-dissolved-date-day" name="to-dissolved-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="to-incorporation-month">
+                                      <label class="govuk-label govuk-date-input__label" for="to-dissolved-date-month">
                                         Month
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-incorporation-month" name="to-incorporation-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-dissolved-date-month" name="to-dissolved-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                   <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="to-incorporation-year">
+                                      <label class="govuk-label govuk-date-input__label" for="to-dissolved-date-year">
                                         Year
                                       </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-incorporation-year" name="to-incorporation-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-dissolved-date-year" name="to-dissolved-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                   </div>
                                 </div>
