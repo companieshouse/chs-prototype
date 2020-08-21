@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
 
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Companies House Sign In
+{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/filing-history#filing-history"
+    href: "start-now"
   }) }}
 {% endblock %}
 
@@ -17,63 +18,65 @@
 
       <h1 class="govuk-heading-xl">Sign in to Companies House</h1>
 
-     <form action="" method="post">
-        {% if emailErr.flag %}
-          {{ govukInput({
-              label: {
-                text: "Email address"
-              },
-              errorMessage: {
-                text: emailErr.text
-              },
-              id: "email",
-              name: "email",
-              value: email
+      <form action="CHS-signin" method="post">
+          {% if errorEmail  == true or errorPassword == true %}
+            {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: errorList
             }) }}
+          {% endif %}
+
+        {% if errorEmail  == true %}
+          {{ govukInput({
+            label: {
+            text: "Email address"
+          },
+          id: "email",
+          name: "email",
+          errorMessage: {
+            text: "Enter your email address"
+          }
+          }) }}
         {% else %}
           {{ govukInput({
-              label: {
-                text: "Email address"
-              },
-              id: "email",
-              name: "email",
-              value: email
-            }) }}
+            label: {
+            text: "Email address"
+          },
+          id: "email",
+          name: "email"
+          }) }}
         {% endif %}
-
-        {% if passwordErr.flag %}
-          {{ govukInput({
-              label: {
-                text: "Password"
-              },
-              errorMessage: {
-                text: passwordErr.text
-              },
-              id: "password",
-              name: "password",
-              type: 'password',
-              value: password
-            }) }}
-        {% else %}
-          {{ govukInput({
-              label: {
-                text: "Password"
-              },
-              id: "password",
-              name: "password",
-              type: 'password',
-              value: password
-            }) }}
-        {% endif %}
-      </form>
-
-    
-
-      <form action="request-document" method="post" novalidate>
-        {{ govukButton({
-          text: "Sign in"
+        
+      {% if errorPassword  == true %}
+        {{ govukInput({
+          label: {
+          text: "Password"
+        },
+        id: "password",
+        name: "password",
+        type: "password",
+        errorMessage: {
+            text: "Enter your password"
+          }
         }) }}
+      {% else %}
+        {{ govukInput({
+          label: {
+          text: "Password"
+        },
+        id: "password",
+        name: "password",
+        type: "password"
+        }) }}
+      {% endif %}
+
+      {{ govukButton({
+        text: "Sign in",
+        href: "request-a-document"
+      }) }}
+
         <p> <a href="" class="govuk-link govuk-link--no-visited-state">Register a new account</a> </p>
+        
         <p> <a href="" class="govuk-link govuk-link--no-visited-state">I've forgotten my password</a> </p>
       </form>
 

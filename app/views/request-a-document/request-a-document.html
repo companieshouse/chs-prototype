@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
 
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
+{% block pageTitle %}
+  Request a document
+{% endblock %}
+
 
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/index#filing-history"
+    href: "CHS-signin"
   }) }}
 {% endblock %}
 
@@ -24,7 +25,7 @@
         rows: [
         {
             key: {
-              text: "Company"
+              text: "Company name"
             },
             value: {
               text: "FILINGS LTD"
@@ -43,7 +44,7 @@
               text: "Date"
             },
             value: {
-              text: "04 Dec 2017"
+              text: "4 Dec 2017"
             }
           },
           {
@@ -61,16 +62,24 @@
             value: {
               html: "Termination of appointment of Secretary Ltd as a secretary on 4 December 2017"
             }
+          },
+          {
+            key: {
+              text: "Fee"
+            },
+            value: {
+              text: "£XX"
+            }
           }
         ]
       }) }}
       <p class="govuk-body">
-        If this document is available, we will update the company’s filing history within 5 working days.
+        If this document is available, we will update the company’s filing history within 2 working hours.
       </p>
 
       <form action="confirmation" method="post" novalidate>
         {{ govukButton({
-          text: "Request document"
+          text: "Continue to payment"
         }) }}
         <p> <a href="/index#filing-history" class="govuk-link govuk-link--no-visited-state">Cancel</a> </p>
       </form>
