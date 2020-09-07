@@ -32,6 +32,20 @@
 
       <p class="govuk-body">If we cannot add the document to the filing history, we will contact you to issue a refund.</p>
 
+      {{ govukInsetText({
+        html: "<p class='govuk-body govuk-!-font-weight-bold'>You will not be sent an email confirmation of this order.</p>
+
+        <ul class='govuk-list'>
+        <li>
+          <img src='/public/images/print-icon.png'  alt='Print icon'/>
+          <a class='govuk-link' href='javascript:window.print()'>
+            Print your order confirmation
+          </a>
+        </li>
+      </ul>"
+
+      }) }}
+
       <h2 class="govuk-heading-m">Your order details</h2>
 
       {{ govukSummaryList({
