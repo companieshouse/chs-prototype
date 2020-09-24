@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block beforeContent %}
+ 
+{% endblock %}
+
+{% block pageTitle %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-m"> <center> MISSING IMAGE DELIVERY <br> ORDER CONFIRMATION</center></h1>
+
+
+      <h2 class="govuk-heading-m">Order details</h2>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Order reference number",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "ORD-123456-123456"
+                  }
+                },
+                {
+                  key: {
+                    text: "Company name",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "John Lewis PLC"
+                  }
+                },
+                {
+                  key: {
+                    text: "Company number"
+                  },
+                  value: {
+                    text: "00233462"
+                  }
+                },
+                {
+                  key: {
+                    text: "Email address",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "email@example.co.uk"
+                  }
+                },
+                {
+                  key: {
+                    text: "Payment reference"
+                  },
+                  value: {
+                    text: "RS5VSN6DRE"
+                  }
+                },
+                {
+                  key: {
+                    text: "Date and time of payment"
+                  },
+                  value: {
+                    text: "11 March 2020 – 10:56:14"
+                  }
+                }
+                ]
+            }) }}
+
+            </div>
+            <div class="govuk-grid-column-full">
+
+
+            <h3 class="govuk-heading-m">Missing image for John Lewis PLC</h3>
+
+                {{ govukTable({
+                    caption: "",
+
+                    head: [
+                      {
+                        html: "Date",
+                        classes: 'no-wrap'
+                      },
+                      {
+                        html: "Type"
+                      },
+                      {
+                        html: "Description",
+                        classes: 'govuk-!-width-half'
+                      },
+                      {
+                        html: "Fee"
+                      }
+                    ],
+                    rows: [
+                      [
+                        {
+                          text: "4 Dec 2017",
+                          classes: 'no-wrap'
+                        },
+                        {
+                        html: "TM02"
+                        },
+                        {
+                          text:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017"
+                        },
+                        {
+                          text:"£3"
+                        }
+
+                      ],
+                      [
+                        {
+                          html: "<p class='govuk-body govuk-!-font-weight-bold'>Total</p>"
+                        },
+                        {},
+                        {},
+                        {
+                          html:"<p class='govuk-body govuk-!-font-weight-bold'>£3</p>"
+                        }
+                      ]
+                    ]
+                  }) }}
+
+            
+
+              <h4 class="govuk-heading-m">How to contact us</h4>
+                <p class="govuk-body">Email <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you have questions about your order. Include your order reference number when you contact us. </p>
+
+              </div>
+            </div>
+  </div>
+{% endblock %}
