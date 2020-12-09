@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a Companies House account
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Sign in to Companies House WebFiling</h1>
+
+
+      {{ govukButton({
+        text: "Sign in",
+        classes: "govuk-button--secondary",
+        href:"webfiling-sign-in-to-company"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}
