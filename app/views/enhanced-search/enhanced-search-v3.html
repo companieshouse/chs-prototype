@@ -65,7 +65,15 @@
                             Enter a postcode, town or region.
                           </label>
 
-                          <input class="govuk-input govuk-!-width-width-full" id="registered-address" name="registered-address" type="text">
+
+                          <select class="location" style="border: 20px; width: 100%" multiple="multiple">
+                            <option value="eng">England</option>
+                            <option value="irl">Ireland</option>
+                            <option value="scot">Scotland</option>
+                            <option value="wal">Wales</option>
+                          </select>
+
+                         
                         </div>
 
                       </fieldset>'
@@ -173,11 +181,22 @@
           ]
         }) }}
 
-      {{ govukButton({
-          text: "Search"
-      }) }}
+        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Search
+        </button>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save as draft
+        </button>
 
     </div>
+
+    
+
+
+
   </div>
 </div>
+
+
 {% endblock %}
