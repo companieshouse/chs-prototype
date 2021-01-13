@@ -15,7 +15,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
-        <h1 class="govuk-heading-xl">Companies House enhanced search</h1>
+        <h1 class="govuk-heading-l">Companies House enhanced search</h1>
 
 
         {{ govukInput({
@@ -26,6 +26,27 @@
           classes: "govuk-!-width-two-thirds",
           id: "contains-company-name",
           name: "contains-company-name"
+        }) }}
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "previous-names",
+              text: "Include companies previous name"
+            }
+          ]
         }) }}
 
       </div>
@@ -92,13 +113,6 @@
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-
-
-
-
-
-
-      
             {{ govukCheckboxes({
               idPrefix: "company-status",
               name: "company-status",
