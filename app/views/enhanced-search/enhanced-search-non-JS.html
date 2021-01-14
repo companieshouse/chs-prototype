@@ -13,17 +13,16 @@
 <div class="govuk-width-container">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-one-half">
 
-        <h1 class="govuk-heading-l">Companies House enhanced search</h1>
+        <h1 class="govuk-heading-l">Enhanced search</h1>
 
 
         {{ govukInput({
           label: {
-            text: "Company name that contains",
+            text: "Company name",
             classes: "govuk-body govuk-!-font-weight-bold"
           },
-          classes: "govuk-!-width-two-thirds",
           id: "contains-company-name",
           name: "contains-company-name"
         }) }}
@@ -32,19 +31,20 @@
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
+          idPrefix: "previous-name",
+          name: "previous-name",
+          classes: "govuk-checkboxes--small",
           fieldset: {
             legend: {
               text: "",
-              isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
               value: "previous-names",
-              text: "Include companies previous name"
+              text: "Include previous company names",
+              classes:"accordion-label"
             }
           ]
         }) }}
@@ -55,56 +55,49 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-one-half">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Location
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+              <label class="accordion-label" for="address-line-1">
+                Building and street
+              </label>
+              
+              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
 
-          {% call govukFieldset({
-            legend: {
-              text: "Location",
-              classes: "govuk-fieldset__legend--s",
-              isPageHeading: true
-            }
-          }) %}
+              <div class="govuk-form-group">
+               <label class="accordion-label" for="address-town">
+                 Town or city
+                  </label>
+                
+                <input class="govuk-input" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+              </div>
 
-            {{ govukInput({
-              label: {
-                html: "Building and street"
-              },
-              id: "address-line-1",
-              name: "address-line-1",
-              autocomplete: "address-line1"
-            }) }}
+              <div class="govuk-form-group">
+                <label class="accordion-label" for="address-county">
+                 County
+                </label>
+                        
+                <select class="location" style="border: 20px; width: 100%" multiple="multiple">
+                   <option value="eng">Powys</option>
+                     <option value="irl">Swansea</option>
+                     <option value="scot">Cardiff</option>
+                    <option value="wal">Newport</option>
+                     </select>
+                </div>
 
-            {{ govukInput({
-              label: {
-                text: "Town or city"
-              },
-              classes: "govuk-!-width-two-thirds",
-              id: "address-town",
-              name: "address-town",
-              autocomplete: "address-level2"
-            }) }}
+                <div class="govuk-form-group">
+                  <label class="accordion-label" for="address-postcode">
+                    Postcode
+                     </label>
+                  <input class="govuk-input" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"></div>
 
-            {{ govukInput({
-              label: {
-                text: "County"
-              },
-              classes: "govuk-!-width-two-thirds",
-              id: "address-region",
-              name: "address-region"
-            }) }}
+        </fieldset>
 
-            {{ govukInput({
-              label: {
-                text: "Postcode"
-              },
-              classes: "govuk-input--width-10",
-              id: "address-postcode",
-              name: "address-postcode",
-              autocomplete: "postal-code"
-            }) }}
-
-           
-          {% endcall %}
         </div>
       </div>
 
@@ -116,12 +109,12 @@
             {{ govukCheckboxes({
               idPrefix: "company-status",
               name: "company-status",
-              classes: "govuk-checkboxes--large",
+              classes: "govuk-checkboxes--small",
               fieldset: {
                 legend: {
                   text: "Company status",
                   isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
+                  classes: "govuk-fieldset__legend--s"
                 }
               },
               items: [
@@ -152,92 +145,109 @@
 
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
+      <div class="govuk-grid-column-one-half">
+
+        <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    Companies incorporated
+                  </h1>
+                </legend>
+
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
-              {{ govukDateInput({
-                id: "incorporation-start-date",
-                namePrefix: "incorporation-start-date",
-                fieldset: {
-                  legend: {
-                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company incorporated after</p>",
-                    isPageHeading: true,
-                    classes: "govuk-body govuk-!-font-weight-regular"
-                  }
-                }
-              }) }}
-            </div>
 
-            <div class="govuk-grid-column-one-half">
-              {{ govukDateInput({
-                id: "incorporation-end-date",
-                namePrefix: "incorporation-end-date",
-                fieldset: {
-                  legend: {
-                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company incorporated before</p>",
-                    isPageHeading: true,
-                    classes: "govuk-body govuk-!-font-weight-regular"
-                  }
-                }
-              }) }}
-            </div>
+              <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
+                                From
+                              </label>
+                            </h1>
+                            <div id="incorporation-date-from-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="incorporation-date-from" name="incorporation-date-from" type="text" spellcheck="false" aria-describedby="incorporation-date-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+
+                        <div class="govuk-grid-column-one-half">
+
+                          <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-to">
+                                To
+                              </label>
+                            </h1>
+                            <div id="incorporation-date-to-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="incorporation-date-to" name="incorporation-date-to" type="text" spellcheck="false" aria-describedby="incorporation-date-to-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
           </div>
-        </div>
+        </fieldset>
       </div>
+    </div>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
 
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
+        <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    Companies dissolved
+                  </h1>
+                </legend>
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
-              {{ govukDateInput({
-                id: "dissolution-start-date",
-                namePrefix: "dissolution-start-date",
-                fieldset: {
-                  legend: {
-                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company closed after</p>",
-                    isPageHeading: true,
-                    classes: "govuk-body govuk-!-font-weight-regular"
-                  }
-                }
-              }) }}
-            </div>
 
+              <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
+                                From
+                              </label>
+                            </h1>
+                            <div id="incorporation-date-from-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="incorporation-date-from" name="incorporation-date-from" type="text" spellcheck="false" aria-describedby="incorporation-date-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
 
-            <div class="govuk-grid-column-one-half">
-              {{ govukDateInput({
-                id: "dissolution-end-date",
-                namePrefix: "dissolution-end-date",
-                fieldset: {
-                  legend: {
-                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Company closed before</p>",
-                    isPageHeading: true,
-                    classes: "govuk-body govuk-!-font-weight-regular"
-                  }
-                }
-              }) }}
-            </div>
+                        <div class="govuk-grid-column-one-half">
+
+                          <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-to">
+                                To
+                              </label>
+                            </h1>
+                            <div id="incorporation-date-to-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="incorporation-date-to" name="incorporation-date-to" type="text" spellcheck="false" aria-describedby="incorporation-date-to-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
           </div>
-        </div>
+        </fieldset>
       </div>
+    </div>
+
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-one-half">
 
       {{ govukInput({
         label: {
-          text: "Standard Industrial Classification (SIC) codes",
+          text: "SIC codes",
           classes: "govuk-label--s"
         },
         classes: "govuk-!-width-two-thirds",
         hint: {
-          text: "For example, a manufacture of motor vehicles has the SIC code 29100."
+          text: "For example, a manufacture of motor vehicles has the SIC (Standard Industrial Classification) code 29100.",
+          classes:"accordion-hint"
         },
         id: "location",
         name: "location"
