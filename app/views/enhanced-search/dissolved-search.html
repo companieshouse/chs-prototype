@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Dissolved company search
+      </h1>
+      <p class="govuk-body">
+        Search the register for Companies dissolved between 10 and 20 years ago.
+      </p>
+      
+        {{ govukInput({
+          label: {
+            text: "Company name"
+          },
+          id: "company-name",
+          name: "company-name",
+          classes: "govuk-!-width-two-thirds"
+        }) }}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
+          classes: "govuk-checkboxes--small",
+      
+          items: [
+            {
+              value: "carcasses",
+              text: "Include previous names"
+            }
+          ]
+        }) }}
+
+                          
+
+        {{ govukButton({
+          text: "Search",
+          href:"../enhanced-search/dissolved-records-results"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

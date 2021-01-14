@@ -2,7 +2,7 @@
 
 {% set serviceName %}
 
-Dissolved company information
+
 
 {% endset%}
 
@@ -14,7 +14,7 @@ Dissolved company information
 
 {% block beforeContent %}
   {{ govukBackLink({
-    href: "#",
+    href: "../enhanced-search/dissolved-search",
     text: "Search again"
   }) }}
 
@@ -23,8 +23,48 @@ Dissolved company information
 
 
 {% block content %}  
-  <h1 class="govuk-heading-l">Search results </h1>
+  <h1 class="govuk-heading-xl">Dissolved company search</h1>
   <p class="govuk-body">Companies dissolved between 10 and 20 years ago.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  {{ govukInput({
+          label: {
+            text: "Company name"
+          },
+          id: "company-name",
+          name: "company-name",
+          classes: "govuk-!-width-two-thirds"
+        }) }}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
+          classes: "govuk-checkboxes--small",
+      
+          items: [
+            {
+              value: "carcasses",
+              text: "Include previous names"
+            }
+          ]
+        }) }}
+
+                          
+
+        {{ govukButton({
+          text: "Search",
+          href:"../enhanced-search/dissolved-records-results"
+        }) }}
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
 
   {% from "govuk/components/table/macro.njk" import govukTable %}
 
@@ -33,7 +73,10 @@ Dissolved company information
     head: [
       {
         text: "Company name",
-        classes: 'govuk-!-width-one-third'
+        classes: 'govuk-!-width-one-quarter'
+      },
+      {
+        text: "Matching previous names"
       },
       {
         text: "Company number"
@@ -55,7 +98,10 @@ Dissolved company information
     rows: [
       [
         {
-          html: "<a href='#' class='govuk-link'>THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN</a>"
+          html: "<a href='#' class='govuk-link'>ACM DIGITAL LIMITED</a>"
+        },
+        {
+
         },
         {
           text: "01210067"
@@ -75,7 +121,10 @@ Dissolved company information
       ],
       [
         {
-          html: "<a href='#' class='govuk-link'>Company name</a>"
+          html: "<a href='#' class='govuk-link'>ACM DIRECT LTD</a>"
+        },
+        {
+
         },
         {
           text: "01210067"
@@ -95,7 +144,10 @@ Dissolved company information
       ],
       [
         {
-          html: "<a href='#' class='govuk-link'>Company name</a>"
+          html: "<a href='#' class='govuk-link'>ACM DISTRIBUTION LIMITED</a>"
+        },
+        {
+
         },
         {
           text: "01210067"
@@ -115,7 +167,10 @@ Dissolved company information
       ],
       [
         {
-          html: "<a href='#' class='govuk-link'>Company name</a>"
+          html: "<a href='#' class='govuk-link'>ACM DISTRIBUTORS LTD</a>"
+        },
+        {
+
         },
         {
           text: "01210067"
@@ -135,7 +190,10 @@ Dissolved company information
       ],
       [
         {
-          html: "<a href='#' class='govuk-link'>Company name</a>"
+          html: "<a href='#' class='govuk-link'>ACM DRIVER LTD</a>"
+        },
+        {
+
         },
         {
           text: "01210067"
@@ -155,27 +213,10 @@ Dissolved company information
       ],
       [
         {
-          html: "<a href='#' class='govuk-link'>Company name</a>"
+          html: "<a href='#' class='govuk-link'>ACM DRIVER HIRE LTD</a>"
         },
         {
-          text: "01210067"
-        },
-        {
-          text:"31 Dec 1987"
-        },
-        {
-          text:"12 Oct 2001"
-        },
-        {
-          text:"London"
-        },
-        {
-          text:"SE4"
-        }
-      ],
-      [
-        {
-          html: "<a href='#' class='govuk-link'>Company name</a>"
+
         },
         {
           text: "01210067"
@@ -195,7 +236,8 @@ Dissolved company information
       ]
     ]
   }) }}
-
+</div>
+</div>
  
 
 
