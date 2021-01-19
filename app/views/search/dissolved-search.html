@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Dissolved company search
 {% endblock %}
 
 {% block content %}
@@ -27,13 +27,13 @@
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
+          idPrefix: "previous-names",
+          name: "previous-names",
           classes: "govuk-checkboxes--small",
       
           items: [
             {
-              value: "carcasses",
+              value: "previous-names",
               text: "Include previous names"
             }
           ]
@@ -43,7 +43,7 @@
 
         {{ govukButton({
           text: "Search",
-          href:"../enhanced-search/dissolved-records-results"
+          href:"../search/dissolved-records-results"
         }) }}
 
     </div>

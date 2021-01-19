@@ -2,20 +2,18 @@
 
 {% set serviceName %}
 
-
-
 {% endset%}
 
 {% block pageTitle %}
 
-Dissolved company information
+Dissolved company search
   
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
-    href: "../enhanced-search/dissolved-search",
-    text: "Search again"
+    href: "https://find-and-update.company-information.service.gov.uk/",
+    text: "Return to Companies House service"
   }) }}
 
 {% endblock %}
@@ -40,13 +38,13 @@ Dissolved company information
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
+          idPrefix: "previous-names",
+          name: "previous-names",
           classes: "govuk-checkboxes--small",
       
           items: [
             {
-              value: "carcasses",
+              value: "previous-names",
               text: "Include previous names"
             }
           ]
@@ -56,7 +54,7 @@ Dissolved company information
 
         {{ govukButton({
           text: "Search",
-          href:"../enhanced-search/dissolved-records-results"
+          href:""
         }) }}
       </div>
     </div>

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dissolved company search
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Dissolved company search
+      </h1>
+      
+
+      <p class="govuk-body-l">
+        Search the register for Companies dissolved between 10 and 20 years ago.
+      </p>
+      
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Company name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "company-name",
+          name: "company-name"
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "company-name-selection",
+          name: "company-name-selection",
+          fieldset: {
+            legend: {
+              text: "Do you want to search the list of dissolved company names or previous company names?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Dissolved company names"
+            },
+            {
+              value: "no",
+              text: "Previous company names"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Search",
+          href:"../search/dissolved-records-results"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
