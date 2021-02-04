@@ -12,7 +12,7 @@
         Dissolved company search
       </h1>
       <p class="govuk-body">
-        Search the register for Companies dissolved between 10 and 20 years ago.
+        Companies dissolved between 1/1/1989 and 31/12/2009.
       </p>
       
         {{ govukInput({
@@ -21,29 +21,15 @@
           },
           id: "company-name",
           name: "company-name",
-          classes: "govuk-!-width-two-thirds"
+          classes: "govuk-!-width-full"
         }) }}
 
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-        {{ govukCheckboxes({
-          idPrefix: "previous-names",
-          name: "previous-names",
-          classes: "govuk-checkboxes--small",
-      
-          items: [
-            {
-              value: "previous-names",
-              text: "Include previous names"
-            }
-          ]
-        }) }}
-
-                          
+  
+           
 
         {{ govukButton({
           text: "Search",
-          href:"../search/dissolved-records-results"
+          href:"../search/dissolved-records-no-previous-names"
         }) }}
 
     </div>

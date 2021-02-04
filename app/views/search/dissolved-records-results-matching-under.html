@@ -25,9 +25,12 @@ Dissolved company search
     <div class="govuk-grid-column-two-thirds">
 
   <h1 class="govuk-heading-xl">Dissolved company search</h1>
-  <p class="govuk-body">Search for companies dissolved between 1/1/1989 and 31/12/2009.  </p>
+  <p class="govuk-body-l">Search for companies dissolved between 1/1/1989 and 31/12/2009.  </p>
 
-
+{{ govukInsetText({
+  text: "Search the company name at dissolution."
+}) }}
+  
   {{ govukInput({
           label: {
             text: "Company name"
@@ -61,107 +64,36 @@ Dissolved company search
     firstCellIsHeader: false,
     head: [
       {
-        text: "Company name"
+        text: "Company name",
+        classes: 'govuk-!-width-one-quarter'
       },
       {
-        html: "Company number",
-        classes: "no-wrap"
+        text: "Matching previous names"
       },
       {
-        text: "Incorporation on",
-        classes: "no-wrap"
+        text: "Company number"
       },
       {
-        html: "Dissolved on",
-        classes: "no-wrap"
+        text: "Incorporation date"
       },
       {
-        text: "Address",
-        classes: "no-wrap"
+        text: "Dissolved date"
+      },
+      {
+        text: "Town"
+      },
+      {
+        text: "Postcode"
       }
 
     ],
     rows: [
       [
         {
-          html: "<a href='#' class='govuk-link'>THIS IS THE COAST LIMITED</a><div class='govuk-inset-text'>
-THIS IS THE YORKSHIRE COAST LIMITED</div> "
+          html: "<a href='#' class='govuk-link'>ACM DIGITAL LIMITED</a>"
         },
         {
-          text: "01210067"
-        },
-        {
-          text:"31 Dec 1987"
-        },
-        {
-          text:"12 Oct 2001"
-        },
-        {
-          text:"London, SE4"
-        }
-      ],
-      [
-        {
-          html: "<a href='#' class='govuk-link'>THIS IS THE COAST LIMITED</a><br><br> <details class='govuk-details' data-module='govuk-details'>
-            <summary class='govuk-details__summary'>
-              <span class='govuk-details__summary-text'>
-                Matching previous names
-              </span>
-            </summary>
-            <div class='govuk-details__text'>
-              THIS IS THE YORKSHIRE COAST LIMITED
-            </div>
-          </details> "
-        },
-        {
-          text: "01210067"
-        },
-        {
-          text:"31 Dec 1987"
-        },
-        {
-          text:"12 Oct 2001"
-        },
-        {
-          text:"London, SE4"
-        }
-  
-      ],
-      [
-        {
-          html: "<a href='#' class='govuk-link'>THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN</a> <br><br> 
 
-          <details class='govuk-details' data-module='govuk-details'>
-            <summary class='govuk-details__summary'>
-              <span class='govuk-details__summary-text'>
-                Matching previous names
-              </span>
-            </summary>
-            <div class='govuk-details__text'>
-              THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN · ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN
-            </div>
-          </details>"
-        },
-        {
-          text: "01210067"
-        },
-        {
-          text:"31 Dec 1987"
-        },
-        {
-          html:"12 Oct 2001",
-          classes: "no-wrap"
-        },
-        {
-          text:"London, SE4"
-        }
- 
-      ],
-      [
-        {
-          html: "<a href='#' class='govuk-link'>THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN</a> <div class='govuk-inset-text'>
-  Matching previous name: <br> THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN · ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN
-</div>"
         },
         {
           text: "01210067"
@@ -173,16 +105,66 @@ THIS IS THE YORKSHIRE COAST LIMITED</div> "
           text:"12 Oct 2001"
         },
         {
-          text:"London, SE4"
+          text:"London"
+        },
+        {
+          text:"SE4"
         }
-
       ],
-      
+      [
+        {
+          html: "<a href='#' class='govuk-link'>ACM DIRECT LTD</a>"
+        },
+        {
+          text:"ACM SERVICES"
+        },
+        {
+          text: "01210067"
+        },
+        {
+          text:"31 Dec 1987"
+        },
+        {
+          text:"12 Oct 2001"
+        },
+        {
+          text:"London"
+        },
+        {
+          text:"SE4"
+        }
+      ],
+      [
+        {
+          html: "<a href='#' class='govuk-link'>ACM DISTRIBUTION LIMITED</a>"
+        },
+        {
+
+        },
+        {
+          text: "01210067"
+        },
+        {
+          text:"31 Dec 1987"
+        },
+        {
+          text:"12 Oct 2001"
+        },
+        {
+          text:"London"
+        },
+        {
+          text:"SE4"
+        }
+      ],
       [
         {
           html: "<a href='#' class='govuk-link'>ACM DISTRIBUTORS LTD</a>"
         },
         {
+
+        },
+        {
           text: "01210067"
         },
         {
@@ -192,7 +174,10 @@ THIS IS THE YORKSHIRE COAST LIMITED</div> "
           text:"12 Oct 2001"
         },
         {
-          text:"London, SE4"
+          text:"London"
+        },
+        {
+          text:"SE4"
         }
       ],
       [
@@ -200,6 +185,9 @@ THIS IS THE YORKSHIRE COAST LIMITED</div> "
           html: "<a href='#' class='govuk-link'>ACM DRIVER LTD</a>"
         },
         {
+
+        },
+        {
           text: "01210067"
         },
         {
@@ -209,15 +197,20 @@ THIS IS THE YORKSHIRE COAST LIMITED</div> "
           text:"12 Oct 2001"
         },
         {
-          text:"London, SE4"
+          text:"London"
+        },
+        {
+          text:"SE4"
         }
-
       ],
       [
         {
           html: "<a href='#' class='govuk-link'>ACM DRIVER HIRE LTD</a>"
         },
         {
+          text: "ACM HIRE LIMITED"
+        },
+        {
           text: "01210067"
         },
         {
@@ -227,9 +220,11 @@ THIS IS THE YORKSHIRE COAST LIMITED</div> "
           text:"12 Oct 2001"
         },
         {
-          text:"London, SE4"
+          text:"London"
+        },
+        {
+          text:"SE4"
         }
-
       ]
     ]
   }) }}
