@@ -8,24 +8,28 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Dissolved company search
-      </h1>
-      <p class="govuk-body">
-        Companies dissolved between 1/1/1989 and 31/12/2009.
-      </p>
-      
-        {{ govukInput({
-          label: {
-            text: "Company name"
-          },
-          id: "company-name",
-          name: "company-name",
-          classes: "govuk-!-width-full"
+       <h1 class="govuk-heading-xl">Dissolved company search</h1>
+
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+        {{ govukInsetText({
+          text: "Search for companies dissolved between 1/1/1989 and 31/12/2009."
         }) }}
 
-  
-           
+
+
+        {{ govukInput({
+                label: {
+                  text: "Company name",
+                  classes: "govuk-body govuk-!-font-weight-bold"
+                },
+                id: "company-name",
+                name: "company-name",
+                classes: "govuk-!-width-full"
+        }) }}
+
+            
+
 
         {{ govukButton({
           text: "Search",

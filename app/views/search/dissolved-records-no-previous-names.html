@@ -25,12 +25,19 @@ Dissolved company search
     <div class="govuk-grid-column-two-thirds">
 
   <h1 class="govuk-heading-xl">Dissolved company search</h1>
-  <p class="govuk-body">Search for companies dissolved between 1/1/1989 and 31/12/2009.  </p>
+
+  {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+  {{ govukInsetText({
+    text: "Search for companies dissolved between 1/1/1989 and 31/12/2009."
+  }) }}
+
 
 
   {{ govukInput({
           label: {
-            text: "Company name"
+            text: "Company name",
+            classes: "govuk-body govuk-!-font-weight-bold"
           },
           id: "company-name",
           name: "company-name",
@@ -49,10 +56,12 @@ Dissolved company search
 
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <h1 class="govuk-heading-xl">Search results</h1>
 
+
+      
 
 
   {% from "govuk/components/table/macro.njk" import govukTable %}
@@ -215,7 +224,11 @@ Dissolved company search
     ]
   }) }}
 </div>
+
+
+
 </div>
+<p class="govuk-body">Data last updated on 12/10/2021</p>
  
 
 
