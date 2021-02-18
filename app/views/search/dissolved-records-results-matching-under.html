@@ -12,49 +12,19 @@ Dissolved company search
 
 {% block beforeContent %}
   {{ govukBackLink({
-    href: "https://find-and-update.company-information.service.gov.uk/",
-    text: "Return to Companies House service"
+    href: "../search/dissolved-search",
+    text: "Search again"
   }) }}
-
 {% endblock %}
 
 
-
 {% block content %}
+
+
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-column-full">
 
-  <h1 class="govuk-heading-xl">Dissolved company search</h1>
-  <p class="govuk-body-l">Search for companies dissolved between 1/1/1989 and 31/12/2009.  </p>
-
-{{ govukInsetText({
-  text: "Search the company name at dissolution."
-}) }}
-  
-  {{ govukInput({
-          label: {
-            text: "Company name"
-          },
-          id: "company-name",
-          name: "company-name",
-          classes: "govuk-!-width-full"
-        }) }}
-
-        {{ govukButton({
-          text: "Search",
-          href:""
-        }) }}
-
-
-      </div>
-    </div>
-
-
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-      <h1 class="govuk-heading-xl">Search results</h1>
+  <h1 class="govuk-heading-xl">Search results</h1>
 
 
 
@@ -68,7 +38,8 @@ Dissolved company search
         classes: 'govuk-!-width-one-quarter'
       },
       {
-        text: "Matching previous names"
+        html: "<a> Matching previous <br> names</a>",
+           classes: "no-wrap"
       },
       {
         text: "Company number"
@@ -77,7 +48,8 @@ Dissolved company search
         text: "Incorporation date"
       },
       {
-        text: "Dissolved date"
+        text: "Dissolved date",
+        classes: "no-wrap"
       },
       {
         text: "Town"
@@ -90,7 +62,7 @@ Dissolved company search
     rows: [
       [
         {
-          html: "<a href='#' class='govuk-link'>ACM DIGITAL LIMITED</a>"
+          html: "<a href='#' class='govuk-link'>THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN</a>"
         },
         {
 

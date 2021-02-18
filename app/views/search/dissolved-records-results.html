@@ -12,8 +12,8 @@ Dissolved company search
 
 {% block beforeContent %}
   {{ govukBackLink({
-    href: "https://find-and-update.company-information.service.gov.uk/",
-    text: "Return to Companies House service"
+    href: "../search/dissolved-search",
+    text: "Search again"
   }) }}
 
 {% endblock %}
@@ -21,37 +21,10 @@ Dissolved company search
 
 
 {% block content %}
+
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-  <h1 class="govuk-heading-xl">Dissolved company search</h1>
-  <p class="govuk-body">Search for companies dissolved between 1/1/1989 and 31/12/2009.  </p>
-
-
-  {{ govukInput({
-          label: {
-            text: "Company name"
-          },
-          id: "company-name",
-          name: "company-name",
-          classes: "govuk-!-width-full"
-        }) }}
-
-        {{ govukButton({
-          text: "Search",
-          href:""
-        }) }}
-
-
-      </div>
-    </div>
-
-
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-      <h1 class="govuk-heading-xl">Search results</h1>
+  <div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-xl">Search results</h1>
 
 
 
