@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-    text: "Back"
+    text: "Return to Companies House service"
   }) }}
 {% endblock %}
 
@@ -20,7 +20,6 @@
 
             <h1 class="govuk-heading-xl">Search for a dissolved company</h1>
       
-
             <p class="govuk-body">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
 
             
@@ -44,12 +43,9 @@
                 classes: "govuk-!-width-full"
             }) }}
 
-            
-
-
             {{ govukButton({
               text: "Search",
-              href:"../search/dissolved-records-no-previous-names"
+              href:"./dissolved-records-no-previous-names"
             }) }}
 
           </form>
