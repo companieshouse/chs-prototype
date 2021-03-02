@@ -18,13 +18,11 @@
 
         <h1 class="govuk-heading-xl">Search for a dissolved company</h1>
       
-            <p class="govuk-body-l">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+            <p class="govuk-body">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
 
             {{ govukInsetText({
               text: "We will only show companies that had this name when they were dissolved. You cannot search previous names held by a company."
-            }) }}
-
-
+            }) }} 
           
             {{ govukInput({
                 label: {
@@ -55,7 +53,7 @@
                 },
                 {
                   value: "best-match",
-                  text: "Best/closest match",
+                  text: "Closest match",
                   hint: {
                     text: ""
                   }
@@ -64,6 +62,34 @@
             }) }}
 
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              idPrefix: "waste",
+              name: "waste",
+              fieldset: {
+                legend: {
+                  text: "Which company names do you want to search?"
+                }
+              },
+              hint: {
+                text: "Select all that apply."
+              },
+              items: [
+                {
+                  value: "latest-company-name",
+                  text: "Company name when they were dissolved"
+                },
+                {
+                  value: "previous",
+                  text: "Previous company names"
+                }
+              ]
+            }) }}
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
 
             {{ govukButton({
               text: "Search",
