@@ -21,8 +21,7 @@
             <p class="govuk-body-l">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
 
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-          
-          <div style:"padding:10px";>
+   
             {{ govukInput({
                 label: {
                   text: "Company name",
@@ -32,7 +31,7 @@
                 name: "company-name",
                 classes: "govuk-!-width-three-quarters"
             }) }}
-          </div>
+
 
             {{ govukCheckboxes({
               idPrefix: "alpha-display",
