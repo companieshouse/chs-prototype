@@ -22,6 +22,7 @@
 
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
           
+          <div style:"padding:10px";>
             {{ govukInput({
                 label: {
                   text: "Company name",
@@ -31,59 +32,20 @@
                 name: "company-name",
                 classes: "govuk-!-width-three-quarters"
             }) }}
-
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-            {{ govukRadios({
-              idPrefix: "sign-in",
-              name: "sign-in",
-              fieldset: {
-                legend: {
-                  text: "How do you want the search results to be displayed?"
-                }
-              },
-              items: [
-                {
-                  value: "alphabetical",
-                  text: "Alphabetical"
-                },
-                {
-                  value: "best-match",
-                  text: "Closest match",
-                  hint: {
-                    text: ""
-                  }
-                }
-              ]
-            }) }}
-
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          </div>
 
             {{ govukCheckboxes({
-              idPrefix: "waste",
-              name: "waste",
+              idPrefix: "alpha-display",
+              name: "alpha-display",
               fieldset: {
-                legend: {
-                  text: "Which company names do you want to search?"
-                }
               },
               items: [
                 {
-                  value: "latest-company-name",
-                  text: "Company name when they were dissolved"
-                },
-                {
-                  value: "previous",
-                  text: "Previous company names"
+                  value: "alphabetically",
+                  text: "Show results alphabetically"
                 }
               ]
             }) }}
-
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
             {{ govukButton({

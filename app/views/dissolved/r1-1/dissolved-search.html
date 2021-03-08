@@ -36,34 +36,19 @@
                 classes: "govuk-!-width-full"
             }) }}
 
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-            {{ govukRadios({
-              idPrefix: "sign-in",
-              name: "sign-in",
+            {{ govukCheckboxes({
+              idPrefix: "alpha-display",
+              name: "alpha-display",
               fieldset: {
-                legend: {
-                  text: "How do you want the search results to be displayed?"
-                }
               },
               items: [
                 {
-                  value: "alphabetical",
-                  text: "Alphabetical"
-                },
-                {
-                  value: "best-match",
-                  text: "Best/closest match",
-                  hint: {
-                    text: ""
-                  }
+                  value: "alphabetically",
+                  text: "Show results alphabetically"
                 }
               ]
             }) }}
-
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  
 
             {{ govukButton({
               text: "Search",
