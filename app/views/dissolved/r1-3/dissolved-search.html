@@ -16,11 +16,15 @@
   <div class="govuk-grid-column-full">
       <form action="/dissolved-search" method="post" novalidate>
 
-        <h1 class="govuk-heading-xl">Search for a dissolved company</h1>
-      
-            <p class="govuk-body-l">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+        {{ govukFieldset({
+          legend: {
+            text: "Search for a dissolved company",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) }}
 
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <p class="govuk-body-l govuk-!-padding-top-4">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
    
             {{ govukInput({
                 label: {
@@ -36,8 +40,7 @@
             {{ govukCheckboxes({
               idPrefix: "alpha-display",
               name: "alpha-display",
-              fieldset: {
-              },
+              classes: "govuk-!-margin-top-5 govuk-!-margin-bottom-5",
               items: [
                 {
                   value: "alphabetically",
