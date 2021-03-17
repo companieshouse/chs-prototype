@@ -19,10 +19,6 @@
         <h1 class="govuk-heading-xl">Search for a dissolved company</h1>
       
             <p class="govuk-body">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
-
-            {{ govukInsetText({
-              text: "We will only show companies that had this name when they were dissolved. You cannot search previous names held by a company."
-            }) }} 
           
             {{ govukInput({
                 label: {
@@ -36,55 +32,44 @@
 
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-            {{ govukRadios({
-              idPrefix: "sign-in",
-              name: "sign-in",
-              fieldset: {
-                legend: {
-                  text: "How do you want the search results to be displayed?"
-                }
-              },
-              items: [
-                {
-                  value: "alphabetical",
-                  text: "Alphabetical"
-                },
-                {
-                  value: "best-match",
-                  text: "Closest match",
-                  hint: {
-                    text: ""
-                  }
-                }
-              ]
-            }) }}
-
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
             {{ govukRadios({
               idPrefix: "waste",
               name: "waste",
               fieldset: {
                 legend: {
-                  text: "Which company names do you want to search?"
+                  text: "Which company names do you want to search?",
+                  classes: "govuk-fieldset__legend--s"
                 }
               },
               items: [
                 {
                   value: "latest-company-name",
-                  text: "Company name when they were dissolved"
+                  text: "Company name when they were dissolved",
+                  hint: {
+                    text: "Display results by closest match."
+                  }
+                },
+          
+                {
+                  value: "latest-company-name",
+                  text: "Previous company names",
+                  hint: {
+                    text: "Display results by closest match."
+                  }
                 },
                 {
                   value: "previous",
-                  text: "Previous company names"
+                  text: "Company name when they were dissolved",
+                  hint: {
+                    text: "Display results alphabetically."
+                  }
                 }
               ]
             }) }}
 
+
+          
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
