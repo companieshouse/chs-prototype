@@ -16,15 +16,7 @@
   <div class="govuk-grid-column-full">
       <form action="/r1-2/dissolved-search" method="post" novalidate>
 
-        {% if errorCompanyName == true or errorPreviousNameAndAlpha == true %}
-
-          {{ govukErrorSummary({
-              titleText: "There is a problem",
-              errorList: errorList
-          }) }}
-
-        {% endif %}
-
+       
        
         {{ govukFieldset({
           legend: {
@@ -36,22 +28,7 @@
 
             <p class="govuk-body-l govuk-!-padding-top-4">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
 
-            {% if errorCompanyName  == true %}
-
-            {{ govukInput({
-                label: {
-                  text: "Company name",
-                  classes: "govuk-!-font-weight-regular"
-                },
-                errorMessage: {
-                  text: "Enter a company name"
-                },
-                id: "company-name",
-                name: "company-name",
-                classes: "govuk-!-width-three-quarters"
-            }) }}
-
-            {% else %}
+  
 
             {{ govukInput({
                 label: {
@@ -62,10 +39,6 @@
                 name: "company-name",
                 classes: "govuk-!-width-three-quarters"
             }) }}
-
-            {% endif %}
-
-
 
 
             {{ govukCheckboxes({
@@ -84,66 +57,6 @@
             }) }}
 
 
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-three-quarters">
-                <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-5">
-              </div>
-            </div>
-
-            {% if errorSelectName  == true %}
-
-            {{ govukRadios({
-              classes: "govuk-radios govuk-!",
-              idPrefix: "select-name",
-              name: "select-name",
-              fieldset: {
-                legend: {
-                  text: "Which company names do you want to search?"
-                }
-              },
-              errorMessage: {
-                  text: "Select which company name you want to search"
-              },
-              items: [
-                {
-                  value: "dissolution",
-                  text: "Company name when they were dissolved"
-                },
-                {
-                  value: "previous",
-                  text: "Previous company names"
-                }
-              ]
-            }) }}
-
-            {% elseif errorPreviousNameAndAlpha  == true %}
-
-            {{ govukRadios({
-              classes: "govuk-radios govuk-!",
-              idPrefix: "select-name",
-              name: "select-name",
-              fieldset: {
-                legend: {
-                  text: "Which company names do you want to search?"
-                }
-              },
-              errorMessage: {
-                  text: "Select company name when they were dissolved. Previous company names is not currently available for alphabetical search."
-              },
-              items: [
-                {
-                  value: "dissolution",
-                  text: "Company name when they were dissolved"
-                },
-                {
-                  value: "previous",
-                  text: "Previous company names"
-                }
-              ]
-            }) }}
-
-            {% else %}
-
             {{ govukRadios({
               classes: "govuk-radios govuk-!",
               idPrefix: "select-name",
@@ -165,7 +78,6 @@
               ]
             }) }}
 
-            {% endif %}
 
 
             {{ govukButton({
