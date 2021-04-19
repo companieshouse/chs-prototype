@@ -24,10 +24,20 @@ Dissolved company search
 
 
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
 
       <h1 class="govuk-heading-xl">Search results</h1>
+
+        <p class="govuk-body">You can call the Contact Centre on 0303 123 4500 to find out if there is any more information available about a dissolved company.</p>
+
+
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
         {% from "govuk/components/table/macro.njk" import govukTable %}
 
@@ -189,10 +199,25 @@ Dissolved company search
           ]
         }) }}
 
+  </div>
+
+   <div class="pagination">
+          <a class="govuk-link" href="#">Previous</a>
+          <a class="govuk-link" href="#">Next</a>
+    </div>
+</div>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+<div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
         <p class="govuk-body">Data last updated on 12/10/2021</p>
   </div>
 </div>
-
+</div>
  
 
 
