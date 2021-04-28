@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dissolved company search
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Return to Companies House service"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <form action="/dissolved-search" method="post" novalidate>
+
+
+        {{ govukFieldset({
+          legend: {
+            text: "Search for a dissolved company",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) }}
+
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+
+            <p class="govuk-body govuk-!-padding-top-4">Search for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+
+          
+            </div>
+            </div>
+
+
+            {{ govukInput({
+                label: {
+                  text: "Company name",
+                  classes: "govuk-!-font-weight-regular"
+                },
+                id: "company-name",
+                name: "company-name",
+                classes: "govuk-!-width-three-quarters"
+            }) }}
+
+
+            <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-2">Or</p>
+
+
+            {{ govukInput({
+                label: {
+                  text: "Company number",
+                  classes: "govuk-!-font-weight-regular"
+                },
+                id: "company-number",
+                name: "company-number",
+                classes: "govuk-!-width-three-quarters govuk-input--width-10 govuk-!-margin-bottom-4"
+            }) }}
+
+
+
+            {{ govukCheckboxes({
+              idPrefix: "alpha-display",
+              name: "alpha-display",
+              classes: "govuk-!-margin-top-5 govuk-!-margin-bottom-7",
+              items: [
+                {
+                  value: "alphabetically",
+                  text: "Show results alphabetically"
+                }
+              ]
+            }) }}
+
+    
+
+            {{ govukRadios({
+              classes: "govuk-radios govuk-!",
+              idPrefix: "changed-name",
+              name: "changed-name",
+              fieldset: {
+                legend: {
+                  text: "Which company names do you want to search?"
+                }
+              },
+              items: [
+                {
+                  value: "dissolution",
+                  text: "Company name when it was dissolved"
+                },
+                {
+                  value: "previous",
+                  text: "Previous company names"
+                }
+              ]
+            }) }}
+
+
+            {{ govukButton({
+              text: "Search",
+              href:"./dissolved-records-no-previous-names",
+              classes: "govuk-!-margin-top-5"
+            }) }}
+
+            
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+
+                <h2 class="govuk-heading-s govuk-!-margin-top-4">For more information</h2>
+
+                <p class="govuk-body">You can call the Contact Centre on 0303 123 4500, or email <a href="#" class="govuk-link">enquiries@companieshouse.gov.uk</a>, to find out if there is any more information available about a dissolved company.</p>
+                
+              </div>
+            </div>
+
+
+
+
+          
+
+
+          </form>
+        </div>
+    </div>
+{% endblock %}

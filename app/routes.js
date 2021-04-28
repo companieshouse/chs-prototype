@@ -32,3 +32,12 @@ router.post('/r1-2/dissolved-search', function(req, res) {
     res.redirect('/r1-2/dissolved-records-no-previous-names')
   }
 })
+
+
+
+
+// Enter your details page
+router.post('/r1-2/dissolved-search-error-message', function(req, res) {
+    res.redirect('/r1-2/dissolved-records-no-previous-names')
+  
+})
