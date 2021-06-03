@@ -33,7 +33,7 @@ Dissolved company search
 
  {{ govukInput({
                 label: {
-                  text: "Company name",
+                  text: "Enter company name or number",
                   classes: "govuk-!-font-weight-regular"
                 },
                 id: "company-name",
@@ -41,10 +41,13 @@ Dissolved company search
                 classes: "govuk-!-width-three-quarters"
             }) }}
 
+
+
+
             {{ govukCheckboxes({
               idPrefix: "alpha-display",
               name: "alpha-display",
-              classes: "govuk-!-margin-top-5 govuk-!-margin-bottom-5",
+              classes: "govuk-!-padding-top-2 govuk-!-padding-bottom-7 govuk-checkboxes--small",
               items: [
                 {
                   value: "alphabetically",
@@ -82,12 +85,11 @@ Dissolved company search
               href:"./dissolved-records-no-previous-names",
               classes: "govuk-!-margin-top-5"
             }) }}
-
-            <h2 class="govuk-heading-s govuk-!-margin-top-4">For more information</h2>
-
-                <p class="govuk-body">You can call the Contact Centre on 0303 123 4500, or email <a href="#" class="govuk-link">enquiries@companieshouse.gov.uk</a>, to find out if there is any more information available about a dissolved company.</p>
                 
-
+          {{ govukDetails({
+            summaryText: "For more information",
+            html: 'You can call the Contact Centre on 0303 123 4500, or email <a href="#" class="govuk-link">enquiries@companieshouse.gov.uk</a>, to find out if there is any more information available about a dissolved company.'
+          }) }}
 
 
    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
