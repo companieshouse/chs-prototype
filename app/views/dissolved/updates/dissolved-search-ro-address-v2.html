@@ -1,0 +1,202 @@
+{% extends "layout.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block pageTitle %}
+
+Dissolved company search
+  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "../dissolved/dissolved-search",
+    text: "Search again"
+  }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Search results</h1>
+
+        <p class="govuk-body govuk-!-padding-bottom-5">You can call the Contact Centre on 0303 123 4500, or email <a href="#" class="govuk-link">enquiries@companieshouse.gov.uk</a>,<br> to find out if there is any more information available about a dissolved company.</p>
+
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          classes: 'govuk-body govuk-!-font-size-14',
+          head: [
+            {
+              text: 'Company name',
+              classes: 'govuk-!-width-one-quarter govuk-body govuk-!-font-size-19'
+            },
+            {
+              text: 'Company number',
+              classes: "no-wrap govuk-body govuk-!-font-size-19"
+            },
+            {
+              text: 'Incorporated on',
+              classes: "no-wrap govuk-body govuk-!-font-size-19"
+            },
+            {
+              text: 'Dissolved on',
+              classes: "no-wrap govuk-body govuk-!-font-size-19"
+            },
+            {
+              text: 'Registered office address at dissolution',
+              classes: 'govuk-!-width-one-quarter govuk-body govuk-!-font-size-19'
+            }
+
+          ],
+          rows: [
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              }
+
+            ],
+            
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              }
+
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              }
+
+            ]
+          ]
+        }) }}
+
+      
+
+  </div>
+</div>
+
+<div class="pagination">
+          <a class="govuk-link" href="#"><span class="govuk-!-font-weight-bold">1</span></a>
+          <a class="govuk-link" href="#">2</a>
+          <a class="govuk-link" href="#">3</a>
+          <a class="govuk-link" href="#">4</a>
+          <a class="govuk-link" href="#">5</a>
+          <a class="govuk-link" href="#">Next</a>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+
+<div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">Data is updated daily.</p>
+  </div>
+</div>
+
+ 
+
+
+{% endblock %}

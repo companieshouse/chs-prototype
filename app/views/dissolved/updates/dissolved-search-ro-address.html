@@ -1,0 +1,197 @@
+{% extends "layout.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block pageTitle %}
+
+Dissolved company search
+  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "../dissolved/dissolved-search",
+    text: "Search again"
+  }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+            <h1 class="govuk-heading-l">Search results</h1>
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Company name"
+            },
+            {
+              html: "Company number",
+              classes: "no-wrap"
+            },
+            {
+              text: "Incorporated on",
+              classes: "no-wrap"
+            },
+            {
+              html: "Dissolved on",
+              classes: "no-wrap"
+            },
+            {
+              html: "Address at dissolution",
+              classes: "no-wrap"
+            }
+
+          ],
+          rows: [
+            [
+              {
+                html: "THIS IS THE COAST LIMITED"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN"
+              }
+            ],
+            [
+              {
+                html: "THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN "
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                html:"12 Oct 2001",
+                classes: "no-wrap"
+              },
+              {
+                text:"SE4"
+              }
+       
+            ],
+            [
+              {
+                html: "THIS IS A COOL COMPANY NAME"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+
+            ],
+            
+            [
+              {
+                html: "ACM DISTRIBUTORS LTD"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+            ],
+            [
+              {
+                html: "ACM DRIVER LTD"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+
+            ],
+            [
+              {
+                html: "ACM DRIVER HIRE LTD"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+
+            ]
+          ]
+        }) }}
+
+  </div>
+</div>
+
+<div class="pagination">
+          <a class="govuk-link" href="#"><span class="govuk-!-font-weight-bold">1</span></a>
+          <a class="govuk-link" href="#">2</a>
+          <a class="govuk-link" href="#">3</a>
+          <a class="govuk-link" href="#">4</a>
+          <a class="govuk-link" href="#">5</a>
+          <a class="govuk-link" href="#">Next</a>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+
+<div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">Data is updated daily.</p>
+  </div>
+</div>
+
+ 
+
+
+{% endblock %}
