@@ -1,0 +1,411 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Companies House enhanced search
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="https://beta.companieshouse.gov.uk/">Back to Companies House service</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Advanced company search</h1>
+
+        <p class="govuk-body"> Useful information ......</p>
+
+        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
+
+      </div>
+
+        <div class="govuk-grid-column-one-third">
+
+      
+        {{ govukAccordion({
+          id: "accordion-default",
+
+          items: [
+            {
+              heading: {
+                text: "Company name"
+              },
+              content: {
+                html: "
+                <div class='govuk-form-group'>
+                        <div class='govuk-form-group'>
+                          <label class='accordion-label' for='contains-company-name'>
+                            Company name
+                          </label>
+                          <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
+                        </div>
+                    </div>"
+
+              }
+            },
+              {
+              heading: {
+                text: "Registered office address"
+              },
+              content: {
+                html: '<fieldset class="govuk-fieldset">
+                    
+                          <div class="govuk-form-group">
+                            <label class="accordion-label" for="address-county">
+                              Registered office address
+                            </label>
+                        
+                            <select class="location" style="border: 20px; width: 100%" multiple="multiple">
+                              <option value="eng">Powys</option>
+                              <option value="irl">Swansea</option>
+                              <option value="scot">Cardiff</option>
+                              <option value="wal">Newport</option>
+                            </select>
+                          </div>
+
+                        </fieldset>'
+              }
+            },
+              {
+              heading: {
+                text: "Status"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="company-status-hint">
+                            <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="all-companies" name="all-companies" type="checkbox" value="all-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="all-companies">
+                                All companies
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Active
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                  Dissolved
+                                </label>
+                              </div>
+
+                            <div class="govuk-checkboxes--small">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                  Liquidation
+                                </label>
+                              </div>
+
+                              
+                          </div> 
+                          </fieldset>
+                        </div>'
+              }
+            },
+            {
+              heading: {
+                text: "Company types"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
+                            <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="all-company-types" name="all-company-types" type="checkbox" value="all-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="all-company-types">
+                                All company types 
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Public limitied company (PLC)
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                  Private company limited by shares (LTD)
+                                </label>
+                              </div>
+
+                            <div class="govuk-checkboxes--small">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                  Private company limited by shares
+                                </label>
+                              </div>
+
+                              
+                          </div> 
+                          </fieldset>
+                        </div>'
+              }
+            },
+            {
+              heading: {
+                text: "Companies incorporated"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
+                                From
+                              </label>
+                            </h1>
+                            <div id="incorporation-date-from-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="incorporation-date-from" name="incorporation-date-from" type="text" spellcheck="false" aria-describedby="incorporation-date-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-to">
+                                To
+                              </label>
+                            </h1>
+                            <div id="incorporation-date-to-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="incorporation-date-to" name="incorporation-date-to" type="text" spellcheck="false" aria-describedby="incorporation-date-to-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        '         
+              }
+            },
+            {
+              heading: {
+                text: "Companies dissolved"
+              },
+              content: {
+                html: '
+                          <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="dissolved-date-from">
+                                From
+                              </label>
+                            </h1>
+                            <div id="dissolved-date-from-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="dissolved-date-from" name="dissolved-date-from" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="dissolved-date-to">
+                                To
+                              </label>
+                            </h1>
+                            <div id="dissolved-date-to-hint" class="accordion-hint">
+                              For example, 2007 or 27/3/2007
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="dissolved-date-to" name="dissolved-date-to" type="text" spellcheck="false" aria-describedby="dissolved-date-to-hint" pattern="[0-9]*" inputmode="numeric">
+                          </div>'
+              }
+            },
+            {
+              heading: {
+                text: "Nature of business"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                        <label class="accordion-label" for="event-name">
+                          Standard Industrial Classification (SIC) codes
+                        </label>
+                        <span id="account-number-hint" class="accordion-hint">
+                          Enter your search term, for example \'motor\'.
+                        </span>
+                        <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
+                      </div>'
+              }
+            }
+          ]
+        }) }}
+
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Update results
+      </button>
+
+
+      
+
+
+    </div>
+
+        <div class="govuk-grid-two-thirds" style="padding-left: 40px";>
+
+        <h2 class="govuk-heading-s">149 results</h2>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+   
+        
+        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
+
+        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
+
+        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
+
+
+                <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
+
+        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
+
+        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
+
+                <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
+
+        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
+
+        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
+
+                <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
+
+        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
+
+        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
+
+        </div>
+
+
+
+
+                  
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          classes: 'govuk-body govuk-!-font-size-16',
+          head: [
+            {
+              text: 'Company name'
+            },
+            {
+              text: 'Company number',
+              classes:'no-wrap'
+            },
+            {
+              text: 'Incorporated on',
+              classes:'no-wrap'
+            },
+            {
+              text: 'Registered office address at dissolution'
+            }
+
+          ],
+          rows: [
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED',
+                classes:'no-wrap'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:'Meade Hill Road, Prestwich, Manchester, M25 0DH'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:'Meade Hill Road, Prestwich, Manchester, M25 0DH'
+              }
+
+            ],
+            
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:'Mountview Court, 1148 High Road, Whetstone, N20 0RA'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:'The Old Exchange, 234 Southchurch Road, Southend On Sea, SS1 2EG'
+              }
+
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' Meade Hill Road, Prestwich, Manchester, M25 0DH'
+              }
+
+            ]
+          ]
+        }) }}
+
+
+        
+
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}
