@@ -18,13 +18,23 @@
 
         <h1 class="govuk-heading-l">Advanced company search</h1>
 
-        <p class="govuk-body"> Useful information ......</p>
+        <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
         <p> <a href="#" class="govuk-link">Download as CSV</a></p>
 
       </div>
+    </div>
+    <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-one-third">
+
+          <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+            Update results
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Clear search
+        </button>
 
       
         {{ govukAccordion({
@@ -39,9 +49,7 @@
                 html: "
                 <div class='govuk-form-group'>
                         <div class='govuk-form-group'>
-                          <label class='accordion-label' for='contains-company-name'>
-                            Company name
-                          </label>
+                          
                           <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
                         </div>
                     </div>"
@@ -56,9 +64,7 @@
                 html: '<fieldset class="govuk-fieldset">
                     
                           <div class="govuk-form-group">
-                            <label class="accordion-label" for="address-county">
-                              Registered office address
-                            </label>
+                            
                         
                             <select class="location" style="border: 20px; width: 100%" multiple="multiple">
                               <option value="eng">Powys</option>
@@ -100,10 +106,67 @@
                                 </label>
                               </div>
 
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="open-companies" name="open-companies" type="checkbox" value="open-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="open-companies">
+                                  Open
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="closed-companies" name="closed-companies" type="checkbox" value="closed-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="closed-companies">
+                                  Closed
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="converted-closed-companies" name="converted-close-companies" type="checkbox" value="converted-closed-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="converted-close-companies">
+                                  Converted closed
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="receivership-companies" name="receivership-companies" type="checkbox" value="receivership-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="receivership-companies">
+                                  Receivership
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="liquidation-companies" name="liquidation-companies" type="checkbox" value="liquidation-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="liquidation-companies">
+                                  Liquidation
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="administration-companies" name="administration-companies" type="checkbox" value="administration-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="administration-companies">
+                                  Administration
+                                </label>
+                              </div>
+
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="insolvency-companies" name="insolvency-companies" type="checkbox" value="insolvency-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="insolvency-companies">
+                                  Insolvency proceedings
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="voluntary-arrangement-companies" name="voluntary-arrangement-companies" type="checkbox" value="voluntary-arrangement-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="voluntary-arrangement-companies">
+                                  Voluntary arrangement
+                                </label>
+                              </div>
+
                             <div class="govuk-checkboxes--small">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                <input class="govuk-checkboxes__input" id="liquidation-companies" name="liquidation-companies" type="checkbox" value="liquidation-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="liquidation-companies">
                                   Liquidation
                                 </label>
                               </div>
@@ -132,7 +195,7 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Public limitied company (PLC)
+                                Private unlimited
                               </label>
                             </div>
 
@@ -143,13 +206,218 @@
                                 </label>
                               </div>
 
-                            <div class="govuk-checkboxes--small">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                  Private company limited by shares
-                                </label>
-                              </div>
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Old public company
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Private limited guarant nsc limited exemption
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Limitied partnership
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Private limited guarant nsc
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Converted or closed
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Private unlimited nsc
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Private limited shares section 30 exemption
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Protected cell company
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Assurance company
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Oversea company
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Eeig
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Icvc securities
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Icvc warrant
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Industrial and provident society
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Northern Ireland
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Northern Ireland other
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                LLP
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Royal Charter
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Investment company with variable capital
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Unregistered company
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                European public limited liability company se
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                UK establishment
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Scottish partnership
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Charitable incorporated organisation
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Scottish charitable incorporated organisation
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Further education or sixth form college corporation
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Community interest company
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Private fund limited partnership
+                              </label>
+                            </div>
+
 
                               
                           </div> 
@@ -238,168 +506,145 @@
         Update results
       </button>
 
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Clear search
+    </button>
+
 
       
 
 
     </div>
 
-        <div class="govuk-grid-two-thirds" style="padding-left: 40px";>
-
-        <h2 class="govuk-heading-s">149 results</h2>
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-   
+        <div class="govuk-grid-two-thirds" style="padding-left:0px">
         
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
+       <table class="govuk-table-search">
 
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-
-                <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-                <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-                <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-        </div>
-
-
-
-
-                  
-
-        {{ govukTable({
-          firstCellIsHeader: false,
-          classes: 'govuk-body govuk-!-font-size-16',
-          head: [
-            {
-              text: 'Company name'
-            },
-            {
-              text: 'Company number',
-              classes:'no-wrap'
-            },
-            {
-              text: 'Incorporated on',
-              classes:'no-wrap'
-            },
-            {
-              text: 'Registered office address at dissolution'
-            }
-
-          ],
-          rows: [
-            [
-              {
-                text: 'THIS IS THE COAST LIMITED',
-                classes:'no-wrap'
-              },
-              {
-                text: '01210067'
-              },
-              {
-                text:'31 Dec 1987'
-              },
-              {
-                text:'Meade Hill Road, Prestwich, Manchester, M25 0DH'
-              }
-            ],
-            [
-              {
-                text: 'THIS IS THE COAST LIMITED'
-              },
-              {
-                text: '01210067'
-              },
-              {
-                text:'31 Dec 1987'
-              },
-              {
-                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
-              }
-            ],
-            [
-              {
-                text: 'THIS IS THE COAST LIMITED'
-              },
-              {
-                text: '01210067'
-              },
-              {
-                text:'31 Dec 1987'
-              },
-              {
-                text:'Meade Hill Road, Prestwich, Manchester, M25 0DH'
-              }
-
-            ],
-            
-            [
-              {
-                text: 'THIS IS THE COAST LIMITED'
-              },
-              {
-                text: '01210067'
-              },
-              {
-                text:'31 Dec 1987'
-              },
-              {
-                text:'Mountview Court, 1148 High Road, Whetstone, N20 0RA'
-              }
-            ],
-            [
-              {
-                text: 'THIS IS THE COAST LIMITED'
-              },
-              {
-                text: '01210067'
-              },
-              {
-                text:'31 Dec 1987'
-              },
-              {
-                text:'The Old Exchange, 234 Southchurch Road, Southend On Sea, SS1 2EG'
-              }
-
-            ],
-            [
-              {
-                text: 'THIS IS THE COAST LIMITED'
-              },
-              {
-                text: '01210067'
-              },
-              {
-                text:'31 Dec 1987'
-              },
-              {
-                text:' Meade Hill Road, Prestwich, Manchester, M25 0DH'
-              }
-
-            ]
-          ]
-        }) }}
-
+        <span> <caption class="govuk-table__caption govuk-table__caption--m">4,000 results <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> </span> </caption>
 
         
 
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Company name</th>
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Company number</th>
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Incorporated on</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14">Registered office address</th>
+
+
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>
+                        <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
 </div>
 
