@@ -20,21 +20,26 @@
 
         <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
-
       </div>
     </div>
     <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-one-third">
 
-          <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-            Update results
-          </button>
+        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
 
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Clear search
-        </button>
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Update results
+            </button>
+
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Clear search
+            </button>
+        </div>
+
+        
+
 
       
         {{ govukAccordion({
@@ -501,14 +506,19 @@
             }
           ]
         }) }}
+        
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Update results
+            </button>
 
-      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-        Update results
-      </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Clear search
+            </button>
+        </div>
 
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Clear search
-    </button>
+        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
+
 
 
       
@@ -517,11 +527,6 @@
     </div>
 
         <div class="govuk-grid-two-thirds" style="padding-left:0px">
-        
-       
-
-
-        <div class="govuk-grid-two-thirds" style="padding-left: 40px";>
 
         <h2 class="govuk-heading-s">2,884 results</h2> 
 
