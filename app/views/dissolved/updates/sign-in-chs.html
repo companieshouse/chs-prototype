@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Sign in to Companies House
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/sign-in" method="post" novalidate>
+
+        {% if errorEmail == true or errorPassword == true %}
+
+          {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: errorList
+            }) }}
+
+        {% endif %}
+
+      <h1 class="govuk-heading-xl">Sign in to Companies House</h1>
+
+
+      <p> You cannot use your WebFiling details to sign in. You must sign in to or register a Companies House account. </p>
+
+
+        {{ govukInput({
+            label: {
+            text: "Email address"
+          },
+          type: "email",
+          autocomplete: "email",
+          id: "email",
+          name: "email"
+          }) }}
+
+
+          {{ govukInput({
+          label: {
+          text: "Password"
+          },
+          id: "password",
+          name: "password",
+          type: "password"
+          }) }}
+
+
+        {{ govukButton({
+          
+          text: "Sign in",
+          href:"dissolved-search-ro-address-v2"
+
+        }) }}
+
+
+      <p class="govuk-body"><a href="start-page" class="govuk-link">Register</a></p>
+
+      <p><a href="../forgotten-password/change-your-password" class="govuk-link govuk-link--no-visited-state">Forgotten your password?</a></p>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
