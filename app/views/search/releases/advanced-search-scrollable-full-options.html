@@ -48,12 +48,45 @@
               },
               content: {
                 html: "
-                <div class='govuk-form-group'>
-                        <div class='govuk-form-group'>
-                          
-                          <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
-                        </div>
-                    </div>"
+                <fieldset class='govuk-fieldset'>
+
+                  <div class='govuk-form-group'>  
+                    <label class='accordion-label' for='contains-company-name'>
+                      Company name (contains)
+                    </label>
+                    <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
+                  </div>
+                  <div class='govuk-form-group'>
+                    <label class='accordion-label' for='sort'>
+                      Options
+                    </label>
+                    <select class='govuk-select accordion-label' id='sort' name='sort'>
+                      <option value='published'>Or</option>
+                      <option value='published' >And</option>
+                    </select>
+                  </div>
+
+                  <hr class='govuk-section-break govuk-section-break--m govuk-section-break--visible'>
+
+                  <div class='govuk-form-group'>
+                    <label class='accordion-label' for='contains-company-name'>
+                      Company name (excludes)
+                    </label>
+                    <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
+                  </div>
+
+                  <div class='govuk-form-group'>
+                    <label class='accordion-label' for='sort'>
+                      Options
+                    </label>
+                    <select class='govuk-select accordion-label' id='sort' name='sort'>
+                      <option value='published'>Or</option>
+                      <option value='published'>And</option>
+                    </select>
+                  </div>
+
+                  
+                </fieldset>"
 
               }
             },
@@ -544,7 +577,7 @@
 
         <h2 class="govuk-heading-s">2,884 results</h2> 
 
-        <a href="advanced-search-table" class="govuk-link" >Table view</a>
+        <a href="" class="govuk-link" >Table view</a>
 
 
 
