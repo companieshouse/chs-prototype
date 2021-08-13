@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Companies House enhanced search
+  Advanced company search - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -501,9 +501,10 @@
                         <label class="accordion-label" for="event-name">
                           Standard Industrial Classification (SIC) codes
                         </label>
-                        <span id="account-number-hint" class="accordion-hint">
-                          Enter your search term, for example \'motor\ has the SIC code 29100'. <p> Browse codes</p>
+                        <span id="account-number-hint" class="accordion-hint govuk-!-margin-bottom-1">
+                          Enter your search term, for example motor has the SIC code 29100. 
                         </span>
+                        <p> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse codes (opens in a new tab)</a></p>
                         <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
                       </div>'
               }

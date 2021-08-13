@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Companies House enhanced search
+  Advanced company search - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -168,14 +168,6 @@
                                 </label>
                               </div>
 
-                            <div class="govuk-checkboxes--small">
-                              <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                  Liquidation
-                                </label>
-                              </div>
-
                               
                           </div> 
                           </fieldset>
@@ -187,7 +179,7 @@
                 text: "Company types"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 225px; width: 300px;">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 225px; width: 300px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -497,9 +489,10 @@
                         <label class="accordion-label" for="event-name">
                           Standard Industrial Classification (SIC) codes
                         </label>
-                        <span id="account-number-hint" class="accordion-hint">
-                          Enter your search term, for example \'motor\'.
+                        <span id="account-number-hint" class="accordion-hint govuk-!-margin-bottom-1">
+                          Enter your search term, for example motor has the SIC code 29100. 
                         </span>
+                        <p> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse codes (opens in a new tab)</a></p>
                         <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
                       </div>'
               }
