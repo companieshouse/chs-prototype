@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block pageTitle %}
+
+Dissolved company search
+  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "../dissolved/dissolved-search",
+    text: "Search again"
+  }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Search results</h1>
+
+        <p class="govuk-body">You’ll need to enable Javascript and <a href="#" class="govuk-link"> sign in to Companies House</a> to download reports for dissolved companies. Reports currently only include a list of filings from the company’s filing history. </p>
+
+        <p class="govuk-body"> You can <a href="#" class="govuk-link"> contact Companies House </a> to find out if there is any more information available about a company. </p>
+        <p class ="govuk-!-padding-bottom-3">We cannot show the registered office address if this information is missing from our records, or for companies dissolved more than 20 years ago.  </p>
+
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          classes: 'govuk-body govuk-!-font-size-16',
+          head: [
+            {
+              text: 'Company name'
+            },
+            {
+              text: 'Company number',
+              classes:'no-wrap'
+            },
+            {
+              text: 'Incorporated on',
+              classes:'no-wrap'
+            },
+            {
+              text: 'Dissolved on',
+              classes:'no-wrap'
+            },
+            {
+              text: 'Registered office address at dissolution'
+            },
+            {
+              html:"Download report",
+              classes:'no-wrap'
+            }
+
+          ],
+          rows: [
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED',
+                classes:'no-wrap'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'Not available'
+              },
+              {
+                html:'<a href="sign-in-chs" class="govuk-link">Download report</a>'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN'
+              },
+              {
+                html:'<a href="sign-in-chs" class="govuk-link">Download report</a>'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'Not available'
+              },
+              {
+                html:'<a href="sign-in-chs" class="govuk-link">Download report</a>'
+              }
+
+            ],
+            
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'Mountview Court, 1148 High Road, Whetstone, N20 0RA'
+              },
+              {
+                html:'<a href="sign-in-chs" class="govuk-link">Download report</a>'
+              }
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:'The Old Exchange, 234 Southchurch Road, Southend On Sea, SS1 2EG'
+              },
+              {
+                html:'<a href="sign-in-chs" class="govuk-link">Download report</a>'
+              }
+
+            ],
+            [
+              {
+                text: 'THIS IS THE COAST LIMITED'
+              },
+              {
+                text: '01210067'
+              },
+              {
+                text:'31 Dec 1987'
+              },
+              {
+                text:' 12 Oct 2001'
+              },
+              {
+                text:' Meade Hill Road, Prestwich, Manchester, M25 0DH'
+              },
+              {
+                html:'<a href="sign-in-chs" class="govuk-link">Download report</a>'
+              }
+
+            ]
+          ]
+        }) }}
+
+      
+
+  </div>
+</div>
+
+<div class="pagination">
+          <a class="govuk-link" href="#"><span class="govuk-!-font-weight-bold">1</span></a>
+          <a class="govuk-link" href="#">2</a>
+          <a class="govuk-link" href="#">3</a>
+          <a class="govuk-link" href="#">4</a>
+          <a class="govuk-link" href="#">5</a>
+          <a class="govuk-link" href="#">Next</a>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+
+<div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">Data is updated daily.</p>
+  </div>
+</div>
+
+ 
+
+
+{% endblock %}

@@ -26,7 +26,7 @@
     </div>
     <div class="govuk-grid-row">
 
-        <div class="govuk-grid-column-one-third">
+        <div class="govuk-grid-column-one-quarter">
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Update results
@@ -38,9 +38,6 @@
         </div>
 
 
-
-
-      
         {{ govukAccordion({
           id: "accordion-default",
 
@@ -51,12 +48,25 @@
               },
               content: {
                 html: "
-                <div class='govuk-form-group'>
-                        <div class='govuk-form-group'>
-                          
-                          <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
-                        </div>
-                    </div>"
+                 <fieldset class='govuk-fieldset'>
+
+                  <div class='govuk-form-group'>  
+                    <label class='accordion-label' for='contains-company-name'>
+                      Company names that contain
+                    </label>
+                    <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
+                  </div>
+
+                  <hr class='govuk-section-break govuk-section-break--m govuk-section-break--visible'>
+
+                  <div class='govuk-form-group'>
+                    <label class='accordion-label' for='excludes-company-name'>
+                      Exclude company names that contain
+                    </label>
+                    <input class='govuk-input govuk-!-width-width-full' id='excludes-company-name' name='excludes-company-name' type='text'>
+                  </div>
+
+                </fieldset>"
 
               }
             },
@@ -538,7 +548,8 @@
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Company name</th>
               <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Company number</th>
-              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Incorporated on</th>
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Status</th>
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">SIC Code</th>
               <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14">Registered office address</th>
 
 
@@ -547,109 +558,110 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">Motor -----</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>
                         <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">FLOWERS (UK) PLC</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">FLOWERS and CHOCOLATES LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--red">Dissolved</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>            <tr class="govuk-table__row">
               
-              <td class="govuk-table__cell govuk-!-font-size-14">THIS IS THE COAST LIMITED</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">31 Dec 1987</td>
-              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-16">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-16"><strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+              <td class="govuk-table__cell govuk-!-font-size-16">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
             </tr>
           </tbody>

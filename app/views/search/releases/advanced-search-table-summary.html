@@ -20,15 +20,14 @@
 
         <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
+        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
+
       </div>
     </div>
     <div class="govuk-grid-row">
 
-        <div class="govuk-grid-column-one-third">
-
-        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
-
-        <div class="govuk-button-group">
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Update results
             </button>
@@ -38,7 +37,7 @@
             </button>
         </div>
 
-        
+
 
 
       
@@ -52,25 +51,12 @@
               },
               content: {
                 html: "
-                <fieldset class='govuk-fieldset'>
-
-                  <div class='govuk-form-group'>  
-                    <label class='accordion-label' for='contains-company-name'>
-                      Company names that contain
-                    </label>
-                    <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
-                  </div>
-
-                  <hr class='govuk-section-break govuk-section-break--m govuk-section-break--visible'>
-
-                  <div class='govuk-form-group'>
-                    <label class='accordion-label' for='excludes-company-name'>
-                      Exclude company names that contain
-                    </label>
-                    <input class='govuk-input govuk-!-width-width-full' id='excludes-company-name' name='excludes-company-name' type='text'>
-                  </div>
-
-                </fieldset>"
+                <div class='govuk-form-group'>
+                        <div class='govuk-form-group'>
+                          
+                          <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
+                        </div>
+                    </div>"
 
               }
             },
@@ -100,7 +86,7 @@
                 text: "Status"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 300px; padding-left: 5px;">
+                html: '<div class="govuk-form-group">
                           <fieldset class="govuk-fieldset" aria-describedby="company-status-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -125,59 +111,67 @@
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="open-companies" name="open-companies" type="checkbox" value="open-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="open-companies">
                                   Open
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="closed-companies" name="closed-companies" type="checkbox" value="closed-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="closed-companies">
                                   Closed
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="converted-closed-companies" name="converted-close-companies" type="checkbox" value="converted-closed-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="converted-close-companies">
                                   Converted closed
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="receivership-companies" name="receivership-companies" type="checkbox" value="receivership-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="receivership-companies">
                                   Receivership
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="liquidation-companies" name="liquidation-companies" type="checkbox" value="liquidation-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="liquidation-companies">
                                   Liquidation
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="administration-companies" name="administration-companies" type="checkbox" value="administration-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="administration-companies">
                                   Administration
                                 </label>
                               </div>
 
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="insolvency-companies" name="insolvency-companies" type="checkbox" value="insolvency-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="insolvency-companies">
                                   Insolvency proceedings
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
-                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                <input class="govuk-checkboxes__input" id="voluntary-arrangement-companies" name="voluntary-arrangement-companies" type="checkbox" value="voluntary-arrangement-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="voluntary-arrangement-companies">
                                   Voluntary arrangement
+                                </label>
+                              </div>
+
+                            <div class="govuk-checkboxes--small">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="liquidation-companies" name="liquidation-companies" type="checkbox" value="liquidation-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="liquidation-companies">
+                                  Liquidation
                                 </label>
                               </div>
 
@@ -192,7 +186,7 @@
                 text: "Company types"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 225px; width: 300px; padding-left: 5px;">
+                html: '<div class="govuk-form-group">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -502,17 +496,17 @@
                         <label class="accordion-label" for="event-name">
                           Standard Industrial Classification (SIC) codes
                         </label>
-                        <span id="account-number-hint" class="accordion-hint govuk-!-margin-bottom-1">
-                          Enter your search term, for example motor has the SIC code 29100. 
+                        <span id="account-number-hint" class="accordion-hint">
+                          Enter your search term, for example \'motor\'.
                         </span>
-                        <p> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse codes (opens in a new tab)</a></p>
                         <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
                       </div>'
               }
             }
           ]
         }) }}
-        
+
+      
         <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Update results
@@ -525,60 +519,41 @@
 
         <p> <a href="#" class="govuk-link">Download as CSV</a></p>
 
+
     </div>
 
+        <div class="govuk-grid-two-thirds" style="padding-left:0px;">
+        
+       <table class="govuk-table-search">
 
-        <div class="govuk-grid-two-thirds" style="padding-left: 40px";>
+        <h2 class="govuk-heading-s">4,000 results </h2>
 
-        <h2 class="govuk-heading-s">2,884 results</h2> 
-
-        <a href="advanced-search-table" class="govuk-link" >Table view</a>
-
-
+        <a href="advanced-search" class="govuk-link" >List view</a>
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-   
-        
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS (UK) PLC</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">Total number of appointments 2</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS and CHOCOLATES LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Dissolved on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-
-      
-
-
         
 
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14" >Company name</th>
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Company <br> number</th>
+              <th scope="col" class="govuk-table__header no-wrap govuk-body govuk-!-font-size-14">Status</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14">Registered office address</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell govuk-!-font-size-14" style="padding-right:2px">THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">01210067</td>
+              <td class="govuk-table__cell govuk-!-font-size-14"> Incorporated on 31 Dec 1987</td>
+              <td class="govuk-table__cell govuk-!-font-size-14">111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
 
-        
-        </div> 
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
 </div>
 
