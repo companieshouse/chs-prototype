@@ -14,31 +14,12 @@
 
     <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-full">
+        <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">Advanced company search</h1>
 
         <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-
-        <div class="govuk-grid-column-two-thirds">
-
-        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
-
-        <div class="govuk-button-group">
-            <button class="govuk-button" data-module="govuk-button">
-              Update results
-            </button>
-
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-              Clear search
-            </button>
-        </div>
-
-      
       
         {{ govukAccordion({
           id: "accordion-default",
@@ -98,7 +79,7 @@
                 text: "Status"
               },
               content: {
-                html: '<div class="govuk-form-group">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 630px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-status-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -178,6 +159,7 @@
                                   Voluntary arrangement
                                 </label>
                               </div>
+
                               
                           </div> 
                           </fieldset>
@@ -189,7 +171,7 @@
                 text: "Company types"
               },
               content: {
-                html: '<div class="govuk-form-group">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 225px; width: 630px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -512,7 +494,7 @@
         
         <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
-              Update results
+              Search
             </button>
 
             <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -520,63 +502,8 @@
             </button>
         </div>
 
-        <p> <a href="#" class="govuk-link">Download as CSV</a></p>
-
-
-
-      
-
-
     </div>
-
-
-
-        <div class="govuk-grid-two-thirds">
-
-
-        <h2 class="govuk-heading-s">2,884 matches found</h2> 
-
-        <a href="advanced-search-table" class="govuk-link" >Table view</a>
-
-
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-   
-        
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-        <p> <a href="#" class="govuk-link" style="font-size: 20px;">FLOWERS LIMITED</a></p> 
-
-        <p class="govuk-body" style="color:#b1b4b6; margin-bottom: 0px; ">18882777 - Incorporated on 31 December 1998</p>
-
-        <p class="govuk-body" style="margin-top: 0px;">2nd Floor Red House, 17 London Road, London SA73 8PH</p>
-
-
-
-      
-
-
-        
-
-
-        
-        </div> 
-
-</div>
-
-</div>
+  </div>
 
 
 
