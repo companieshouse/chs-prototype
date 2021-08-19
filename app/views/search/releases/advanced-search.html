@@ -492,14 +492,18 @@
           ]
         }) }}
         
-        <div class="govuk-button-group">
-            <button class="govuk-button" data-module="govuk-button">
-              Search
-            </button>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
 
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-              Clear search
-            </button>
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Search",
+            href:"advanced-search-results"
+          }) }}
+
+          {{ govukButton({
+            text: "Clear search",
+            classes: "govuk-button--secondary"
+          }) }}
         </div>
 
     </div>
