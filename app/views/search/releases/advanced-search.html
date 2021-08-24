@@ -18,7 +18,7 @@
 
         <h1 class="govuk-heading-l">Advanced company search</h1>
 
-        <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="govuk-body"> Fill in one or more fields to search the Companies House register.</p>
 
       
         {{ govukAccordion({
@@ -61,8 +61,13 @@
                 html: '<fieldset class="govuk-fieldset">
                     
                           <div class="govuk-form-group">
-                            
-                        
+
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
+                                Enter a full or partial address
+                              </label>
+                            </h1>
+                
+
                             <select class="location" style="border: 20px; width: 100%" multiple="multiple">
                               <option value="eng">Powys</option>
                               <option value="irl">Swansea</option>
@@ -171,7 +176,7 @@
                 text: "Company types"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 225px; width: 630px; padding-left: 5px;">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 630px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -416,12 +421,12 @@
             },
             {
               heading: {
-                text: "Companies incorporated"
+                text: "Incorporation date"
               },
               content: {
                 html: '<div class="govuk-form-group">
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
-                                Compaines incorporated from
+                                Companies incorporated after
                               </label>
                             </h1>
                             <div id="incorporation-date-from-hint" class="accordion-hint">
@@ -432,7 +437,7 @@
 
                           <div class="govuk-form-group">
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-to">
-                                Compaines incorporated to
+                                Companies incorporated before
                               </label>
                             </h1>
                             <div id="incorporation-date-to-hint" class="accordion-hint">
@@ -445,28 +450,35 @@
             },
             {
               heading: {
-                text: "Companies dissolved"
+                text: "Dissolution date"
               },
               content: {
                 html: '
                           <div class="govuk-form-group">
-                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="dissolved-date-from">
-                               Companies dissolved from
+
+                             <span id="sic-code" class=" accordion-label govuk-!-margin-bottom-1">
+
+                            We can only show companies dissolved since 01/01/2010. </span>
+
+
+                            <h1 class="govuk-label-wrapper "><label class="accordion-label govuk-label--s" style="padding-top:10px;" for="dissolved-date-from">
+                               Companies dissolved after
                               </label>
                             </h1>
                             <div id="dissolved-date-from-hint" class="accordion-hint">
-                              For example, 2007 or 27/3/2007
+                              For example, 2011 or 21/3/2011
+                              
                             </div>
                             <input class="govuk-input govuk-input--width-10" id="dissolved-date-from" name="dissolved-date-from" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
                           </div>
 
                           <div class="govuk-form-group">
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="dissolved-date-to">
-                                Companies dissolved to
+                                Companies dissolved before
                               </label>
                             </h1>
                             <div id="dissolved-date-to-hint" class="accordion-hint">
-                              For example, 2007 or 27/3/2007
+                              For example, 2011 or 21/3/2011
                             </div>
                             <input class="govuk-input govuk-input--width-10" id="dissolved-date-to" name="dissolved-date-to" type="text" spellcheck="false" aria-describedby="dissolved-date-to-hint" pattern="[0-9]*" inputmode="numeric">
                           </div>'
@@ -478,14 +490,19 @@
               },
               content: {
                 html: '<div class="govuk-form-group">
-                        <label class="accordion-label" for="event-name">
-                          Standard Industrial Classification (SIC) codes
-                        </label>
-                        <span id="account-number-hint" class="accordion-hint govuk-!-margin-bottom-1">
-                          Enter your search term, for example motor has the SIC code 29100. 
+
+                        <span id="sic-code" class=" accordion-label govuk-!-margin-bottom-1">
+                          Select a Standard Industrial Classification (SIC) code to search by nature of business. 
                         </span>
-                        <p> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse codes (opens in a new tab)</a></p>
+                        <label class="accordion-label" for="event-name" style="padding-top:10px;">
+                          Enter a search term, for example ‘motor’.
+                        </label>
+      
+                        
                         <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
+
+                        <p style="padding-top:10px;"> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse codes (opens in a new tab)</a></p>
+
                       </div>'
               }
             }

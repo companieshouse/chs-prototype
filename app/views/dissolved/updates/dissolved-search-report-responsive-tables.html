@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block pageTitle %}
+
+Dissolved company search
+  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "../dissolved/dissolved-search",
+    text: "Search again"
+  }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Search results</h1>
+
+        <p class="govuk-body">Reports currently only include a list of filings from the company’s filing history. </p>
+
+        <p class="govuk-body"> You can <a href="#" class="govuk-link"> contact Companies House </a> to find out if there is any more information available about a company. </p>
+        <p class ="govuk-!-padding-bottom-3">We cannot show the registered office address if this information is missing from our records, or for companies dissolved more than 20 years ago.  </p>
+
+
+        <table class="govuk-table">
+          
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th role="columnheader" scope="col" class="govuk-table__header">Company name</th>
+              <th role="columnheader" scope="col" class="govuk-table__header no-wrap">Company number</th>
+              <th role="columnheader" scope="col" class="govuk-table__header no-wrap">Incorporated on</th>
+              <th role="columnheader" scope="col" class="govuk-table__header no-wrap">Dissolved on</th>
+              <th role="columnheader" scope="col" class="govuk-table__header">Registered office address at dissolution</th>
+              <th role="columnheader" scope="col" class="govuk-table__header no-wrap">Download report</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"> <span class="responsive-table__heading no-wrap" aria-hidden="true">Company name</span>THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Company number</span>01210067</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Incorporated on</span>31 Dec 1987</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Dissolved on</span>12 Oct 2001</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Registered office address at dissolution</span>111 Burnt Oak Broadway, Edgware, Middlesex, HA8 5EN</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Download report</span><a href="sign-in-chs" class="govuk-link">Download report</a></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"> <span class="responsive-table__heading no-wrap" aria-hidden="true">Company name</span>THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Company number</span>01210067</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Incorporated on</span>31 Dec 1987</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Dissolved on</span>12 Oct 2001</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Registered office address at dissolution</span>Mountview Court, 1148 High Road, Whetstone, N20 0RA</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Download report</span><a href="sign-in-chs" class="govuk-link">Download report</a></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"> <span class="responsive-table__heading no-wrap" aria-hidden="true">Company name</span>THIS IS THE COAST LIMITED</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Company number</span>01210067</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Incorporated on</span>31 Dec 1987</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Dissolved on</span>12 Oct 2001</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Registered office address at dissolution</span>Not available</td>
+              <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Download report</span><a href="sign-in-chs" class="govuk-link">Download report</a></td>
+            </tr>
+            
+
+          </tbody>
+        </table>
+
+      
+
+  </div>
+</div>
+
+<div class="pagination">
+          <a class="govuk-link" href="#"><span class="govuk-!-font-weight-bold">1</span></a>
+          <a class="govuk-link" href="#">2</a>
+          <a class="govuk-link" href="#">3</a>
+          <a class="govuk-link" href="#">4</a>
+          <a class="govuk-link" href="#">5</a>
+          <a class="govuk-link" href="#">Next</a>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+
+<div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">Data is updated daily.</p>
+  </div>
+</div>
+
+ 
+
+
+{% endblock %}
