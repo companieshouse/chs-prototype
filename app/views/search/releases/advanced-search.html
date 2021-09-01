@@ -84,7 +84,7 @@
                 text: "Status"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 630px; padding-left: 5px;">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 490px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-status-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -176,7 +176,7 @@
                 text: "Company types"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 630px; padding-left: 5px;">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 490px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -189,14 +189,21 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Private unlimited
+                                Private unlimited company
                               </label>
                             </div>
 
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
                                 <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
-                                  Private company limited by shares (LTD)
+                                  Private limited company
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dissolved-companies" name="dissolved-companies" type="checkbox" value="dissolved-companies">
+                                <label class="govuk-label govuk-checkboxes__label" for="dissolved-companies">
+                                  Public limited company
                                 </label>
                               </div>
 
@@ -211,14 +218,14 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Private limited guarant nsc limited exemption
+                                Private Limited Company by guarantee without share capital, use of \'Limited\' exemption
                               </label>
                             </div>
 
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Limitied partnership
+                                Limited partnership
                               </label>
                             </div>
 
@@ -226,7 +233,7 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Private limited guarant nsc
+                                Private limited by guarantee without share capital
                               </label>
                             </div>
 
@@ -242,14 +249,14 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Private unlimited nsc
+                                Private unlimited company without share capital
                               </label>
                             </div>
 
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Private limited shares section 30 exemption
+                                Private Limited Company, use of \'Limited\' exemption
                               </label>
                             </div>
 
@@ -272,36 +279,14 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Oversea company
+                                Overseas company
                               </label>
                             </div>
 
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Eeig
-                              </label>
-                            </div>
-
-
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Icvc securities
-                              </label>
-                            </div>
-
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Icvc warrant
-                              </label>
-                            </div>
-
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Industrial and provident society
+                                European Economic Interest Grouping (EEIG)
                               </label>
                             </div>
 
@@ -309,7 +294,35 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Northern Ireland
+                                Investment company with variable capital - securities
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Investment company with variable capital -  warrant
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Investment company with variable capital -  umbrella
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Registered society
+                              </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Industrial and Provident society
                               </label>
                             </div>
 
@@ -317,7 +330,7 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Northern Ireland other
+                                Northern Ireland company
                               </label>
                             </div>
 
@@ -325,7 +338,7 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                LLP
+                                Credit union (Northern Ireland)
                               </label>
                             </div>
 
@@ -333,7 +346,15 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Royal Charter
+                                Limited liability partnership
+                              </label>
+                            </div>
+
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
+                                Royal charter company
                               </label>
                             </div>
 
@@ -357,7 +378,7 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                European public limited liability company se
+                                European public limited liability company (SE)
                               </label>
                             </div>
 
@@ -365,14 +386,14 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                UK establishment
+                                UK establishment company
                               </label>
                             </div>
 
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
                               <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Scottish partnership
+                                Scottish qualifying partnership
                               </label>
                             </div>
 
@@ -398,22 +419,6 @@
                               </label>
                             </div>
 
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Community interest company
-                              </label>
-                            </div>
-
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
-                              <label class="govuk-label govuk-checkboxes__label" for="active-companies">
-                                Private fund limited partnership
-                              </label>
-                            </div>
-
-
-                              
                           </div> 
                           </fieldset>
                         </div>'
