@@ -25,7 +25,7 @@
 
     <div class="govuk-grid-row">
 
-        <div class="govuk-grid-column-one-third" style="margin-right: 15px;">
+        <div class="govuk-grid-column-one-third" style="padding-top: govuk-spacing(3)">
 
 
         <div class="govuk-button-group">
@@ -49,25 +49,24 @@
               },
               content: {
                 html: "
-                <fieldset class='govuk-fieldset'>
 
-                  <div class='govuk-form-group'>  
-                    <label class='accordion-label' for='contains-company-name'>
-                      Company names that contain
-                    </label>
-                    <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
+               <div class='govuk-form-group' style='padding-bottom:10px;'>
+                    <h1 class='govuk-label-wrapper'><label class='accordion-label govuk-label--l' for='contains-company-name'>
+                        Company names that contain
+                      </label>
+                    </h1>
+                    <input class='govuk-input' id='contains-company-name' name='contains-company-name' type='text'>
                   </div>
 
-                  <hr class='govuk-section-break govuk-section-break--m govuk-section-break--visible'>
+                 
 
-                  <div class='govuk-form-group'>
-                    <label class='accordion-label' for='excludes-company-name'>
-                      Exclude company names that contain
-                    </label>
-                    <input class='govuk-input govuk-!-width-width-full' id='excludes-company-name' name='excludes-company-name' type='text'>
-                  </div>
-
-                </fieldset>"
+                <div class='govuk-form-group' style='margin-top: govuk-spacing(5)'>
+                    <h1 class='govuk-label-wrapper'><label class='accordion-label govuk-label--l' for='excludes-company-name'>
+                        Exclude company names that contain
+                      </label>
+                    </h1>
+                    <input class='govuk-input' id='excludes-company-name' name='excludes-company-name' type='text'>
+                  </div>"
 
               }
             },
@@ -102,7 +101,7 @@
                 text: "Status"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 300px; padding-left: 5px;">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 300px; padding-left: govuk-spacing(1);">
                           <fieldset class="govuk-fieldset" aria-describedby="company-status-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -194,7 +193,7 @@
                 text: "Company types"
               },
               content: {
-                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 300px; padding-left: 5px;">
+                html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 300px; padding-left: govuk-spacing(1)">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -483,7 +482,7 @@
                             We can only show companies dissolved since 01/01/2010. </span>
 
 
-                            <h1 class="govuk-label-wrapper "><label class="accordion-label govuk-label--s" style="padding-top:10px;" for="dissolved-date-from">
+                            <h1 class="govuk-label-wrapper "><label class="accordion-label govuk-label--s" style="padding-top: govuk-spacing(2);" for="dissolved-date-from">
                                Companies dissolved after
                               </label>
                             </h1>

@@ -31,25 +31,23 @@
               },
               content: {
                 html: "
-                  <fieldset class='govuk-fieldset'>
-
-                  <div class='govuk-form-group'>  
-                    <label class='accordion-label' for='contains-company-name'>
-                      Company names that contain
-                    </label>
-                    <input class='govuk-input govuk-!-width-width-full' id='contains-company-name' name='contains-company-name' type='text'>
+                  <div class='govuk-form-group' style='padding-bottom:10px;'>
+                    <h1 class='govuk-label-wrapper'><label class='accordion-label govuk-label--l' for='contains-company-name'>
+                        Company names that contain
+                      </label>
+                    </h1>
+                    <input class='govuk-input' id='contains-company-name' name='contains-company-name' type='text'>
                   </div>
 
-                  <hr class='govuk-section-break govuk-section-break--m govuk-section-break--visible'>
+                 
 
-                  <div class='govuk-form-group'>
-                    <label class='accordion-label' for='excludes-company-name'>
-                      Exclude company names that contain
-                    </label>
-                    <input class='govuk-input govuk-!-width-width-full' id='excludes-company-name' name='excludes-company-name' type='text'>
-                  </div>
-
-                </fieldset>"
+                <div class='govuk-form-group' style='margin-top: govuk-spacing(5)'>
+                    <h1 class='govuk-label-wrapper'><label class='accordion-label govuk-label--l' for='excludes-company-name'>
+                        Exclude company names that contain
+                      </label>
+                    </h1>
+                    <input class='govuk-input' id='excludes-company-name' name='excludes-company-name' type='text'>
+                  </div>"
 
               }
             },
