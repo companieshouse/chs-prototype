@@ -179,7 +179,8 @@ tbody tr td {
   font-weight: 700;
   padding-right: 1em;
   text-align: left;
-  word-break: initial;
+  word-break: break-word;
+
 }
 
 
@@ -197,6 +198,7 @@ tbody tr td {
 
   .responsive-table__cell {
     text-align: right;
+    word-break: break-word;
   }
 
   .govuk-table__header:last-child, .govuk-table__cell:last-child {
