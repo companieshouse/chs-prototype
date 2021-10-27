@@ -16,6 +16,19 @@
 
         <div class="govuk-grid-column-two-thirds">
 
+          <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#incorporation-start-error">The incorporation date must be in the past</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
         <h1 class="govuk-heading-l">Advanced company search</h1>
 
         <p class="govuk-body"> Fill in one or more fields to search the Companies House register.</p>
@@ -427,7 +440,7 @@
                 text: "Incorporation date"
               },
               content: {
-                html: '<div class="govuk-form-group">
+                html: '<div class="govuk-form-group govuk-form-group--error">
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
                                 Companies incorporated after
                               </label>
@@ -435,7 +448,10 @@
                             <div id="incorporation-date-from-hint" class="accordion-hint">
                               For example, 27/3/2007
                             </div>
-                            <input class="govuk-input govuk-input--width-10" id="incorporation-date-from" name="incorporation-date-from" type="text" spellcheck="false" aria-describedby="incorporation-date-hint" pattern="[0-9]*" inputmode="numeric">
+                            <span id="incorporation-start-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> The incorporation date must be in the past
+    </span>
+                            <input class="govuk-date-input__input govuk-input--width-10 govuk-input--error" id="incorporation-date-from" name="incorporation-date-from" type="text" spellcheck="false" aria-describedby="incorporation-date-hint" pattern="[0-9]*" inputmode="numeric">
                           </div>
 
                           <div class="govuk-form-group">

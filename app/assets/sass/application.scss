@@ -149,7 +149,7 @@ thead {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  
+
   width: 1px;
 }
 
@@ -203,7 +203,7 @@ tbody tr td {
 
   .govuk-table__header:last-child, .govuk-table__cell:last-child {
     padding-right: 1em;
-  } 
+  }
 
 }
 
@@ -218,17 +218,39 @@ tbody tr td {
     position: relative;
     width: auto;
   }
-  
+
   tbody tr {
     display: table-row;
   }
-  
+
   tbody tr td {
     display: table-cell;
     text-align: left;
   }
-  
+
   .responsive-table__heading {
     display: none;
   }
+}
+
+.govuk-input--error {
+  font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    height: 2.5rem;
+    margin-top: 0;
+    padding: 5px;
+    border: 2px
+ solid #d4351c;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
