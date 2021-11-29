@@ -57,7 +57,7 @@
                     <input class='govuk-input' id='contains-company-name' name='contains-company-name' type='text'>
                   </div>
 
-                 
+
 
                 <div class='govuk-form-group' style='margin-top: govuk-spacing(5)'>
                     <h1 class='govuk-label-wrapper'><label class='accordion-label govuk-label--l' for='excludes-company-name'>
@@ -75,14 +75,14 @@
               },
               content: {
                 html: '<fieldset class="govuk-fieldset">
-                    
+
                           <div class="govuk-form-group">
 
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
                                 Enter a full or partial address
                               </label>
                             </h1>
-                
+
 
                             <select class="location" style="border: 20px; width: 100%" multiple="multiple">
                               <option value="eng">Powys</option>
@@ -181,8 +181,8 @@
                                 </label>
                               </div>
 
-                              
-                          </div> 
+
+                          </div>
                           </fieldset>
                         </div>'
               }
@@ -195,12 +195,6 @@
                 html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 300px; padding-left: govuk-spacing(1)">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="all-company-types" name="all-company-types" type="checkbox" value="all-companies">
-                              <label class="govuk-label govuk-checkboxes__label" for="all-company-types">
-                                All company types 
-                              </label>
-                            </div>
 
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
@@ -435,7 +429,7 @@
                               </label>
                             </div>
 
-                          </div> 
+                          </div>
                           </fieldset>
                         </div>'
               }
@@ -447,26 +441,26 @@
               content: {
                 html: '<div class="govuk-form-group">
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
-                                Companies incorporated after
+                                From
                               </label>
                             </h1>
                             <div id="incorporation-date-from-hint" class="accordion-hint">
-                              For example, 2007 or 27/3/2007
+                              For example, 27/3/2007
                             </div>
                             <input class="govuk-input govuk-input--width-10" id="incorporation-date-from" name="incorporation-date-from" type="text" spellcheck="false" aria-describedby="incorporation-date-hint" pattern="[0-9]*" inputmode="numeric">
                           </div>
 
                           <div class="govuk-form-group">
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-to">
-                                Companies incorporated before
+                                To
                               </label>
                             </h1>
                             <div id="incorporation-date-to-hint" class="accordion-hint">
-                              For example, 2007 or 27/3/2007
+                              For example, 27/3/2007
                             </div>
                             <input class="govuk-input govuk-input--width-10" id="incorporation-date-to" name="incorporation-date-to" type="text" spellcheck="false" aria-describedby="incorporation-date-to-hint" pattern="[0-9]*" inputmode="numeric">
                           </div>
-                        '         
+                        '
               }
             },
             {
@@ -482,23 +476,23 @@
 
 
                             <h1 class="govuk-label-wrapper "><label class="accordion-label govuk-label--s" style="padding-top: govuk-spacing(2);" for="dissolved-date-from">
-                               Companies dissolved after
+                               From
                               </label>
                             </h1>
                             <div id="dissolved-date-from-hint" class="accordion-hint">
-                              For example, 2011 or 21/3/2011
-                              
+                              For example, 21/3/2011
+
                             </div>
                             <input class="govuk-input govuk-input--width-10" id="dissolved-date-from" name="dissolved-date-from" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
                           </div>
 
                           <div class="govuk-form-group">
                             <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="dissolved-date-to">
-                                Companies dissolved before
+                                To
                               </label>
                             </h1>
                             <div id="dissolved-date-to-hint" class="accordion-hint">
-                              For example, 2011 or 21/3/2011
+                              For example, 21/3/2011
                             </div>
                             <input class="govuk-input govuk-input--width-10" id="dissolved-date-to" name="dissolved-date-to" type="text" spellcheck="false" aria-describedby="dissolved-date-to-hint" pattern="[0-9]*" inputmode="numeric">
                           </div>'
@@ -514,8 +508,8 @@
                         <label class="accordion-label" for="event-name" style="padding-top:10px;">
                           Enter a Standard Industrial Classification (SIC) code to search by nature of business.
                         </label>
-      
-                        
+
+
                         <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
 
                         <p style="padding-top:10px;"> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse SIC codes (opens in new tab)</a></p>
@@ -525,7 +519,7 @@
             }
           ]
         }) }}
-        
+
         <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Update results
@@ -541,32 +535,16 @@
 
     <div class="govuk-grid-two-thirds" style="padding-top: 45px;">
 
-        <h2 class="govuk-heading-s">2,884 results</h2> 
+        <h2 class="govuk-heading-s">2,884 results</h2>
 
-
+        <div class="govuk-button-group" style="justify-content: flex-end;">
+            <button class="govuk-button" data-module="govuk-button">
+              Download results
+            </button>
+            <p class="govuk-body-s" style="text-align: right; color: #505a5f;">Results are downloaded as a CSV file. Only the first 500 results can be downloaded.</p>
+            </div>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-        
-        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
-        <p style="padding-bottom: 10px; margin-top:0px;" >
-        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
-        Private limited company <br>
-        18882777 - Incorporated on 31 December 1998 <br>
-        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
-        SIC codes - 46220, 47760</p>
-
-
-
-        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
-        <p style="padding-bottom: 10px; margin-top:0px;" >
-        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
-        Private limited company <br>
-        18882777 - Incorporated on 31 December 1998 <br>
-        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
-        SIC codes - 46220, 47760</p>
-
-
-
 
         <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
         <p style="padding-bottom: 10px; margin-top:0px;" >
@@ -587,15 +565,36 @@
         SIC codes - 46220, 47760</p>
 
 
-        
+
+
+        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
+        <p style="padding-bottom: 10px; margin-top:0px;" >
+        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
+        Private limited company <br>
+        18882777 - Incorporated on 31 December 1998 <br>
+        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
+        SIC codes - 46220, 47760</p>
+
+
+
+        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
+        <p style="padding-bottom: 10px; margin-top:0px;" >
+        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
+        Private limited company <br>
+        18882777 - Incorporated on 31 December 1998 <br>
+        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
+        SIC codes - 46220, 47760</p>
+
+
+
          <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link"> FLOWERS LIMITED</a></h2>
 
          <p style="padding-bottom: 10px; margin-top:0px;" >
           <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
           18882777 - Incorporated on 31 December 1998 <br>
-          
+
           Private limited company <br>
-          
+
            2nd Floor Red House, 17 London Road, London SA73 8PH<br>
           SIC codes - 46220, 47760</p>
 
@@ -605,18 +604,11 @@
                  <p style="padding-bottom: 10px; margin-top:0px;" >
           <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
           18882777 - Incorporated on 31 December 1998 <br>
-          
+
           Private limited company <br>
-          
+
            2nd Floor Red House, 17 London Road, London SA73 8PH<br>
           SIC codes - 46220, 47760</p>
-
-
-
-
-
-
-
 
         <span class="govuk-caption-m">18882777</span>
           <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link"> FLOWERS LIMITED</a></h2>
@@ -631,8 +623,8 @@
 
         <span class="govuk-caption-m">18882777</span>
           <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link"> FLOWERS LIMITED</a></h2>
-        
-        <p style="padding-bottom: 10px" > 
+
+        <p style="padding-bottom: 10px" >
           <a href="#" class="govuk-link" style="font-size: 20px">FLOWERS LIMITED </a> <br>
           <span class="govuk-body govuk-!-font-weight-bold"> Company number:</span> 18882777<br>
           <span class="govuk-body govuk-!-font-weight-bold"> Company status: </span> Active <br>
@@ -642,10 +634,18 @@
           <span class="govuk-body govuk-!-font-weight-bold"> SIC codes:</span> 46220, 47760</p>
 
 
-        
-        
-        </div> 
 
+
+
+        <div class="govuk-button-group" style="justify-content: flex-end;">
+            <button class="govuk-button" data-module="govuk-button">
+              Download results
+            </button>
+            </div>
+            <div style="justify-content: flex-end;">
+            <p class="govuk-body-s" style="text-align: right; color: #505a5f;">Results are downloaded as a CSV file. Only the first 500 results can be downloaded.</p>
+            </div>
+            </div>
 </div>
 
 </div>
