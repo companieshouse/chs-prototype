@@ -10,6 +10,15 @@
 
 {% block content %}
 
+{% set sicHtml %}
+<div class="govuk-input--width-30">
+  <label for="autocomplete-default" class="govuk-label">Enter a SIC code or description</label>
+  <div id="sic" class="autocomplete-wrapper"></div>
+</div>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/sic.js"></script>
+{% endset -%}
+
 <div class="govuk-width-container">
 
     <div class="govuk-grid-row">
@@ -540,16 +549,24 @@
                        <!-- <span id="sic-code" class=" accordion-label govuk-!-margin-bottom-1">
 
                         </span> -->
-                        <label class="accordion-label" for="event-name" style="padding-top:10px;">
-                          Enter a Standard Industrial Classification (SIC) code to search by nature of business.
+                        <div class="govuk-input--width-full">
+                        <label class="accordion-label" for="autocomplete-default" style="padding-top:10px;">
+                          Enter a Standard Industrial Classification (SIC) code or description to search by nature of business.
                         </label>
 
+                          <div id="sic" class="govuk-input--width-full autocomplete-wrapper"></div>
+                        </div>
 
-                        <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
+                                                <script src="/public/javascripts/accessible-autocomplete.js"></script>
+                        <script src="/public/javascripts/sic.js"></script>
+</div>
+
+
 
                         <p style="padding-top:10px;"> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse SIC codes (opens in new tab)</a></p>
 
-                      </div>'
+                      </div>
+                    '
               }
             }
           ]
