@@ -505,15 +505,16 @@
               content: {
                 html: '<div class="govuk-form-group">
 
-                        <label class="accordion-label" for="event-name" style="padding-top:10px;">
-                          Enter a Standard Industrial Classification (SIC) code to search by nature of business.
-                        </label>
+                  <div class="govuk-input--width-full">
+                  <label class="accordion-label" for="autocomplete-default" style="padding-top:10px;">
+                    Enter a Standard Industrial Classification (SIC) code or description to search by nature of business.
+                  </label>
 
+                    <div id="sic" class="govuk-input--width-30 autocomplete-wrapper"></div>
+                  </div>
 
-                        <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
-
-                        <p style="padding-top:10px;"> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse SIC codes (opens in new tab)</a></p>
-
+                                          <script src="/public/javascripts/accessible-autocomplete.js"></script>
+                  <script src="/public/javascripts/sic.js"></script>
                       </div>'
               }
             }
@@ -529,11 +530,9 @@
               Clear search
             </button>
         </div>
+</div>
 
-
-    </div>
-
-    <div class="govuk-grid-two-thirds" style="padding-top: 45px;">
+    <div class="govuk-grid-column-two-thirds" style="padding-top: 45px; justify-content: flex-end;">
 
         <h2 class="govuk-heading-s">2,884 results</h2>
 
@@ -587,55 +586,34 @@
 
 
 
-         <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link"> FLOWERS LIMITED</a></h2>
-
-         <p style="padding-bottom: 10px; margin-top:0px;" >
-          <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
-          18882777 - Incorporated on 31 December 1998 <br>
-
-          Private limited company <br>
-
-           2nd Floor Red House, 17 London Road, London SA73 8PH<br>
-          SIC codes - 46220, 47760</p>
-
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link"> FLOWERS LIMITED</a></h2>
-
-                 <p style="padding-bottom: 10px; margin-top:0px;" >
-          <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
-          18882777 - Incorporated on 31 December 1998 <br>
-
-          Private limited company <br>
-
-           2nd Floor Red House, 17 London Road, London SA73 8PH<br>
-          SIC codes - 46220, 47760</p>
-
-        <span class="govuk-caption-m">18882777</span>
-          <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link"> FLOWERS LIMITED</a></h2>
-
+        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
         <p style="padding-bottom: 10px; margin-top:0px;" >
-          Company status <span class="govuk-body govuk-!-font-weight-bold"> Active </span> <br>
-          Incorporated on <span class="govuk-body govuk-!-font-weight-bold"> 31 December 1998 </span><br>
-          Company type <span class="govuk-body govuk-!-font-weight-bold"> Private limited company </span><br>
-          Registered office address <span class="govuk-body govuk-!-font-weight-bold"> 2nd Floor Red House, 17 London Road, London SA73 8PH </span><br>
-          SIC codes <span class="govuk-body govuk-!-font-weight-bold"> 46220, 47760</span></p>
-
-
-        <span class="govuk-caption-m">18882777</span>
-          <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link"> FLOWERS LIMITED</a></h2>
-
-        <p style="padding-bottom: 10px" >
-          <a href="#" class="govuk-link" style="font-size: 20px">FLOWERS LIMITED </a> <br>
-          <span class="govuk-body govuk-!-font-weight-bold"> Company number:</span> 18882777<br>
-          <span class="govuk-body govuk-!-font-weight-bold"> Company status: </span> Active <br>
-          <span class="govuk-body govuk-!-font-weight-bold"> Incorporated on: </span> 31 December 1998 <br>
-          <span class="govuk-body govuk-!-font-weight-bold"> Company type: </span> Private limited company<br>
-          <span class="govuk-body govuk-!-font-weight-bold"> Registered office address:</span> 2nd Floor Red House, 17 London Road, London SA73 8PH <br>
-          <span class="govuk-body govuk-!-font-weight-bold"> SIC codes:</span> 46220, 47760</p>
-
-
-
-
+        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
+        Private limited company <br>
+        18882777 - Incorporated on 31 December 1998 <br>
+        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
+        SIC codes - 46220, 47760</p>
+        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
+        <p style="padding-bottom: 10px; margin-top:0px;" >
+        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
+        Private limited company <br>
+        18882777 - Incorporated on 31 December 1998 <br>
+        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
+        SIC codes - 46220, 47760</p>
+        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
+        <p style="padding-bottom: 10px; margin-top:0px;" >
+        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
+        Private limited company <br>
+        18882777 - Incorporated on 31 December 1998 <br>
+        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
+        SIC codes - 46220, 47760</p>
+        <h2 class="govuk-heading-m" style="margin-bottom: 3px;"><a href="#" class="govuk-link govuk-link--no-underline"> FLOWERS LIMITED</a></h2>
+        <p style="padding-bottom: 10px; margin-top:0px;" >
+        <span class="govuk-body govuk-!-font-weight-bold"> Active</span><br>
+        Private limited company <br>
+        18882777 - Incorporated on 31 December 1998 <br>
+        2nd Floor Red House, 17 London Road, London SA73 8PH<br>
+        SIC codes - 46220, 47760</p>
 
         <div class="govuk-button-group" style="justify-content: flex-end;">
             <button class="govuk-button" data-module="govuk-button">
