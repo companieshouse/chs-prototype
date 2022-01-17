@@ -4,7 +4,10 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 module.exports = router
+router.get('/', function(req, res) {
+    res.redirect('search/index')
 
+})
 
 // Enter your details page
 router.post('/r1-2/dissolved-search', function(req, res) {
@@ -39,5 +42,5 @@ router.post('/r1-2/dissolved-search', function(req, res) {
 // Enter your details page
 router.post('/r1-2/dissolved-search-error-message', function(req, res) {
     res.redirect('/r1-2/dissolved-records-no-previous-names')
-  
+
 })
