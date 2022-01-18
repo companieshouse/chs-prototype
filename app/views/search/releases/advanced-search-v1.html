@@ -10,6 +10,15 @@
 
 {% block content %}
 
+{% set sicHtml %}
+<div class="govuk-input--width-30">
+  <label for="autocomplete-default" class="govuk-label">Enter a SIC code or description</label>
+  <div id="sic" class="autocomplete-wrapper"></div>
+</div>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/sic.js"></script>
+{% endset -%}
+
 <div class="govuk-width-container">
 
     <div class="govuk-grid-row">
@@ -56,91 +65,35 @@
                 text: "Registered office address"
               },
               content: {
-                html: '<h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="ro-address">
-                    Enter a full or partial address
-                  </label><input class="govuk-input govuk-input--width-20" id="ro-address" name="ro-address" type="text">'
-              }
-            },
-            {
-              heading: {
-                text: "Incorporation date"
-              },
-              content: {
-                html: '<div class="govuk-form-group">
-                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--m" for="incorporation-date-from">
-                                From
-                              </label>
-                            </h1>
-                            <div class="govuk-hint">
-  For example, 27 3 2007
-</div>
-<div class="govuk-date-input">
-  <div class="govuk-date-input__item">
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-date-input__label">
-        Day
-      </label>
-      <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-  </div>
-  <div class="govuk-date-input__item">
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-date-input__label">
-        Month
-      </label>
-      <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-  </div>
-  <div class="govuk-date-input__item">
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-date-input__label">
-        Year
-      </label>
-      <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-  </div>
-</div>
-</div>
+                html: '<fieldset class="govuk-fieldset">
 
                           <div class="govuk-form-group">
-                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--m" for="incorporation-date-to">
-                                To
+
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="ro-address">
+                                Enter a full or partial address
                               </label>
                             </h1>
-                            <div id="incorporation-date-to-hint" class="accordion-hint">
-                              For example, 27 3 2007
-                            </div>
-                            <div class="govuk-date-input">
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label">
-                                    Day
-                                  </label>
-                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                              </div>
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label">
-                                    Month
-                                  </label>
-                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                              </div>
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label">
-                                    Year
-                                  </label>
-                                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                              </div>
-                            </div>
-                        </div>'
+
+<input class="govuk-input govuk-input--width-20" id="ro-address" name="ro-address" type="text">
+                          </div>
+
+                        </fieldset>'
               }
             },
               {
               heading: {
-                text: "Company status"
+                text: "Status"
               },
               content: {
                 html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 490px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-status-hint">
                             <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="all-companies" name="all-companies" type="checkbox" value="all-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="all-companies">
+                                All companies
+                              </label>
+                            </div>
 
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
@@ -221,38 +174,18 @@
             },
             {
               heading: {
-                text: "Nature of business"
-              },
-              content: {
-                html: '<div class="govuk-form-group">
-
-                       <!-- <span id="sic-code" class=" accordion-label govuk-!-margin-bottom-1">
-
-                        </span> -->
-                        <label class="accordion-label" for="event-name" style="padding-top:10px;">
-                          Enter a Standard Industrial Classification (SIC) code to search by nature of business.
-                        </label>
-                        <div id="sic-hint" class="accordion-hint">
-                          For example, 01120
-                        </div>
-
-
-
-                        <input class="govuk-input govuk-!-width-full" id="event-name" name="event-name" type="text">
-
-                        <p style="padding-top:10px;"> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse SIC codes (opens in new tab)</a></p>
-
-                      </div>'
-              }
-            },
-            {
-              heading: {
                 text: "Company types"
               },
               content: {
                 html: '<div class="govuk-form-group" style="overflow: scroll; height: 200px; width: 490px; padding-left: 5px;">
                           <fieldset class="govuk-fieldset" aria-describedby="company-type-hint">
                             <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="all-company-types" name="all-company-types" type="checkbox" value="all-companies">
+                              <label class="govuk-label govuk-checkboxes__label" for="all-company-types">
+                                All company types
+                              </label>
+                            </div>
 
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="active-companies" name="active-companies" type="checkbox" value="active-companies">
@@ -492,7 +425,78 @@
                         </div>'
               }
             },
+            {
+              heading: {
+                text: "Incorporation date"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-from">
+                                Companies incorporated after
+                              </label>
+                            </h1>
+                            <div class="govuk-hint">
+  For example, 27 3 2007
+</div>
+<div class="govuk-date-input">
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label">
+        Day
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label">
+        Month
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label">
+        Year
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+</div>
+</div>
 
+                          <div class="govuk-form-group">
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="incorporation-date-to">
+                                Companies incorporated before
+                              </label>
+                            </h1>
+                            <div id="incorporation-date-to-hint" class="accordion-hint">
+                              For example, 27 3 2007
+                            </div>
+                            <div class="govuk-date-input">
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label">
+                                    Day
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label">
+                                    Month
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label">
+                                    Year
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                              </div>
+                            </div>
+                        </div>'
+              }
+            },
             {
               heading: {
                 text: "Dissolution date"
@@ -505,8 +509,8 @@
                             We can only show companies dissolved since 01/01/2010. </span>
 
 
-                            <h1 class="govuk-label-wrapper "><label class="accordion-label govuk-label--m" style="padding-top:10px;" for="dissolved-date-from">
-                               From
+                            <h1 class="govuk-label-wrapper "><label class="accordion-label govuk-label--s" style="padding-top:10px;" for="dissolved-date-from">
+                               Companies dissolved after
                               </label>
                             </h1>
                             <div class="govuk-hint">
@@ -515,7 +519,7 @@
   <div class="govuk-date-input">
   <div class="govuk-date-input__item">
     <div class="govuk-form-group">
-      <label class="govuk-body-s govuk-label govuk-date-input__label ">
+      <label class="govuk-label govuk-date-input__label">
         Day
       </label>
       <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
@@ -539,8 +543,8 @@
 
 
                           <div class="govuk-form-group">
-                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--m" for="dissolved-date-to">
-                                To
+                            <h1 class="govuk-label-wrapper"><label class="accordion-label govuk-label--s" for="dissolved-date-to">
+                                Companies dissolved before
                               </label>
                             </h1>
                             <div class="govuk-hint">
@@ -572,6 +576,36 @@
                           </div>'
 
               }
+            },
+            {
+              heading: {
+                text: "Nature of business"
+              },
+              content: {
+                html: '<div class="govuk-form-group">
+
+                       <!-- <span id="sic-code" class=" accordion-label govuk-!-margin-bottom-1">
+
+                        </span> -->
+                        <div class="govuk-input--width-full">
+                        <label class="accordion-label" for="autocomplete-default" style="padding-top:10px;">
+                          Enter a Standard Industrial Classification (SIC) code or description to search by nature of business.
+                        </label>
+
+                          <div id="sic" class="govuk-input--width-30 autocomplete-wrapper"></div>
+                        </div>
+
+                                                <script src="/public/javascripts/accessible-autocomplete.js"></script>
+                        <script src="/public/javascripts/sic.js"></script>
+</div>
+
+
+
+                        <p style="padding-top:10px;"> <a href="http://resources.companieshouse.gov.uk/sic/" target="_blank" class="govuk-link accordion-label">Browse SIC codes (opens in new tab)</a></p>
+
+                      </div>
+                    '
+              }
             }
           ]
         }) }}
@@ -587,7 +621,6 @@
           {{ govukButton({
             text: "Clear search",
             classes: "govuk-button--secondary"
-
           }) }}
         </div>
 
