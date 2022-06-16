@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dissolved company search
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Return to Companies House service"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+      <form action="/dissolved-search" method="post" novalidate>
+
+        <h1 class="govuk-heading-xl">Search for a dissolved company</h1>
+      
+            <p class="govuk-body">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+          
+            {{ govukInput({
+                label: {
+                  text: "Company name",
+                  classes: "govuk-!-font-weight-regular"
+                },
+                id: "company-name",
+                name: "company-name",
+                classes: "govuk-!-width-full"
+            }) }}
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+            {{ govukRadios({
+              idPrefix: "waste",
+              name: "waste",
+              fieldset: {
+                legend: {
+                  text: "Which company names do you want to search?",
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "latest-company-name",
+                  text: "Company name when they were dissolved",
+                  hint: {
+                    text: "Display results by closest match."
+                  }
+                },
+          
+                {
+                  value: "latest-company-name",
+                  text: "Previous company names",
+                  hint: {
+                    text: "Display results by closest match."
+                  }
+                },
+                {
+                  value: "previous",
+                  text: "Company name when they were dissolved",
+                  hint: {
+                    text: "Display results alphabetically."
+                  }
+                }
+              ]
+            }) }}
+
+
+          
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+            {{ govukButton({
+              text: "Search",
+              href:"./dissolved-records-no-previous-names"
+            }) }}
+
+          </form>
+        </div>
+    </div>
+{% endblock %}

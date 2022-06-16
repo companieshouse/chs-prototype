@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dissolved company search
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Return to Companies House service"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <form action="/dissolved-search" method="post" novalidate>
+
+        <h1 class="govuk-heading-xl">Search for a dissolved company</h1>
+      
+            <p class="govuk-body-l">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          
+            {{ govukInput({
+                label: {
+                  text: "Company name",
+                  classes: "govuk-!-font-weight-regular"
+                },
+                id: "company-name",
+                name: "company-name",
+                classes: "govuk-!-width-three-quarters"
+            }) }}
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              idPrefix: "sign-in",
+              name: "sign-in",
+              fieldset: {
+                legend: {
+                  text: "How do you want the search results to be displayed?"
+                }
+              },
+              items: [
+                {
+                  value: "alphabetical",
+                  text: "Alphabetical"
+                },
+                {
+                  value: "best-match",
+                  text: "Closest match",
+                  hint: {
+                    text: ""
+                  }
+                }
+              ]
+            }) }}
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              idPrefix: "waste",
+              name: "waste",
+              fieldset: {
+                legend: {
+                  text: "Which company names do you want to search?"
+                }
+              },
+              items: [
+                {
+                  value: "latest-company-name",
+                  text: "Company name when they were dissolved"
+                },
+                {
+                  value: "previous",
+                  text: "Previous company names"
+                }
+              ]
+            }) }}
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+            {{ govukButton({
+              text: "Search",
+              href:"./dissolved-records-no-previous-names"
+            }) }}
+
+          </form>
+        </div>
+    </div>
+{% endblock %}

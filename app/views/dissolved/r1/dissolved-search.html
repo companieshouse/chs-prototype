@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dissolved company search
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Return to Companies House service"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <form action="/dissolved-search" method="post" novalidate>
+
+            <h1 class="govuk-heading-xl">Search for a dissolved company</h1>
+      
+            <p class="govuk-body">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+
+            
+            {{ govukInsetText({
+              text: "We will only show companies that had this name when they were dissolved. You cannot search previous names held by a company."
+            }) }} 
+
+          
+            {{ govukInput({
+                label: {
+                  text: "Company name",
+                  classes: "govuk-!-font-weight-regular"
+                },
+                hint: {
+                  text:""
+
+                },
+  
+                id: "company-name",
+                name: "company-name",
+                classes: "govuk-!-width-full"
+            }) }}
+
+            {{ govukButton({
+              text: "Search",
+              href:"./dissolved-records-no-previous-names"
+            }) }}
+
+          </form>
+        </div>
+    </div>
+{% endblock %}

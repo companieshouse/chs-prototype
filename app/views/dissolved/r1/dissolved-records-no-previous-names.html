@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block pageTitle %}
+
+Dissolved company search
+  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "../dissolved/dissolved-search",
+    text: "Search again"
+  }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      <h1 class="govuk-heading-xl">Search results</h1>
+
+        {% from "govuk/components/table/macro.njk" import govukTable %}
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Company name",
+              classes: 'govuk-!-width-one-half'
+            },
+            {
+              html: "Company number",
+              classes: "no-wrap"
+            },
+            {
+              text: "Incorporated on",
+              classes: "no-wrap"
+            },
+            {
+              html: "Dissolved on",
+              classes: "no-wrap"
+            },
+            {
+              text: "Postcode",
+              classes: "no-wrap"
+            }
+
+          ],
+          rows: [
+            [
+              {
+                html: "THISISTHECOASTLIMI"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+            ],
+            [
+              {
+                html: "THIS IS THE COMPANY"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                html:"12 Oct 2001",
+                classes: "no-wrap"
+              },
+              {
+                text:"SE4"
+              }
+       
+            ],
+            [
+              {
+                html: "THIS IS A COOL COMPANY NAME"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+
+            ],
+            
+            [
+              {
+                html: "ACM DISTRIBUTORS LTD"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+            ],
+            [
+              {
+                html: "ACM DRIVER LTD"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+
+            ],
+            [
+              {
+                html: "ACM DRIVER HIRE LTD"
+              },
+              {
+                text: "01210067"
+              },
+              {
+                text:"31 Dec 1987"
+              },
+              {
+                text:"12 Oct 2001"
+              },
+              {
+                text:"SE4"
+              }
+
+            ]
+          ]
+        }) }}
+
+        <p class="govuk-body">Data last updated on 12/10/2021</p>
+  </div>
+</div>
+
+ 
+
+
+{% endblock %}

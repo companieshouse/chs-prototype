@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dissolved company search
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Return to Companies House service"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <form action="/r1-2/dissolved-search" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Previous company names are currently not available for alphabetical search",
+              href: "#previous-names-error"
+            }
+          ]
+        }) }}
+
+      
+        {{ govukFieldset({
+          legend: {
+            text: "Search for a dissolved company",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) }}
+
+            <p class="govuk-body-l govuk-!-padding-top-4">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+
+  
+
+            {{ govukInput({
+                label: {
+                  text: "Company name",
+                  classes: "govuk-!-font-weight-regular"
+                },
+                id: "company-name",
+                name: "company-name",
+                classes: "govuk-!-width-three-quarters"
+            }) }}
+
+
+            {{ govukCheckboxes({
+              idPrefix: "alpha-display",
+              name: "alpha-display",
+              classes: "govuk-!-margin-top-5 govuk-!-margin-bottom-5 govuk-checkboxes",
+              items: [
+                {
+                  value: "alphabetically",
+                  text: "Show results alphabetically",
+                   hint:{
+                    text:"Previous company names are currently not available for alphabetical search"
+                  }
+                }
+              ]
+            }) }}
+
+
+            {{ govukRadios({
+              classes: "govuk-radios govuk-!",
+              idPrefix: "select-name",
+              name: "select-name",
+              fieldset: {
+                legend: {
+                  text: "Which company names do you want to search?"
+                }
+              },
+              errorMessage: {
+                  text: "Previous company names are currently not available for alphabetical search"
+              },
+              items: [
+                {
+                  value: "dissolution",
+                  text: "Company name when it was dissolved"
+                },
+                {
+                  value: "previous",
+                  text: "Previous company names"
+                }
+              ]
+            }) }}
+
+
+
+            {{ govukButton({
+              text: "Search",
+              classes: "govuk-!-margin-top-5"
+            }) }}
+
+
+          </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,417 @@
+{% extends "layout.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block pageTitle %}
+
+Dissolved company search
+  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "../dissolved/dissolved-search",
+    text: "Search again"
+  }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+       <h1 class="govuk-heading-l">Search for a dissolved company</h1>
+
+
+      <p class="govuk-body">Search by name for companies dissolved between 1/1/1989 and 31/12/2009. </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        {{ govukInput({
+          label: {
+              text: "Enter company name or number"
+          },
+          id: "company-search",
+          name: "company-search"
+      }) }}
+    </div>
+
+    <div class ="govuk-grid-column-one-quarter">
+
+            {{ govukButton({
+                text: "Search",
+                href:"#",
+                classes: "searchbutton govuk-button"
+            }) }}
+            
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        {{ govukCheckboxes({
+              idPrefix: "alpha-display",
+              name: "alpha-display",
+              classes: "govuk-!-margin-bottom-5",
+              items: [
+                {
+                  value: "alphabetically",
+                  text: "Show results alphabetically"
+                }
+              ]
+        }) }}
+    </div>
+  </div>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <h1 class="govuk-heading-l">Search results </h1>
+
+                     <p class="govuk-body govuk-!-padding-bottom-5">You can call the Contact Centre on 0303 123 4500, or email <a href="#" class="govuk-link">enquiries@companieshouse.gov.uk</a>,<br> to find out if there is any more information available about a dissolved company.</p>
+
+
+
+
+            {% set pastDayHtml %}
+
+            {{ govukTable({
+              head: [
+                {
+                  text: "Company name",
+                  classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                  text: "Company number"
+                },
+                {
+                  text: "Incorporated on"
+                },
+                {
+                  text: "Dissolved on"
+                },
+                {
+                  html: "Registered office<br> address"
+                }
+                
+              ],
+              rows: [
+                [
+                  {
+                    html: "THIS IS THE COAST LIMITED"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+                ],
+                [
+                  {
+                    html: "THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN "
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    html:"12 Oct 2001",
+                    classes: "no-wrap"
+                  },
+                  {
+                    text:"SE4"
+                  }
+           
+                ],
+                [
+                  {
+                    html: "THIS IS A COOL COMPANY NAME"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+
+                ],
+                
+                [
+                  {
+                    html: "ACM DISTRIBUTORS LTD"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+                ],
+                [
+                  {
+                    html: "ACM DRIVER LTD"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+
+                ],
+                [
+                  {
+                    html: "ACM DRIVER HIRE LTD"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+
+                ]
+                
+              ]
+            }) }}
+
+
+            <div class="pagination">
+                  <a class="govuk-link" href="#"><span class="govuk-!-font-weight-bold">1</span></a>
+                  <a class="govuk-link" href="#">2</a>
+                  <a class="govuk-link" href="#">3</a>
+                  <a class="govuk-link" href="#">4</a>
+                  <a class="govuk-link" href="#">5</a>
+                  <a class="govuk-link" href="#">Next</a>
+          </div>
+
+          <p class="govuk-body">Data is updated daily.</p>
+
+
+            {% endset -%}
+
+            {% set pastWeekHtml %}
+            {{ govukTable({
+              head: [
+                {
+                  text: "Company name",
+                  classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                  text: "Company number"
+                },
+                {
+                  text: "Incorporated on"
+                },
+                {
+                  text: "Dissolved on"
+                },
+                {
+                  html: "Registered office<br> address"
+                }
+                
+              ],
+              rows: [
+                [
+                  {
+                    html: "THIS IS THE COAST LIMITED"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+                ],
+                [
+                  {
+                    html: "THIS IS THE COMPANY WITH THE LONGEST NAME SO FAR INCORPORATED AT THE REGISTRY OF COMPANIES IN ENGLAND AND WALES AND ENCOMPASSING THE REGISTRIES BASED IN SCOTLAN "
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    html:"12 Oct 2001",
+                    classes: "no-wrap"
+                  },
+                  {
+                    text:"SE4"
+                  }
+           
+                ],
+                [
+                  {
+                    html: "THIS IS A COOL COMPANY NAME"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+
+                ],
+                
+                [
+                  {
+                    html: "ACM DISTRIBUTORS LTD"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+                ],
+                [
+                  {
+                    html: "ACM DRIVER LTD"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+
+                ],
+                [
+                  {
+                    html: "ACM DRIVER HIRE LTD"
+                  },
+                  {
+                    text: "01210067"
+                  },
+                  {
+                    text:"31 Dec 1987"
+                  },
+                  {
+                    text:"12 Oct 2001"
+                  },
+                  {
+                    text:"SE4"
+                  }
+
+                ]
+                
+              ]
+            }) }}
+
+            <div class="pagination">
+                  <a class="govuk-link" href="#"><span class="govuk-!-font-weight-bold">1</span></a>
+                  <a class="govuk-link" href="#">2</a>
+                  <a class="govuk-link" href="#">3</a>
+                  <a class="govuk-link" href="#">4</a>
+                  <a class="govuk-link" href="#">5</a>
+                  <a class="govuk-link" href="#">Next</a>
+          </div>
+
+          <p class="govuk-body">Data is updated daily.</p>
+
+
+
+            {% endset -%}
+
+            {{ govukTabs({
+              items: [
+                {
+                  label: "Company name when they were dissolved",
+                  id: "dissolved-name",
+                  panel: {
+                    html: pastDayHtml
+                  }
+                },
+                {
+                  label: "Previous company names",
+                  id: "previous-names",
+                  panel: {
+                    html: pastWeekHtml
+                  }
+                }
+              ]
+            }) }}
+
+
+
+
+
+<div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+
+  </div>
+</div>
+
+ 
+
+
+{% endblock %}

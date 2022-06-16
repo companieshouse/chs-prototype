@@ -13,12 +13,16 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/step-by-step-related";
 @import "patterns/task-list";
 @import "patterns/related-items";
+@import "accessible-autocomplete";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+.autocomplete__menu {
+  font-family: 'GDS Transport', arial, sans-serif;
+}
 
 
 .select2-selection {
@@ -102,4 +106,158 @@ $govuk-assets-path: '/govuk/assets/';
 
 .no-wrap {
   white-space: nowrap;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  float: left;
+  font-size: 19px;
+  padding: 8px 16px;
+}
+
+@media (min-width: 641px) {
+    .searchbutton{
+        margin-top: 25px;
+        margin-left: -17px;
+
+    }
+}
+
+.govuk-table-search {
+
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    margin-bottom: 20px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+
+/* Responsive table styling */
+thead {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+
+  width: 1px;
+}
+
+tbody tr {
+  display: block;
+  margin-bottom: 1.5em;
+  padding: 0 0.5em;
+}
+
+tbody tr td {
+  display: block; /* browsers that don't support flex */
+  display: flex;
+  justify-content: space-between;
+  min-width: 1px;
+  text-align: right;
+}
+
+
+
+@media all and (-ms-high-contrast: none) { /* IE11 flex fix */
+  tbody tr td {
+    display: block;
+  }
+}
+
+.responsive-table__heading {
+  font-weight: 700;
+  padding-right: 1em;
+  text-align: left;
+  word-break: break-word;
+
+}
+
+
+
+@media (max-width: 768px) {
+  tbody tr td {
+    padding-right: 0;
+  }
+  tbody tr td:last-child {
+    border-bottom: 0;
+  }
+  tbody tr {
+    border-bottom: 3px solid grey;
+  }
+
+  .responsive-table__cell {
+    text-align: right;
+    word-break: break-word;
+  }
+
+  .govuk-table__header:last-child, .govuk-table__cell:last-child {
+    padding-right: 1em;
+  }
+
+}
+
+@media (min-width: 769px) {
+  thead {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    display: table-header-group;
+    height: auto;
+    overflow: auto;
+    position: relative;
+    width: auto;
+  }
+
+  tbody tr {
+    display: table-row;
+  }
+
+  tbody tr td {
+    display: table-cell;
+    text-align: left;
+  }
+
+  .responsive-table__heading {
+    display: none;
+  }
+}
+
+.govuk-input--error {
+  font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    height: 2.5rem;
+    margin-top: 0;
+    padding: 5px;
+    border: 2px
+ solid #d4351c;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.govuk-date-input__label {
+  font-size: 16px;
 }
